@@ -244,17 +244,13 @@ Rule: n8n-docker never syncs to Drive.
 
 ---  
 
-## 10. GIT REPO SETUP (Pending — carry to Gate 5 session)  
+## 10. GIT REPO (✅ LIVE)  
 
-OCS state repo is separate from WallyB. Steps for a fresh Claude Code session:  
-1. mkdir ~/Documents/ME/Ai/ocs-state && cd ~/Documents/ME/Ai/ocs-state  
-2. git init  
-3. Add this file as OAIS_STATE.md  
-4. git add OAIS_STATE.md && git commit -m "OCS Gate 4 closed: OAIS_STATE.md V5 — initial repo commit"  
-5. Create GitHub repo: github.com → New → name: ocs-state  
-6. git remote add origin https://github.com/[username]/ocs-state.git && git push -u origin main  
-
-Prompt for Code session: "I'm setting up the OCS state repo at ~/Documents/ME/Ai/ocs-state — initialize git, add OAIS_STATE.md, first commit." Paste this file content directly.  
+- **Local:** `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks `.git`)
+- **Remote:** https://github.com/royalcreatesai-star/ocs-state (main)
+- **Canonical file:** `OAIS_STATE.md` (this file). Drive `/ROC-OS/00_Registry/` is the mirror; the repo is version control.
+- **Auth:** fine-grained GitHub PAT (Contents: read/write). Push is interactive — `cd ~/Documents/ME/Ai/ocs-state && git push -u origin main`.
+- **Workflow:** edit/commit/push in repo, then mirror key files to Drive.  
 
 ---  
 
@@ -265,7 +261,8 @@ Prompt for Code session: "I'm setting up the OCS state repo at ~/Documents/ME/Ai
 - [ ] Document Audit Trainer, NYC CRE Broker, Financial Aid Consultant, Technical Expert as Claude Project configs (not GPT configs — different format, no Gizmo ID)  
 - [ ] Cross-reference Claude Projects against OpenAI GPT configs — identify overlaps, gaps, consolidation opportunities  
 - [ ] Royal: Enable capability toggles in GPT Builder for all 6 OpenAI GPTs per Gizmo Registry V3 (F4)  
-- [ ] Royal: Set up OCS Git repo per Section 10 (carry from Gate 4)  
+- [x] OCS Git repo live — ~/Documents/ME/Ai/ocs-state → github.com/royalcreatesai-star/ocs-state  
+- [ ] CoWork: naming homogenization + iCloud↔Drive dedup + Steuben .xlsx in Drive (F12); archive OCS_Program_State files (F10)  
 - [ ] Royal: Transcribe WAV files via Whisper when convenient (F7 — low priority)  
 
 ---  
