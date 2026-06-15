@@ -135,6 +135,19 @@ Commands (04_Domain/commands/): CMD_status_V1.md — /status instant OCS snapsho
 | PROJ_EDU_SHSAT | SHSAT Prep — McKayla | 1/4 | Active — Tutorverse enrolled |  
 | PROJ_AI_FOOTBALL | Football Recruiting — Kimani | 4 | Planning phase; group chat captured |  
 
+> **Note (Gate 5):** This Section-6 list is the AI-asset subset only. The full project universe (24 unique initiatives across 6 sources) is reconciled in **DOC_2026-06-14_AI_PROJECTS_GATE5-RECONCILIATION_V1.md**. Layered model: `blueprint/projects.md` = all-engine master; this section = AI-asset view; reconciliation doc = the bridge. Cross-platform pairs (Translator, Travel) exist on both Claude + OpenAI with different instructions.
+
+### 6b. PROJECT SOURCES (Gate 5 taxonomy)
+| Source | What | Count |
+|--------|------|-------|
+| S1 Claude.ai Projects | Anthropic cloud | 11 original (+1 sample, +1 strategy layer) |
+| S2 OpenAI Custom GPTs | ChatGPT | 6 |
+| S3 OpenAI Projects | ChatGPT | 2 known (⚠ verify): Relatable Translator, Travel/World Tour |
+| S4 iCloud PROJ_* | local | 5 |
+| S5 blueprint/projects/*.md | local + Drive mirror | 12 |
+| S6 Drive PROJECT_STATE | Drive | 10 |
+| **Deduplicated true total** | — | **24 unique initiatives** |
+
 ---  
 
 ## 7. OPEN FINDINGS  
@@ -150,6 +163,8 @@ Commands (04_Domain/commands/): CMD_status_V1.md — /status instant OCS snapsho
 | F7 | WAV files (2) untranscribed | Low priority | Royal — Whisper on M4 |  
 | F8 | PNG spot-check | Low priority | Royal |  
 | F9 | 12 shared URLs | Resolved — 00_Registry | — |  
+| F10 | **Two V5 state lineages** — OAIS_STATE (Gate 5) vs OCS_Program_State (Gate 3), same date, diverged. OAIS_STATE is canonical; fold unique content from OCS_Program_State then archive it | Open | Royal — HIGH |
+| F11 | Verify ⚠ items in reconciliation: OpenAI Projects complete? Property Mgmt\|Tax a Claude Project? Commercial Broker also a GPT? Spark=McKayla's Study Partner? | Open | Royal |
 
 ---  
 
