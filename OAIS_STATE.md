@@ -1,9 +1,10 @@
 # OAIS_STATE.md — O'Connor AI System State  
 **Program:** O'Connor Configured System (OCS) | 60-Day Initiative  
-**Version:** V5 — Gate 4 CLOSED  
+**Version:** V6 — Gate 4 CLOSED / Gate 5 OPEN (single canonical state file)  
 **Last Updated:** 2026-06-14  
-**Updated By:** Royal O'Connor + Claude (Sonnet 4.6)  
+**Updated By:** Royal O'Connor + Claude (Opus 4.8)  
 **Route:** /ROC-OS/00_Registry/  
+**Supersedes:** OAIS_STATE_V5 + the OCS_Program_State lineage (V1–V5). OCS-foundation content folded in below (§5, §5b). The OCS_Program_State lineage is now RETIRED — update only this file going forward.  
 **Cross-platform bridge:** Load this file in any Claude or ChatGPT session before beginning work. Read in full. Check Section 11 for active tasks before taking any action.  
 
 ---  
@@ -109,12 +110,59 @@ Full registry + capability matrix: DOC_2026-06-14_AI_GPT-GIZMO-REGISTRY_V3.md �
 
 ---  
 
-## 5. GATE 3 REFERENCE  
+## 5. GATE 3 REFERENCE — 16 HARNESS ASSETS (folded from OCS_Program_State)  
 
-Skills (04_Domain/skills/): method-select, coc-underwrite, risk-score, comp-score, content-curation, billing-conventions  
-Rules (04_Domain/rules/): pii-sanitize, derive-never-store, security-hygiene, session-close  
-Templates (04_Domain/templates/): persona-spec  
-Commands (04_Domain/commands/): CMD_status_V1.md — /status instant OCS snapshot  
+All written to /ROC-OS/04_Domain/. Skills must obey the 600-token rule (full detail lives in Refinery-converted MD, loaded on demand).
+
+| File | Type | ~Tokens | Location |
+|------|------|---------|----------|
+| SKILL_method-select_V1.md | Skill | 240 | 04_Domain/skills/ |
+| SKILL_coc-underwrite_V1.md | Skill | 276 | 04_Domain/skills/ |
+| SKILL_risk-score_V1.md | Skill | 248 | 04_Domain/skills/ |
+| SKILL_comp-score_V1.md | Skill | 270 | 04_Domain/skills/ |
+| SKILL_content-curation_V1.md | Skill | 270 | 04_Domain/skills/ |
+| SKILL_billing-conventions_V1.md | Skill | 293 | 04_Domain/skills/ |
+| RULE_pii-sanitize_V1.md | Rule | 278 | 04_Domain/rules/ |
+| RULE_derive-never-store_V1.md | Rule | 294 | 04_Domain/rules/ |
+| RULE_security-hygiene_V1.md | Rule | 281 | 04_Domain/rules/ |
+| RULE_session-close_V1.md | Rule | 324 | 04_Domain/rules/ |
+| TEMPLATE_persona-spec_V1.md | Template | 461 | 04_Domain/templates/ |
+| CMD_status_V1.md | Command | ~260 | 04_Domain/commands/ — /status snapshot |
+| CMD_wrap_V1.md | Command | ~270 | 04_Domain/commands/ — session close |
+| CMD_gpt-revise_V1.md | Command | ~280 | 04_Domain/commands/ |
+| CMD_property-rollup_V1.md | Command | ~290 | 04_Domain/commands/ |
+| CMD_trade-log_V1.md | Command | ~290 | 04_Domain/commands/ |
+
+**Document Refinery** (02_Automation/refinery/, outline V1): 5-stage n8n pipeline Ingest→Filter→Refine→Structure→Deliver. Google Drive native OCR; Claude Sonnet 4.6 refine node; YAML front matter on every output. 3 NotebookLM notebooks (ROC-OS-Professional, ROC-OS-RealEstate, ROC-OS-AI). ~3.5 hr build (W3). Build pending.
+
+**NotebookLM MCP** (`@roomi-fields/notebooklm-mcp` v2.0.1): installed global via npm; registered `claude mcp add notebooklm`; authenticated royalcreates.ai (stdio/persistent). Chrome profile + library.json under `~/Library/Application Support/notebooklm-mcp/`. 25 tools (notebook.ask, source.add, notebook.create, vault.batch, content.generate). Retrieval at zero Anthropic token cost. HTTP/n8n mode deferred to W3.
+
+---  
+
+## 5b. LOCKED KEY DECISIONS (folded from OCS_Program_State)  
+
+1. **Hallway = Google Drive** under royalcreates.ai. Structure: /ROC-OS/{00_Registry, 01_Intelligence, 02_Automation, 03_Data, 04_Domain, 05_Projects}.
+2. **Hamilton flagship = SMB two-track:** (1) Configured Business demo, (2) OpenAI Migration Rescue. **Audit Trainer = internal/firm-eval only** (≠ The Binder).
+3. **OpenAI path = Responses API / Agents SDK only.** Assistants API dies Aug 26 2026; Agent Builder Nov 30 2026.
+4. **n8n = core rails.** "Workflows are controls, agents are staff."
+5. **wrap = session-close trigger.** Fresh session opens with state file only.
+6. MovieWatch 4 open questions ANSWERED — Phase 1 ready.
+7. **n8n-docker folder NEVER syncs to Drive.**
+8. **Work split:** Royal owns Domain + controls; engineer owns Automation + Data. Book engineer Gate 5 (Jul 13–17).
+9. Tax worksheets → 03_Data/rei/.
+10. Blueprint Dashboard — Drive → Open with Chrome. Productivity Dashboard (dashboard.html) — run local as file:// in Chrome.
+11. **Intake workflow:** /ROC-OS/00_Inbox/ + "ROC-OS Intake" Gmail label.
+12. **royalcreates.ai domain NOT YET registered** (~$15–20/yr).
+13. **Session hygiene is a RULE** (quadratic token tax) — wrap + fresh session.
+14. **CLAUDE.md / skill 600-token rule** — harness skills lean; detail in Refinery MD on demand.
+15. **NotebookLM MCP + Google Drive MCP** both on royalcreates.ai — confirmed working.
+
+### Surface update equivalents
+| Surface | Trigger |
+|---------|---------|
+| Claude Chat | "wrap" → draft + write to Drive |
+| Claude Code | /update |
+| CoWork | native; export to Drive after significant sessions |
 
 ---  
 
@@ -163,7 +211,7 @@ Commands (04_Domain/commands/): CMD_status_V1.md — /status instant OCS snapsho
 | F7 | WAV files (2) untranscribed | Low priority | Royal — Whisper on M4 |  
 | F8 | PNG spot-check | Low priority | Royal |  
 | F9 | 12 shared URLs | Resolved — 00_Registry | — |  
-| F10 | **State lineage consolidation** — DECIDED: OAIS_STATE is canonical cross-platform bridge; OCS_Program_State (Claude/OCS-foundation) to be retired AFTER folding its content (16 harness assets, Refinery, NotebookLM MCP) into OAIS_STATE | Open | Royal — HIGH |
+| F10 | **State lineage consolidation** — ✅ DONE: OCS-foundation content folded into this file (§5, §5b) at V6. OCS_Program_State lineage RETIRED. Remaining: CoWork to archive the old OCS_Program_State files in Drive | Mostly closed | CoWork — archive |
 | F11 | Reconciliation ⚠ items — ✅ ALL RESOLVED: OpenAI Projects complete at 2; Property Mgmt\|Tax = data artifact not project; Commercial Broker = Claude only; McKayla's Study Partner (SHSAT/TACHS/ISEE) ≠ Spark Tween Mentor (Elementary) — separate, one per child | CLOSED | — |
 | F12 | **CoWork cleanup** — naming homogenization per naming bundle; iCloud↔Drive dedup; create Steuben .xlsx in Drive (only .numbers in iCloud) | Open | Royal — CoWork |
 
@@ -260,4 +308,4 @@ For ChatGPT: Paste full contents. Prompt: "This is my OCS program state file. Re
 For Claude Code: cat OAIS_STATE.md at session start. Commit: git commit -m "OCS Gate 5: [description]"  
 
 ---  
-*OAIS_STATE.md — O'Connor AI System | OCS | V5 | Gate 4 CLOSED | Gate 5 OPEN | 2026-06-14 | /ROC-OS/00_Registry/*  
+*OAIS_STATE.md — O'Connor AI System | OCS | V6 | Gate 4 CLOSED | Gate 5 OPEN | single canonical (OCS_Program_State folded + retired) | 2026-06-14 | /ROC-OS/00_Registry/*  
