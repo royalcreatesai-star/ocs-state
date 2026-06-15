@@ -163,8 +163,9 @@ Commands (04_Domain/commands/): CMD_status_V1.md — /status instant OCS snapsho
 | F7 | WAV files (2) untranscribed | Low priority | Royal — Whisper on M4 |  
 | F8 | PNG spot-check | Low priority | Royal |  
 | F9 | 12 shared URLs | Resolved — 00_Registry | — |  
-| F10 | **Two V5 state lineages** — OAIS_STATE (Gate 5) vs OCS_Program_State (Gate 3), same date, diverged. OAIS_STATE is canonical; fold unique content from OCS_Program_State then archive it | Open | Royal — HIGH |
-| F11 | Verify ⚠ items in reconciliation: OpenAI Projects complete? Property Mgmt\|Tax a Claude Project? Commercial Broker also a GPT? Spark=McKayla's Study Partner? | Open | Royal |
+| F10 | **State lineage consolidation** — DECIDED: OAIS_STATE is canonical cross-platform bridge; OCS_Program_State (Claude/OCS-foundation) to be retired AFTER folding its content (16 harness assets, Refinery, NotebookLM MCP) into OAIS_STATE | Open | Royal — HIGH |
+| F11 | Reconciliation ⚠ items — ✅ ALL RESOLVED: OpenAI Projects complete at 2; Property Mgmt\|Tax = data artifact not project; Commercial Broker = Claude only; McKayla's Study Partner (SHSAT/TACHS/ISEE) ≠ Spark Tween Mentor (Elementary) — separate, one per child | CLOSED | — |
+| F12 | **CoWork cleanup** — naming homogenization per naming bundle; iCloud↔Drive dedup; create Steuben .xlsx in Drive (only .numbers in iCloud) | Open | Royal — CoWork |
 
 ---  
 

@@ -120,11 +120,12 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 | 10 | Home Renovation Advisor | Personal | — | ✅ | — | — | — | |
 | 11 | AI Thought Leader | 5 | ✅ | — | — | ✅ | — | Ties to AUTOTRADING |
 | 12 | Custom GPTs (builder/dev) | 4 | ✅ | — | — | — | — | Meta-project |
-| 13 | NYC CRE Commercial Broker | 3 | ✅ | ⚠ | — | — | ✅ | ⚠ Confirm if also a GPT |
+| 13 | NYC CRE Commercial Broker | 3 | ✅ | — | — | — | ✅ | **Claude only** (confirmed — not a GPT) |
 | 14 | REI Technical Expert | 3 | ✅ | — | — | ✅ | ✅ | PROJ_AI_REI / Bay St |
-| 15 | **Spark / Tween Mentor / McKayla's Study Partner** | Family | ✅ | — | — | ✅ | ✅ | ⚠ 3 names, likely 1 initiative — confirm |
+| 15 | **McKayla's Study Partner** (SHSAT / TACHS / ISEE) | Family | ✅ | — | — | ✅ | ✅ | For McKayla — HS admissions. Maps to PROJ_EDU_SHSAT. **Separate from #15b.** |
+| 15b | **Spark — Tween Mentor** (Elementary) | Family | ✅ | — | — | ✅ | ✅ | For younger child — elementary level. **One assistant per child.** |
 | 16 | MovieWatch | 4 | — | — | — | ✅ | ✅ | Not a Claude Project yet |
-| 17 | Property Mgmt \| Tax Schedules | 3 | ⚠ | — | — | — | ✅ | ⚠ Possible undocumented Claude Project |
+| ~~17~~ | ~~Property Mgmt \| Tax Schedules~~ → **DATA, not a project** | 3 | — | — | — | ✅ | ✅ | Property tax/expense spreadsheets (iCloud `.numbers` + Drive `.xlsx`). Belongs to Property Financial Tracking (#21). ⚠ Steuben `.xlsx` missing in Drive. |
 | 18 | Bay Street Automation | 3 | — | — | — | ✅ | — | PROJ_AI_BAYSTREET |
 | 19 | Staten Island REI Analysis | 3 | — | — | — | ✅ | — | |
 | 20 | AI Bootcamp Curation | 2 | — | — | — | ✅ | — | Also `Ai Bootcamp/` folder |
@@ -155,7 +156,10 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 | of which: cross-platform pairs | 2 (Translator, Travel) |
 | of which: Cold Case ecosystem | 5 (1 Claude + 4 GPT) |
 | Conceptual layers (NOT projects) | 4 (North Star, Binder, OCS, Playbook) |
+| Data artifacts (NOT projects) | 1 (Property tax/expense schedules) |
 | Excluded (Anthropic sample) | 1 (How to use Claude) |
+
+> **Composition correction (post-confirmation 2026-06-14):** Count held at 24 after two offsetting fixes — (+1) McKayla's Study Partner and Spark Tween Mentor are SEPARATE initiatives (one per child); (−1) "Property Management | Tax Schedules" reclassified as a data artifact, not a project. OpenAI Projects confirmed complete at 2. Commercial Broker confirmed Claude-only.
 
 **🎯 BOTTOM LINE: 24 unique initiatives across 5 engines + personal/family. Everything else is the same work represented in multiple places.**
 
@@ -173,17 +177,18 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 
 ## 5. DISCREPANCY LOG
 
-| ID | Discrepancy | Severity | Recommendation |
-|----|-------------|----------|----------------|
-| D1 | **Two V5 state lineages** (OAIS_STATE vs OCS_Program_State), same date, diverged gate progress | 🔴 HIGH | Pick ONE canonical. OAIS_STATE is newer (Gate 5). Retire/merge OCS_Program_State. |
-| D2 | **Three inventories disagree** (OAIS §6 = 12, blueprint/projects.md ≈ 25 line items, Asset_Registry = 12) | 🟡 MED | Layered model resolves: blueprint = master, OAIS = AI subset, this report = bridge. |
-| D3 | **Cross-platform pairs** (Translator, Travel) counted as separate projects | 🟡 MED | Track as 1 initiative / 2 instances. Done in §3. |
-| D4 | **Spark / Tween Mentor / McKayla's Study Partner** — 3 names | 🟡 MED | ⚠ Confirm these are one initiative; standardize the name. |
-| D5 | **Property Management \| Tax Schedules** in Drive states only | 🟡 MED | ⚠ Confirm if it's a live Claude Project (would make 12 originals). |
-| D6 | **Commercial Broker** — Claude Project; also an OpenAI GPT? | 🟢 LOW | ⚠ Confirm GPT existence. |
-| D7 | **Naming mismatch**: iCloud `PROJ_AI_REI` vs OAIS `RE_PROPDATA` vs Drive `REI Technical Expert` | 🟢 LOW | Adopt one code per initiative in master registry. |
-| D8 | **OpenAI Projects completeness** unknown (2 captured) | 🟡 MED | ⚠ Confirm S3 is complete. |
-| D9 | **Duplicate "Project MD files (Various Sources)"** Google Doc in Drive root | 🟢 LOW | User confirmed discard. Safe to delete. |
+| ID | Discrepancy | Severity | Resolution |
+|----|-------------|----------|------------|
+| D1 | **Two state lineages** (OAIS_STATE vs OCS_Program_State). NOT an accidental desync — intentionally different: OCS_Program_State = Claude-env / OCS-foundation detail; OAIS_STATE = cross-platform bridge. | 🔴 HIGH | ✅ **DECIDED:** consolidate to OAIS_STATE as the single canonical. Fold OCS_Program_State's OCS-foundation content (16 harness assets, Refinery, NotebookLM MCP) into OAIS_STATE, then retire that lineage. Saved to memory. |
+| D2 | **Three inventories disagree** (OAIS §6 = 12, blueprint/projects.md ≈ 25 line items, Asset_Registry = 12) | 🟡 MED | ✅ Layered model: blueprint = master, OAIS = AI subset, this report = bridge. |
+| D3 | **Cross-platform pairs** (Translator, Travel) counted as separate projects | 🟡 MED | ✅ Tracked as 1 initiative / 2 instances in §3. |
+| D4 | **Spark vs McKayla's Study Partner** | 🟡 MED | ✅ **RESOLVED: SEPARATE.** McKayla's Study Partner = SHSAT/TACHS/ISEE (McKayla). Spark = Tween Mentor, Elementary (younger child). One per child. |
+| D5 | **Property Management \| Tax Schedules** | 🟡 MED | ✅ **RESOLVED: DATA artifact, not a project.** Property tax/expense spreadsheets in iCloud `.numbers` + Drive `.xlsx`. ⚠ Steuben `.xlsx` missing from Drive. |
+| D6 | **Commercial Broker** — also an OpenAI GPT? | 🟢 LOW | ✅ **RESOLVED: Claude only.** |
+| D7 | **Naming mismatch** across sources (e.g. `PROJ_AI_REI` / `RE_PROPDATA` / `REI Technical Expert`) | 🟡 MED | → CoWork: homogenize per naming bundle `{TYPE}_{DATE}_{DOMAIN}_{CATEGORY}_{DESCRIPTION}_{VERSION}`; one code per initiative. |
+| D8 | **OpenAI Projects completeness** | 🟡 MED | ✅ **RESOLVED: complete at 2** (no others worth noting). |
+| D9 | **Duplicate "Project MD files (Various Sources)"** Google Doc in Drive root | 🟢 LOW | ✅ Confirmed discard. Safe to delete. |
+| D10 | **iCloud ↔ Drive redundancy** — iCloud was original storage; mostly duplicates Drive (project folders, blueprint, WallyB) | 🟡 MED | → CoWork: dedup both sides where appropriate. iCloud is origin; Drive is canonical hallway. |
 
 ---
 
@@ -194,6 +199,12 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 3. **Mark cross-platform pairs explicitly** in the registry (Translator, Travel) so dedup stays honest.
 4. **Confirm the 4 ⚠ items** (D4, D5, D6, D8) to lock the true count between 24 and ~26.
 5. **Keep blueprint/projects.md as master** per layered decision; OAIS §6 points to it.
+
+### CoWork cleanup handoff (both sides — Drive + iCloud)
+- **Naming homogenization** — rename legacy files (`wallyb.md`, `OAIS_STATE_V5.md`, `PROJECT_STATE_*`, blueprint mirrors) to `{TYPE}_{DATE}_{DOMAIN}_{CATEGORY}_{DESCRIPTION}_{VERSION}` per the naming bundle (`/ME/Ai/DOC_AI_NAMING_BUNDLE/` — has cheat sheet, shell script, PowerShell, iOS shortcut). Decide whether the canonical bridge keeps a stable memorable name (`OAIS_STATE`) as an allowed exception.
+- **iCloud ↔ Drive dedup** — iCloud is origin storage and largely duplicates Drive (project folders, blueprint, WallyB). Reduce redundancy where appropriate; keep Drive as canonical hallway.
+- **Format gap** — create Steuben `.xlsx` in Drive to match Oxford/Neckar (currently `.numbers` in iCloud only).
+- **Retire OCS_Program_State lineage** after folding its content into OAIS_STATE (D1).
 
 ---
 
