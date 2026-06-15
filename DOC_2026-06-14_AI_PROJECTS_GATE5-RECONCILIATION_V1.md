@@ -27,12 +27,14 @@ The word **"project" is overloaded across 6 sources + 2 state lineages + 3 conce
 | S5 | **blueprint/projects/*.md** | Local + Drive mirror | `/ME/Ai/blueprint/projects/` + Drive `1CVa…` | ✅ Full |
 | S6 | **Drive PROJECT_STATE exports** | Drive | Drive folder `1t0_…` | ✅ Full |
 
-### 1B. The state-file lineages (the "drop this first" docs — should be ONE, are TWO)
+### 1B. The state-file lineages (the "drop this first" docs)
 
-| Lineage | Title | Latest | Gate progress | Status |
-|---------|-------|--------|---------------|--------|
-| L1 | `OAIS_STATE` (O'Connor AI System State) | V5 | Gate 4 CLOSED / Gate 5 OPEN | ✅ Newer — canonical |
-| L2 | `OCS_Program_State` (PROJECT_STATE.md — OCS Program) | V5 | Gate 3 IN PROGRESS | ⚠ Older content, SAME "V5" label, same date |
+These were **intentionally** two different docs with different purposes (confirmed by Royal) — but going forward they consolidate to ONE canonical (L1).
+
+| Lineage | Title | Purpose | Decision |
+|---------|-------|---------|----------|
+| L1 | `OAIS_STATE` (O'Connor AI System State) | Cross-platform bridge (Claude + ChatGPT) | ✅ **CANONICAL** going forward |
+| L2 | `OCS_Program_State` (PROJECT_STATE.md — OCS Program) | Claude-environment / OCS-foundation detail (harness assets, Refinery, NotebookLM MCP) | **RETIRE** after folding content into L1 |
 
 Plus a third inventory doc referenced by L2: **`Asset_Registry_V1/V2.md`** (12 projects + 11 embedded harness assets).
 
@@ -197,7 +199,7 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 1. **Resolve D1 now** — declare `OAIS_STATE` the single canonical state file. Fold any unique content from `OCS_Program_State_V5` (16 harness assets, Refinery, NotebookLM MCP details) into OAIS_STATE, then archive the OCS_Program_State lineage.
 2. **Adopt one code per initiative** — `PROJ_{ENGINE}_{NAME}` everywhere (iCloud folder, Drive state, OAIS registry).
 3. **Mark cross-platform pairs explicitly** in the registry (Translator, Travel) so dedup stays honest.
-4. **Confirm the 4 ⚠ items** (D4, D5, D6, D8) to lock the true count between 24 and ~26.
+4. ✅ **DONE — 4 ⚠ items confirmed** (D4, D5, D6, D8). True count locked at **24**.
 5. **Keep blueprint/projects.md as master** per layered decision; OAIS §6 points to it.
 
 ### CoWork cleanup handoff (both sides — Drive + iCloud)
@@ -208,13 +210,13 @@ Legend: ✅ present · — absent · ⚠ verify. "Claude" = S1, "GPT" = S2, "OAI
 
 ---
 
-## 7. OAIS_STATE UPDATES REQUIRED
+## 7. OAIS_STATE UPDATES (✅ DONE)
 
-- [ ] Add this report to Gate 4/5 deliverables list
-- [ ] Section 6: annotate the 12 with cross-platform-pair flags + add S3 OpenAI Projects
-- [ ] Add a new "Project Taxonomy & Sources" pointer to this doc
-- [ ] Record D1 (V5 lineage collision) as a new Open Finding
-- [ ] Note: Audit Trainer ≠ The Binder (confirmed against OCS_Program_State decision #2)
+- [x] Section 6b "Project Sources" taxonomy added + pointer to this report
+- [x] Cross-platform-pair flags (Translator, Travel) noted
+- [x] F10 (state lineage consolidation), F11 (⚠ items resolved), F12 (CoWork cleanup) recorded
+- [x] Audit Trainer ≠ The Binder (confirmed against OCS_Program_State decision #2; saved to memory)
+- [x] OpenAI Project configs filed to Drive 01_Intelligence (Relatable Translator, Travel)
 
 ---
 *DOC_2026-06-14_AI_PROJECTS_GATE5-RECONCILIATION_V1 — OCS | Gate 5 | Layered model | 24 unique initiatives | 2026-06-14*
