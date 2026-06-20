@@ -118,7 +118,7 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 - [x] **Commit V7.1 to git repo (SoT) — done this session** (repo had been stale at V6; now reconciled + current)
 - [ ] Update the Drive `.md` mirror in 00_Registry to V7.1 (so mirror = repo)
 - [ ] Remove 2 stray Google Docs V6 (IDs: 1vFnP5NHBlT66pSJZefwnsvWozU0WRMXGtYolmR3kv7k, 1QUdVtWKKKYP1Y2RRXcUiFKyL6gmkIYKciyIDZw_ibQU)
-- [ ] Courtesy: fix Salesforce→ADP slip in SubService memo
+- [x] Courtesy: fix Salesforce→ADP slip in SubService memo — DONE 06-19; verified in Drive (memo reads "ADP Workforce / ADP GETS" throughout, zero "Salesforce")
 
 ## 13. SHORTHAND DECODE
 OCS / ROC-OS · The Binder (8-ch client Playbook) · The Blueprint (5-engine strategy) · Hallway (Google Drive) · Gates (pass/fail) · Harness (tools/workflows/protocols) · Hamilton (NJ Anthropic SMB Workshop) · **Migration Rescue = Risk Scan → Risk Assessment → Migration Build** · Deprecation (software shutdown, NOT accounting) · Gizmo ID (OpenAI GPT id) · ===SECTION=== (GPT delimiter) · Claude Projects (Anthropic GPT-equivalent) · Execution Gap (the moat) · Carve-Out (third-party dependency documented not tested) · CUEC → Complementary Client Actions · Band (Low/Mod/High risk) vs Tier (T1/T2/T3 price).
