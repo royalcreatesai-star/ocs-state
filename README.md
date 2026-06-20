@@ -1,11 +1,11 @@
 # OCS State Repo — Quick Reference
 
-This repo holds the canonical OCS / ROC-OS state. Plain Markdown files, version-controlled, backed up on GitHub.
+This repo holds the canonical OCS / ROC-OS state. The state file is `OCS_STATE_CANONICAL.md` (renamed 2026-06-19 from `OAIS_STATE.md`). Plain Markdown files, version-controlled, backed up on GitHub.
 
 ## What's here
 | File | What it is |
 |------|-----------|
-| `OAIS_STATE.md` | **The canonical state file.** Drop this first in any session. |
+| `OCS_STATE_CANONICAL.md` | **The canonical state file** (formerly `OAIS_STATE.md`). Drop this first in any session. |
 | `DOC_..._GATE5-RECONCILIATION_V1.md` | The 24-initiative project reconciliation (the bridge map) |
 | `DOC_..._COWORK-CLEANUP-WORKORDER_V1.md` | Cleanup task list for CoWork |
 

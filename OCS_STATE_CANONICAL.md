@@ -1,4 +1,5 @@
-# OAIS_STATE.md — O'Connor AI System State
+# OCS_STATE_CANONICAL.md — O'Connor Configured System (OCS) State
+*(Formerly OAIS_STATE.md — renamed 2026-06-19. The "OAIS / O'Connor AI System" acronym is retired in favor of OCS. Distinct from the separately-retired OCS_Program_State lineage — see GATE5-RECONCILIATION D1.)*
 
 **Program:** O'Connor Configured System (OCS) | 60-Day Initiative
 **Version:** V7.1 — Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE — **Workstream B BUILT**
@@ -90,7 +91,7 @@ Assistants API 2026-08-26 (~10wk) · Agent Builder 2026-11-30 (~24wk) · OCS Gat
 Claude (Sonnet 4.6) orchestration · OpenAI (GPT-5-5-thinking) specialist advisory (6 GPTs + 2 Projects, ===SECTION=== format) · n8n 2.0 (Docker, M4, LOCAL only) · Google Drive mirror. Naming: {TYPE}_{DATE}_{DOMAIN}_{CATEGORY}_{DESCRIPTION}_{VERSION}.
 
 ## 11. GIT REPO (✅ LIVE)
-Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Remote github.com/royalcreatesai-star/ocs-state (main). Canonical file OAIS_STATE.md; Drive 00_Registry = mirror. Fine-grained PAT (Contents r/w). Push: `cd ~/Documents/ME/Ai/ocs-state && git push -u origin main`.
+Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Remote github.com/royalcreatesai-star/ocs-state (main). Canonical file OCS_STATE_CANONICAL.md (formerly OAIS_STATE.md); Drive 00_Registry = mirror. Fine-grained PAT (Contents r/w). Push: `cd ~/Documents/ME/Ai/ocs-state && git push -u origin main`.
 **06-18:** repo path whitelisted in `~/.claude/hooks/bash-path-guard.py` so Claude Code (this harness) can `git add/commit/push` the repo directly without the /ME/Ai path-guard blocking it.
 
 ## 12. OPEN ACTIONS
@@ -127,4 +128,4 @@ OCS / ROC-OS · The Binder (8-ch client Playbook) · The Blueprint (5-engine str
 1. Read in full. 2. Check §12 (open actions). 3. Check §8 (findings). 4. Check §3 (gates). 5. Confirm orientation. 6. Close: /wrap (Chat) or /update (Code) → update state, mirror to Drive, commit to repo.
 
 ---
-*OAIS_STATE.md | OCS | V7.1 | Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE — Workstream B built | reconciles both V6 branches + 06-18 build session | 2026-06-18 | /ROC-OS/00_Registry/*
+*OCS_STATE_CANONICAL.md | OCS | V7.1 | Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE — Workstream B built | reconciles both V6 branches + 06-18 build session | 2026-06-18 | /ROC-OS/00_Registry/*
