@@ -1,166 +1,134 @@
-# DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md — Gate 5 Audit
+# DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md — Gate 5 Audit (MAP)
 
 **Gate:** 5 (OPEN) — Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)**
 **Program:** O'Connor Configured System (OCS) | Engine 4 (program) / governance artifact
-**Route (logical):** /ROC-OS/05_Projects/ — physically committed to git repo SoT `~/Documents/ME/Ai/ocs-state` (flat layout, alongside the Gate 5 reconciliation doc). **Mirror to Drive /ROC-OS/05_Projects/ pending.**
-**Created:** 2026-06-21 by Royal O'Connor + Claude (Opus 4.8, Claude Code).
-**Status:** ⏳ V1 SCAFFOLD — awaiting Royal's paste of (a) each Claude Project's instructions + knowledge list, (b) ChatGPT memory list, (c) ChatGPT connector list. Sections marked **⏳ AWAITING PASTE** are placeholders.
-**Source-of-truth inputs:** OCS_STATE_CANONICAL.md V7.1 §3/§4/§11/§12; DOC_2026-06-14_AI_PROJECTS_GATE5-RECONCILIATION_V1.md.
-**Constraint this session:** Parallel session is editing OCS_STATE_CANONICAL.md (Migration Sprint setup). **This doc does NOT edit the state file.** §C below proposes state edits only — Royal merges them.
+**Route (logical):** /ROC-OS/05_Projects/ — physically in git repo SoT `~/Documents/ME/Ai/ocs-state` (flat layout). **Mirror to Drive pending.**
+**Created:** 2026-06-21 · **Updated:** 2026-06-22 (platform re-confirmation pass) by Royal O'Connor + Claude (Opus 4.8, Claude Code).
+**Companions (verbatim instructions):**
+- Claude Projects → `DOC_2026-06-21_AI_PROJECTS_CLAUDE-PROJECT-INSTRUCTIONS_V1.md`
+- OpenAI GPTs → `DOC_2026-06-22_AI_INTELLIGENCE_GPT-INSTRUCTIONS_V1.md`
+**This doc is the map** (register, statuses, reconciliation); companions hold the raw instruction text.
+**Status:** 🔄 V1 — **PARTIAL CAPTURE.** Instructions captured for **6 Claude Projects** (Audit Trainer, NYC CRE Broker, Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + **1 OpenAI GPT** (Financial Strategist). **Key finding: the REI advisory agent-team is CROSS-PLATFORM** (Claude Projects + ≥1 ChatGPT GPT). Remaining team members + all knowledge-file lists + ChatGPT memory/connector audit (§B) still ⏳.
+**Source-of-truth inputs:** OCS_STATE_CANONICAL.md V7.1 §3/§4/§11/§12; GATE5-RECONCILIATION_V1.
+**Constraint:** Parallel session may edit OCS_STATE_CANONICAL.md. **This doc does NOT edit the state file.** §C proposes edits only.
 
 ---
 
 ## §A — CLAUDE PROJECTS AUDIT
 
-### A.0 Scope confirmation
-Per **§4 locked correction**, these four are **Claude Projects (Anthropic), NOT OpenAI GPTs** → **no Gizmo ID exists** for any of them. Do not look for one. Claude Projects expose two configurable surfaces to capture:
-1. **Custom instructions** (the project's "instructions" / set-context box)
-2. **Project knowledge** (attached files + pasted knowledge)
+### A.0 Scope (updated 06-22)
+Royal is running a **per-project platform re-confirmation pass** (Claude vs ChatGPT). Confirmed so far: most of the REI advisory team are **Claude Projects**, but **Financial Strategist is an OpenAI GPT** — so the team **spans both platforms** (like the Translator/Travel cross-platform pattern, but as a coordinated team). Each project has two capture surfaces: **(1) custom instructions, (2) project knowledge (files).**
 
-### A.1 Summary table
+### Flag status
+- ✅ **A-1 (Financial Aid undocumented)** — partial: instructions captured; engine = **Family/Personal**; residual = PROJ code.
+- ✅ **A-2 (Technical Expert naming)** — resolved: live name **"REI Technical Expert"**.
+- ✅ **A-3 (Audit Trainer / Financial Aid platform)** — resolved: both **Claude Projects** (06-21).
+- ✅ **A-4 (REI agent-team platform)** — resolved per-member in the 06-22 pass: team is **cross-platform** (see register).
 
-| # | Claude Project | Intended Engine | Reconciliation cross-ref | Type confirmed | Instructions captured | Knowledge list captured |
-|---|----------------|:--:|---|:--:|:--:|:--:|
-| 1 | **Audit Trainer** | 1 (W2 / firm-internal) | Locked decision #2: *"Audit Trainer = internal/firm-eval only"*; ≠ The Binder | ✅ Claude Project (not GPT) | ⏳ | ⏳ |
-| 2 | **NYC CRE Broker** | 3 (Real Estate) | #13 "NYC CRE Commercial Broker — **Claude only, confirmed not a GPT**" | ✅ Claude Project (not GPT) | ⏳ | ⏳ |
-| 3 | **Financial Aid Consultant** | ❓ (likely Family/Personal — verify) | ⚠ **Not present under this name** in reconciliation cross-ref — possible undocumented project | ✅ Claude Project (not GPT) | ⏳ | ⏳ |
-| 4 | **Technical Expert** | 3 (Real Estate) | #14 "REI Technical Expert" → PROJ_AI_REI / Bay St | ✅ Claude Project (not GPT) | ⏳ | ⏳ |
+### A.1 Register
 
-> ⚠ **Flag A-1 (gap):** *Financial Aid Consultant* is not in the Gate 5 reconciliation cross-reference (S1–S6, 24 initiatives). Either it is newer than the 06-14 reconciliation, or it was missed in the source sweep. Capture it fully and assign an engine + PROJ_ code in §C.
-> ⚠ **Flag A-2 (naming):** Project #4 is labeled **"Technical Expert"** in the Gate 4 correction but **"REI Technical Expert"** in reconciliation #14 and Drive state S6. Confirm the live claude.ai name and homogenize (D7 naming rule).
+| # | Project | Platform | Engine | Instructions | Knowledge | Notes |
+|---|---------|:--:|:--:|:--:|:--:|-------|
+| 1 | **Audit Trainer** (Expert Audit Knowledge Advisor) | Claude | 1 | ✅ | ⏳ | Internal/firm-eval; ≠ The Binder |
+| 2 | **NYC CRE Broker** (Commercial Broker · SI/Bay St) | Claude | 3 | ✅ | ⏳ | **Full instructions captured 06-22** (was desc-only) |
+| 3 | **Financial Aid Consultant** | Claude | Family | ✅ | ⏳ | New to registry (A-1); ETA→EOP note |
+| 4 | **REI Technical Expert** | Claude | 3 | ✅ | ⏳ | Agent-team **hub**; re-confirmed Claude 06-22 |
+| 5 | **Transaction Advisory Accountant** | Claude | 2/3 | ✅ | ⏳ | Agent-team |
+| 6 | **Real Estate Investment Advisor** | Claude | 3 | ✅ | ⏳ | Agent-team; residential ≤4-unit |
+| 7 | **Broker Director** | ⏳ | 3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
+| 8 | **Real Estate Counsel** | ⏳ | 3 | ⏳ | ⏳ | Referenced; cf "Expert Real Estate Counsel" |
+| 9 | **Business Broker Assistant** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
+| 10 | **Research Analyst** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
+| 11 | **Financial Advisor** = **Financial Strategist GPT** | **ChatGPT** | 5 | ✅ | ⏳ | **F19 RESOLVED 06-22** — the team's financial role is the Gate 4 GPT (cross-platform); confirm there's no separate Claude "Financial Advisor" |
+| 12 | **Industry Expert** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
 
-### A.2 Per-project detail
+Verbatim: Claude #1–#6 in the Claude companion; GPT #11 (Financial Strategist) in the GPT companion.
 
-#### Project 1 — Audit Trainer
-- **Purpose / role:** ⏳ AWAITING PASTE. *(Working assumption from state: internal audit-skills training / firm-evaluation aid. Explicitly NOT a client deliverable and NOT The Binder.)*
-- **Intended engine:** 1 (W2 / firm-internal). *Confirm it should not be re-pointed at Engine 2 advisory.*
-- **Custom instructions:** ⏳ AWAITING PASTE (full text).
-- **Knowledge files:** ⏳ AWAITING PASTE (list every attached file + 1-line description each).
-- **Overlap / consolidation notes:** Compare against Engine 2 advisory assets and the Migration Sprint workpapers — confirm no client-facing leakage. Cross-ref Gate 4 GPTs: no audit-training GPT exists (the 6 GPTs are Financial Strategist, Home Renovation Advisor, 4× Cold Case) → **no GPT overlap.**
-
-#### Project 2 — NYC CRE Broker
-- **Purpose / role:** ⏳ AWAITING PASTE. *(Working assumption: NYC commercial real-estate brokerage analysis / deal support — Abby/Engine 3 adjacent.)*
-- **Intended engine:** 3 (Real Estate).
-- **Custom instructions:** ⏳ AWAITING PASTE.
-- **Knowledge files:** ⏳ AWAITING PASTE.
-- **Overlap / consolidation notes:** Reconciliation confirms **Claude-only, no GPT twin** → no cross-platform dedup needed. Check overlap with Project 4 (Technical Expert / REI) — both Engine 3; confirm they are distinct (brokerage vs. REI technical underwriting) and not redundant.
-
-#### Project 3 — Financial Aid Consultant
-- **Purpose / role:** ⏳ AWAITING PASTE. *(Working assumption: college/school financial-aid guidance — possibly Family engine, tied to McKayla HS/college track. VERIFY.)*
-- **Intended engine:** ❓ — assign on paste (candidate: Family/Personal; or Engine 2 if client-facing).
-- **Custom instructions:** ⏳ AWAITING PASTE.
-- **Knowledge files:** ⏳ AWAITING PASTE.
-- **Overlap / consolidation notes:** New to the registry (Flag A-1). Decide whether it gets a PROJ_ code or is folded into an existing family/education initiative (e.g., PROJ_EDU_SHSAT family cluster).
-
-#### Project 4 — Technical Expert (a.k.a. REI Technical Expert)
-- **Purpose / role:** ⏳ AWAITING PASTE. *(Working assumption: REI technical/underwriting expert — Bay Street / Staten Island analysis support.)*
-- **Intended engine:** 3 (Real Estate) → PROJ_AI_REI / Bay St.
-- **Custom instructions:** ⏳ AWAITING PASTE.
-- **Knowledge files:** ⏳ AWAITING PASTE.
-- **Overlap / consolidation notes:** Present in iCloud (S4/S5) + Drive state (S6) but **Claude-only, no GPT twin.** Confirm distinct from Project 2 (CRE Broker).
+### A.2 Per-project notes (full text in companions)
+- **#1 Audit Trainer** — audit-manager/senior-manager training; IIA/AICPA/PCAOB. Engine 1 (confirm not re-pointed to E2).
+- **#2 NYC CRE Broker** — Staten Island / Bay Street mixed-use acquisition broker; two-stage CoC underwriting, walk-away filters, SI market context. ⚠ description framed *occupier rep*; instructions are *investor buy-side* — reconcile framing.
+- **#3 Financial Aid Consultant** — FAFSA/SAI; NY TAP/EOP/APTS; Title IV. Engine Family/Personal (cf PROJ_EDU_SHSAT).
+- **#4 REI Technical Expert** — REI technical analysis; **hub** coordinating #5–#12. = scaffold "Project 4 / Technical Expert."
+- **#5 Transaction Advisory Accountant** — transaction advisory + RE accounting; educational-only + prompt-protection.
+- **#6 Real Estate Investment Advisor** — residential/≤4-unit investor advisory; Fair Housing / no-guarantee guardrails.
+- **#11 Financial Advisor → Financial Strategist GPT** — holistic financial planning for entrepreneurs/RE investors; **OpenAI GPT** (Gate 4 #1), integrates with the rest of the (Claude) team across platforms.
+- **#7–#10, #12** — referenced by the team's collaboration sections; not yet pasted; platform per-member TBC.
 
 ### A.3 Cross-reference — Claude Projects vs OpenAI GPTs (Gate 4)
-- **Gate 4 confirmed 6 GPTs:** Financial Strategist, Home Renovation Advisor, 4× Cold Case.
-- **Overlap:** ZERO of the 4 Gate 5 Claude Projects has a same-purpose GPT twin. (Cross-platform *pairs* identified in reconciliation — Translator/"The Bridge", Travel/World Tour — are **not** in this Gate 5 set.)
-- **Consolidation finding (preliminary):** No Claude↔GPT dedup action required for these four. Internal overlap to resolve is Project 2 vs Project 4 (both Engine 3). Confirm on paste.
+- **Gate 4's 6 GPTs:** Financial Strategist, Home Renovation Advisor, 4× Cold Case. **Financial Strategist instructions now captured** (GPT companion) — it is **#11 of the REI team** (cross-platform).
+- **F19 RESOLVED:** the team's "Financial Advisor" = Financial Strategist GPT. (Confirm no *separate* Claude "Financial Advisor" exists.)
+- **Internal RE-role distinctness:** #2 Commercial Broker vs #4 Technical Expert vs #6 Investment Advisor — three distinct RE roles; confirm no redundancy.
 
-### A.4 ⬇ EXACT COPY-PASTE GUIDE FOR ROYAL (claude.ai — I cannot reach it)
-For **each** of the 4 projects, in claude.ai:
-1. Open **Projects** (left sidebar) → click the project.
-2. **Custom instructions:** open the project's **instructions / "Set project instructions"** panel (gear or "Edit" near the project title). **Select-all → copy the entire text** and paste it here labeled `### <Project> — INSTRUCTIONS`.
-3. **Knowledge files:** open the **Project knowledge** panel (right side). For each item, paste: **filename + type** (PDF/MD/pasted-text) and, if quick, a 1-line "what it is." Label it `### <Project> — KNOWLEDGE`.
-4. **Name + description:** paste the exact project **name** as shown and the short description if set (resolves Flag A-2).
-> Do all four in one message if easy; I'll slot each into A.2 and finalize engines/PROJ codes.
+### A.5 — REI ADVISORY AGENT-TEAM (CROSS-PLATFORM)
+A coordinated multi-agent team (hub #4 REI Technical Expert) whose members integrate with one another **across Claude and ChatGPT**. Captured: #4, #5, #6 (Claude) + #11 Financial Strategist (ChatGPT). Referenced/uncaptured: #7 Broker Director, #8 Real Estate Counsel, #9 Business Broker Assistant, #10 Research Analyst, #12 Industry Expert (+ confirm each one's platform). **This team is materially larger and more cross-platform than the 2 RE entries (#13/#14) in the 24-initiative reconciliation → F17.**
 
 ---
 
-## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18)
+## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18) — ALL ⏳ AWAITING PASTE
 
-Account in scope: **royaloconnor@gmail.com** (the Gate 4 export account). Purpose: governance/credibility artifact — show the advisory practitioner runs a clean, documented AI footprint.
+Account in scope: **royaloconnor@gmail.com**. Purpose: a **governance/credibility artifact** — prove the AI-governance advisor runs a clean, documented AI footprint (Engine 2) + surface privacy/deprecation exposure. Four parts:
 
-### B.1 Saved "memory" entries — ⏳ AWAITING PASTE
-Scaffold (one row per memory entry Royal pastes):
+### B.1 Saved memory entries — ⏳
+ChatGPT's persistent Memory ("Manage memories"): triage each as business/personal/stale, flag PII, decide keep/edit/delete. Tests the §12 hypothesis that "O'Connor Advisory" awareness came from memory/state-paste, not a Drive connection.
 
-| # | Memory entry (verbatim) | Category (business / personal / stale) | Privacy flag | Action (keep / edit / delete) |
-|---|---|---|:--:|:--:|
-| _ | ⏳ | ⏳ | ⏳ | ⏳ |
+### B.2 Connectors / connected apps — ⏳
+Each connector + on/off + scope; flag Drive/Gmail **write** scope. Also Google layer: myaccount.google.com/connections → any OpenAI↔Drive grant.
 
-> Hypothesis from §12: any "O'Connor Advisory" awareness in ChatGPT most likely came from a **state-file paste or a saved memory**, **NOT** a Drive connection. The memory list confirms or refutes this.
-
-### B.2 Connected connectors / apps — ⏳ AWAITING PASTE
-Scaffold (one row per connector):
-
-| # | Connector / app | Scope / permissions | Data exposure | Action |
-|---|---|---|:--:|:--:|
-| _ | ⏳ | ⏳ | ⏳ | ⏳ |
-
-Also inventory at the **Google Account** layer: myaccount.google.com → Security → **Your connections to third-party apps** → look for any **OpenAI/ChatGPT ↔ Google Drive** grant. Record present/absent + scope.
-
-### B.3 Data-control settings — re-verify Gate 4 finding
-| Setting | Gate 4 (06-14) | Now (06-21) | Status |
-|---|---|---|:--:|
-| `training_allowed` ("Improve the model for everyone" / data-controls) | **false** (export) | ⏳ verify | 🔄 |
-| "Reference saved memories" | n/a | ⏳ | 🔄 |
-| "Reference chat history" | n/a | ⏳ | 🔄 |
+### B.3 Data-control settings — re-verify Gate 4
+`training_allowed` ("Improve the model for everyone" — was **false**) · "Reference saved memories" · "Reference chat history".
 
 ### B.4 Flags
-- **Deprecation exposure:** Gate 4 found **ZERO** Assistants API / Agent Builder objects (the positioning advantage, §9). **Re-confirm** no such objects/connectors have appeared since 06-14. Timeline still live: Assistants API 2026-08-26, Agent Builder 2026-11-30.
-- **Privacy:** any connector with Drive/Gmail write scope, or memory entries containing client/family PII, gets flagged for removal/redaction (ties to harness rule `pii-sanitize`).
+- **Deprecation:** Gate 4 = ZERO Assistants API / Agent Builder objects (positioning advantage). Re-confirm none appeared (Assistants API 2026-08-26; Agent Builder 2026-11-30).
+- **Privacy:** any write-scope connector or PII-bearing memory → flag (rule `pii-sanitize`).
 
-### B.5 ⬇ EXACT COPY-PASTE GUIDE FOR ROYAL (ChatGPT settings — I cannot reach it)
-In ChatGPT (royaloconnor@gmail.com):
-1. **Memory:** Settings → **Personalization** → **Memory** → **Manage memories**. Copy the full list of saved entries → paste under `### B.1 PASTE`.
-2. **Connectors:** Settings → **Connectors** (or **Connected apps**). List each connector + on/off + scope → paste under `### B.2 PASTE`.
-3. **Data controls:** Settings → **Data controls** → report the "Improve the model for everyone" toggle (on/off) + "Reference chat history" + "Reference saved memories" states → paste under `### B.3 PASTE`.
-4. **Google side:** myaccount.google.com/connections → screenshot/list any OpenAI/ChatGPT entry + its scope.
+### B.5 ⬇ COPY-PASTE GUIDE (ChatGPT settings — I cannot reach it)
+1. Settings → Personalization → Memory → Manage memories → copy list → `### B.1 PASTE`.
+2. Settings → Connectors / Connected apps → each + on/off + scope → `### B.2 PASTE`.
+3. Settings → Data controls → the three toggles → `### B.3 PASTE`.
+4. myaccount.google.com/connections → any OpenAI/ChatGPT entry + scope.
+
+---
+
+## §A.4 ⬇ COPY-PASTE GUIDE (claude.ai — I cannot reach it)
+Still needed: **knowledge-file lists for #1–#6 & #11**; full **instructions + knowledge + platform** for #7 Broker Director, #8 Real Estate Counsel, #9 Business Broker Assistant, #10 Research Analyst, #12 Industry Expert.
+Per project: paste exact **name**, **custom instructions**, **knowledge** (filename + type + 1-line), and **platform (Claude / ChatGPT)**.
 
 ---
 
 ## §C — PROPOSED STATE UPDATES (do NOT apply — Royal merges)
 
-> Provided as diffs for the parallel editor to merge into OCS_STATE_CANONICAL.md after this audit's data is in.
+**§3 — Gate 5 status line (proposed):**
+> `| 5 | Claude Projects audit + ChatGPT audit | OPEN — 6 Claude Project + 1 GPT instruction sets captured; REI team confirmed CROSS-PLATFORM; team members #7-#10/#12 + all knowledge lists + ChatGPT audit pending |`
 
-**§3 — Gate 5 status line (proposed change):**
-- Current: `| 5 | Claude Projects audit + ChatGPT memory/connector audit (added 06-18) | OPEN |`
-- Proposed (interim, this session): **`| 5 | Claude Projects audit + ChatGPT memory/connector audit | OPEN — audit doc V1 scaffolded (DOC_2026-06-21...GATE5-AUDIT_V1); awaiting Royal's claude.ai + ChatGPT paste |`**
-- On completion: flip to **`CLOSED`** once A.2 (all 4 projects) and B.1–B.4 are filled and verified.
+**§4 — Gate 4 GPTs:** Financial Strategist GPT instructions now captured (GPT companion) → merge into GPT-GIZMO-REGISTRY_V3. (Count stays 6; this is capture, not a new GPT.)
 
-**§12 — Gate 5 open actions (proposed edits):**
-- `[ ] Map Claude Projects …` → **mark in-progress**; add sub-note: *scaffold built, 4/4 awaiting instructions+knowledge paste; Financial Aid Consultant is a NEW project not in 06-14 reconciliation (Flag A-1).*
-- `[ ] Cross-reference Claude Projects vs OpenAI GPTs` → **partially done**: no Claude↔GPT overlap among the 4; open item = Project 2 (CRE Broker) vs Project 4 (Technical Expert/REI) internal-overlap check.
-- `[ ] ChatGPT memory + connector audit` → **scaffold built (§B)**; awaiting paste of memory list + connector list + data-control re-verify.
+**§7 — Project registry:**
+- **Financial Aid** → Family/Personal; PROJ_FAM_FINAID or fold into PROJ_EDU_SHSAT.
+- **REI advisory agent-team** → register explicitly as a **cross-platform multi-agent system** (hub REI Technical Expert; Claude members #2,#4,#5,#6 + ChatGPT Financial Strategist + TBC #7–#10,#12) under Engine 3. Resolves reconciliation undercount.
 
-**§7 — Project registry (proposed, pending Financial Aid Consultant resolution):**
-- Add a PROJ_ code for **Financial Aid Consultant** once engine is assigned (candidate: PROJ_FAM_FINAID or fold into PROJ_EDU_SHSAT cluster).
-
-**§8 — Findings (proposed new):**
-- **F16 (proposed):** *Financial Aid Consultant Claude Project undocumented in Gate 5 reconciliation — capture + classify (Flag A-1).*
-- Optionally close/keep **F4** (GPT capability toggles) — unrelated to this audit; leave as-is.
+**§8 — Findings:**
+- **F16** — Financial Aid → partial (instructions+engine done; residual PROJ code).
+- **F17 (updated 06-22)** — reconciliation undercounts the REI agent-team AND mis-frames it as single-platform; it's a **cross-platform team**. Update the true count + platform split.
+- **F18 (resolved 06-21)** — Audit Trainer / Financial Aid = Claude.
+- **F19 (resolved 06-22)** — team "Financial Advisor" = Financial Strategist GPT (ChatGPT).
 
 ---
 
 ## WHAT I NEED FROM YOU (to finish Gate 5)
 
-**From claude.ai (one message, all four projects):**
-1. **Audit Trainer** — full custom instructions + knowledge file list + exact name/description.
-2. **NYC CRE Broker** — same.
-3. **Financial Aid Consultant** — same **+ tell me its intended engine** (Family? Engine 2 client-facing? other).
-4. **Technical Expert** — same + confirm exact live name (is it "Technical Expert" or "REI Technical Expert"?).
+**Claude Projects:**
+1. **Knowledge-file lists** for #1 Audit Trainer, #2 NYC CRE Broker, #3 Financial Aid, #4 REI Technical Expert, #5 Transaction Advisory, #6 Real Estate Investment Advisor.
+2. **Instructions + knowledge + platform** for #7 Broker Director, #8 Real Estate Counsel, #9 Business Broker Assistant, #10 Research Analyst, #12 Industry Expert.
+3. Confirm there's **no separate Claude "Financial Advisor"** distinct from the Financial Strategist GPT.
 
-**From ChatGPT settings (royaloconnor@gmail.com):**
-5. **Memory list** (Personalization → Memory → Manage memories) — verbatim.
-6. **Connector list** (Connectors / Connected apps) — each + scope.
-7. **Data controls** — "Improve the model for everyone" on/off (re-verify `training_allowed`), plus "Reference chat history" + "Reference saved memories".
-8. **Google connections** — myaccount.google.com/connections — any OpenAI/ChatGPT↔Drive grant (present/absent + scope).
+**OpenAI GPTs:**
+4. Knowledge files + Gizmo ID for **Financial Strategist** (to complete the GPT-registry merge).
 
-**Decisions I need from you:**
-9. Engine + PROJ_ code for **Financial Aid Consultant** (Flag A-1).
-10. Confirm **CRE Broker vs Technical Expert** are distinct (no consolidation) once I see both instruction sets.
+**ChatGPT account (royaloconnor@gmail.com)** — §B.5: 5. memory · 6. connectors · 7. data controls · 8. Google connections.
+
+**Decisions:**
+9. **PROJ code** for Financial Aid — `PROJ_FAM_FINAID` or fold into `PROJ_EDU_SHSAT`?
+10. NYC CRE Broker: reconcile the **occupier-rep description vs investor-buy-side instructions** (same project, two framings?).
 
 ---
-
-### PROPOSED ONE-LINE GATE 5 STATUS CHANGE FOR §3
-> `| 5 | Claude Projects audit + ChatGPT memory/connector audit | OPEN — audit doc V1 scaffolded (DOC_2026-06-21..._GATE5-AUDIT_V1); awaiting claude.ai + ChatGPT paste |`
-
----
-*DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md | OCS Gate 5 | V1 scaffold | does not edit canonical state | mirror to Drive /ROC-OS/05_Projects/ pending | 2026-06-21*
+*DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md | OCS Gate 5 | V1 map (06-22) | companions: CLAUDE-PROJECT-INSTRUCTIONS_V1 + GPT-INSTRUCTIONS_V1 | does not edit canonical state | 2026-06-22*
