@@ -39,4 +39,18 @@ Use when the Drive mount is unavailable (e.g. Drive-for-Desktop not running) or 
 | 2026-06-28 | (this commit) | V7.4 | OCS_STATE_CANONICAL + 3 Gate 5 docs + GATE5-CLOSE-SESSION + this template | A (direct) | ✅ diff byte-identical |
 
 ---
-*DOC_HANDOFF_DRIVE-MIRROR_TEMPLATE_V1.md | OCS | repo→Drive mirror procedure + log | 2026-06-28 | /ROC-OS/00_Registry/*
+
+## CANDIDATE HAND-OFFS / CROSS-RUNTIME METHODS TO EVALUATE (added 06-28)
+A future pass should inventory recurring cross-runtime work and decide which to templatize (like this Drive mirror) vs leave as one-offs. Known candidates + where each currently lives:
+| Candidate | Recurs? | Currently recorded | Action to weigh |
+|---|---|---|---|
+| Repo→Drive mirror | every canonical change | **this doc (DONE)** | ✅ templatized |
+| Stray-file / dup cleanup in Drive | occasional | canonical §12 (F12/F13) | templatize the "find dups + remove" CoWork step? |
+| Advisory Drive access (oconnoradvisory.ai) | when touching client funnel | memory `project_ocs_runtime_access_map` | stand up dedicated `/mcp` connector vs share-to-royalcreates workaround |
+| Google Form read via connector (export zip→html+csv) | each Risk Scan check | memory `project_ocs_runtime_access_map` | promote method-note → reusable procedure |
+| Binary Office edit (native app, not connector) | each .docx/.xlsx deliverable | canonical §8 F14ext | re-test now that direct-mount `cp` may make this byte-faithful |
+
+*Note: some of these are "methods" buried in memory rather than discoverable procedures — the value of the pass is surfacing them into one place a cold session can find.*
+
+---
+*DOC_HANDOFF_DRIVE-MIRROR_TEMPLATE_V1.md | OCS | repo→Drive mirror procedure + log + hand-off candidates | 2026-06-28 | /ROC-OS/00_Registry/*
