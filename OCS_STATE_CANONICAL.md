@@ -2,11 +2,11 @@
 *(Formerly OAIS_STATE.md — renamed 2026-06-19. The "OAIS / O'Connor AI System" acronym is retired in favor of OCS. Distinct from the separately-retired OCS_Program_State lineage — see GATE5-RECONCILIATION D1.)*
 
 **Program:** O'Connor Configured System (OCS) | 60-Day Initiative
-**Version:** V7.1 — Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE — **Workstream B BUILT**
-**Last Updated:** 2026-06-19
-**Updated By:** Royal O'Connor + Claude (Opus 4.8, Claude Code) — 2026-06-18 build session
+**Version:** V7.2 — Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed)**
+**Last Updated:** 2026-06-28
+**Updated By:** Royal O'Connor + Claude (Opus 4.8, Claude Code) — 2026-06-28 Command Center Phase 2 session (prior: 2026-06-18 build session)
 **Route:** /ROC-OS/00_Registry/
-**Supersedes & reconciles:** the TWO divergent V6 files — the 06-15 "foundation" branch (git repo, 15 locked decisions, harness registry, Gate 4 detail) AND the 06-17 "Migration Sprint" branch (W7 decisions). The 06-17 branch had dropped foundation content; V7 re-merged everything and added the 2026-06-18 decisions. **V7.1 = V7 imported into the git repo (which had been stale at V6) + the 2026-06-18 build-session outputs (Migration Sprint Components 1–3 built, Workstream A Phases 0–1 drafted). Repo is canonical again and now ahead of the Drive mirror until re-mirrored.**
+**Supersedes & reconciles:** the TWO divergent V6 files — the 06-15 "foundation" branch (git repo, 15 locked decisions, harness registry, Gate 4 detail) AND the 06-17 "Migration Sprint" branch (W7 decisions). The 06-17 branch had dropped foundation content; V7 re-merged everything and added the 2026-06-18 decisions. **V7.1 = V7 imported into the git repo (which had been stale at V6) + the 2026-06-18 build-session outputs (Migration Sprint Components 1–3 built, Workstream A Phases 0–1 drafted). Repo is canonical again and now ahead of the Drive mirror until re-mirrored.** **V7.2 adds the 2026-06-28 Command Center Phase 2 Session 1 outputs: the Notion Agent Registry (G3) and the Notion role audit (G8) — see new §5c.**
 **Canonical:** git repo `~/Documents/ME/Ai/ocs-state` → github.com/royalcreatesai-star/ocs-state. This Drive copy is the MIRROR. ⚠ Edit `.md` as TEXT only — opening in Google Docs spawns duplicate files.
 **Cross-platform bridge:** Load in any Claude or ChatGPT session before work. Read in full. Check §12 for active tasks.
 
@@ -56,6 +56,14 @@ Skills: method-select, coc-underwrite, risk-score, comp-score, content-curation,
 
 ## 5b. LOCKED KEY DECISIONS (foundation)
 1. Hallway = Google Drive (royalcreates.ai). 2. Hamilton = SMB two-track (Configured Business demo + Migration Rescue); Audit Trainer = internal/firm-eval only. 3. OpenAI path = Responses API / Agents SDK only. 4. n8n = core rails ("workflows are controls, agents are staff"). 5. wrap = session-close trigger; fresh session opens with state file only. 6. MovieWatch Phase 1 ready. 7. n8n-docker NEVER syncs to Drive. 8. Work split: Royal owns Domain+controls; engineer owns Automation+Data. 9. Tax worksheets → 03_Data/rei/. 10. Dashboards open in Chrome. 11. Intake: /ROC-OS/00_Inbox/ + "ROC-OS Intake" Gmail label. 12. royalcreates.ai domain NOT yet registered. 13. Session hygiene is a RULE (quadratic token tax). 14. CLAUDE.md/skill 600-token rule. 15. NotebookLM + Drive MCP both on royalcreates.ai, working.
+
+## 5c. AGENTIC LAYER — Command Center Phase 2 (NEW 06-28)
+Frame: Agentic Evolution Master Plan V1 (Drive 12T9jTvd…, /ROC-OS/05_Projects/) scores OCS 3.2/5 and defines 8 gaps G1–G8. Notion = Operations Visibility layer ONLY (NOT data store, NOT automation trigger). Drive = data/files; Notion = ops visibility; n8n = automation backbone; Claude = intelligence.
+- **G3 Agent Registry — CLOSED 06-28.** Notion DB "OCS Agent Registry" (db ffb295e8-3829-4db8-8d08-73b6e465f844 / ds 426ab0db-d5e6-4a69-b235-d6f073059a7b) under Command Center (page 3863373d-9321-81c3-93ac-df0057117db5). 9 fields per spec. Seeded 14 agents ("agents only" scope): 6 GPTs, 4 Claude Projects, 3 n8n/workflows (Document Refinery, WallyB, Risk Scan), NotebookLM MCP. Last Run blank (no telemetry = the G5 signal). 5 agents Engine-unset (4 Cold Case GPTs + Financial Aid Consultant = personal/family; Personal/Family will NOT be an Engine — Royal 06-28). GPT/Project Output Destination = "None defined (G2 gap)" by design.
+- **G8 Notion Role — AUDITED 06-28 (documentation only).** Command Center page header already correctly frames Notion as downstream consumer. Findings A1–A7; live risks: A5 Session Log schema duplicates the /wrap session-bridge role (canonical-store risk; DB currently empty), A6 latent trigger contradiction (Master Plan G2 text "Notion webhook triggers" vs notionReframe "no Notion triggers" — resolved by decision #4: n8n is the backbone).
+- **Tracker groomed 06-28:** added "Gate / Phase" select field; all 36 rows now have Priority (0 Unflagged: 12 High/11 Med/13 Low) + Gate/Phase.
+- **Session doc:** DOC_2026-06-28_AI_OCS_CommandCenter-Phase2-Session1_V1.md (Drive 1R9rVRe5RhFlgWoLyrsMFA3hW0QDHC13u, /ROC-OS/00_Registry/).
+- **DEFERRED remediation (Royal-confirm to execute):** (1) Session Log → Drive-pointing Session Index; (2) align Tracker Engine options to canonical naming (add OCS, "AI Dev" not "AI product"); (3) add "Role & Boundaries" note to Command Center page; (4) one-line Master Plan G2 edit removing "Notion webhook triggers".
 
 ## 6. MIGRATION SPRINT V2 — DECISIONS LOCKED (Engine 2)
 Full plan: **DOC_2026-06-18_AI_ADVISORY_MIGRATION-SPRINT-PLAN_V2.md** (/ROC-OS/05_Projects/).
@@ -115,6 +123,15 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 - [ ] Confirm E&O coverage (F11)
 - [ ] Test run on Royal's own (CLEAN) account — sample deliverable, validate ≤2-hr target
 
+**Command Center Phase 2 (NEW 06-28):**
+- [x] **G3 — Agent Registry BUILT 06-28** (Notion; 14 agents seeded)
+- [x] **G8 — Notion role audited 06-28** (findings A1–A7 + remediation list; doc-only)
+- [ ] Execute 4 deferred remediation items (Session Index / Engine alignment / Boundaries note / Master Plan G2 edit) — Royal-confirm
+- [ ] **G5 Command Bridge** (Weeks 2–4) — daily review surface; n8n posts scheduled summary; reads Agent Registry Last Run + Exception Log
+- [ ] **G2 Output Handoff** (Weeks 3–6) — assign each agent a real Output Destination; close the "None defined" rows
+- [ ] **G7 Agents SDK** (NOW → Aug 26) — rebuild deprecated-path GPTs (= the internal agentic infra build)
+- Note: this session REGISTERED the 4 Claude Projects in the Agent Registry but did NOT complete the Gate 5 config-doc mapping (still open above under Gate 5).
+
 **File hygiene (CoWork — F12/F13):**
 - [x] **Commit V7.1 to git repo (SoT) — done this session** (repo had been stale at V6; now reconciled + current)
 - [ ] Update the Drive `.md` mirror in 00_Registry to V7.1 (so mirror = repo)
@@ -128,4 +145,4 @@ OCS / ROC-OS · The Binder (8-ch client Playbook) · The Blueprint (5-engine str
 1. Read in full. 2. Check §12 (open actions). 3. Check §8 (findings). 4. Check §3 (gates). 5. Confirm orientation. 6. Close: /wrap (Chat) or /update (Code) → update state, mirror to Drive, commit to repo.
 
 ---
-*OCS_STATE_CANONICAL.md | OCS | V7.1 | Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE — Workstream B built | reconciles both V6 branches + 06-18 build session | 2026-06-18 | /ROC-OS/00_Registry/*
+*OCS_STATE_CANONICAL.md | OCS | V7.2 | Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE / Command Center Phase 2 Session 1 built (Agent Registry G3 live, G8 audited) | 2026-06-28 | /ROC-OS/00_Registry/*
