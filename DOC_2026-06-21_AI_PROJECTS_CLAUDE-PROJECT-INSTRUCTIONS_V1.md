@@ -5,7 +5,7 @@
 **Companion to:** `DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md` (the map). This file holds the **verbatim custom-instruction text**; the audit doc holds the summaries, statuses, and reconciliation.
 **Platform note (Royal, 06-21):** ALL entries below are **Claude Projects (Anthropic), NOT OpenAI GPTs.** The `GPT` / `Ai Agent` strings in the project names are Royal's naming convention, not the platform. → no Gizmo IDs.
 
-**Captured this session (5):** Audit Trainer · Financial Aid Consultant · REI Technical Expert · Transaction Advisory Accountant · Real Estate Investment Advisor. (NYC CRE Broker = description only, no instructions — see audit doc.)
+**Captured (6):** Audit Trainer · Financial Aid Consultant · REI Technical Expert · Transaction Advisory Accountant · Real Estate Investment Advisor (all 06-21) · **NYC CRE Broker — full Sections 1–8 added 06-22** (§2 below). *Header corrected 06-28: the original 06-21 line read "5 captured / NYC CRE desc-only"; that was stale once Section 2's full investor-buy-side instructions landed in the 06-22 pass — see F20.*
 
 ---
 
@@ -1369,4 +1369,4 @@ Disclaimer: Reiterate that guidance is educational, not professional advice
 ```
 
 ---
-*DOC_2026-06-21_AI_PROJECTS_CLAUDE-PROJECT-INSTRUCTIONS_V1.md | OCS Gate 5 | verbatim companion to GATE5-AUDIT_V1 | 5 captured + NYC CRE desc-only | 2026-06-21*
+*DOC_2026-06-21_AI_PROJECTS_CLAUDE-PROJECT-INSTRUCTIONS_V1.md | OCS Gate 5 | verbatim companion to GATE5-AUDIT_V1 | 6 captured (incl. NYC CRE full 06-22) | header corrected 06-28 | 2026-06-21*

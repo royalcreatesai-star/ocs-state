@@ -3,12 +3,12 @@
 **Gate:** 5 (OPEN) — Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)**
 **Program:** O'Connor Configured System (OCS) | Engine 4 (program) / governance artifact
 **Route (logical):** /ROC-OS/05_Projects/ — physically in git repo SoT `~/Documents/ME/Ai/ocs-state` (flat layout). **Mirror to Drive pending.**
-**Created:** 2026-06-21 · **Updated:** 2026-06-22 (platform re-confirmation pass) by Royal O'Connor + Claude (Opus 4.8, Claude Code).
+**Created:** 2026-06-21 · **Updated:** 2026-06-22 (platform re-confirmation pass) · **2026-06-28 (substantive pass — cross-reference §A.3 completed; NYC CRE stale-status corrected; toggle rec §D drafted)** by Royal O'Connor + Claude (Opus 4.8, Claude Code).
 **Companions (verbatim instructions):**
 - Claude Projects → `DOC_2026-06-21_AI_PROJECTS_CLAUDE-PROJECT-INSTRUCTIONS_V1.md`
 - OpenAI GPTs → `DOC_2026-06-22_AI_INTELLIGENCE_GPT-INSTRUCTIONS_V1.md`
 **This doc is the map** (register, statuses, reconciliation); companions hold the raw instruction text.
-**Status:** 🔄 V1 — **PARTIAL CAPTURE.** Instructions captured for **6 Claude Projects** (Audit Trainer, NYC CRE Broker, Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + **1 OpenAI GPT** (Financial Strategist). **Key finding: the REI advisory agent-team is CROSS-PLATFORM** (Claude Projects + ≥1 ChatGPT GPT). Remaining team members + all knowledge-file lists + ChatGPT memory/connector audit (§B) still ⏳.
+**Status:** 🔄 V1 — **PARTIAL CAPTURE + CROSS-REFERENCE COMPLETE (06-28).** Instructions captured for **6 Claude Projects** (Audit Trainer, NYC CRE Broker, Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + **1 OpenAI GPT** (Financial Strategist). **Cross-reference (§A.3) DONE 06-28** — overlaps/gaps/consolidation analyzed across the captured set. **Key finding: the REI advisory agent-team is CROSS-PLATFORM** (Claude Projects + ≥1 ChatGPT GPT) by design, not redundancy. Remaining ⏳: 5 referenced REI team members (capture + platform), all knowledge-file lists, ChatGPT memory/connector audit (§B), GPT toggle execution (§D / F4).
 **Source-of-truth inputs:** OCS_STATE_CANONICAL.md V7.1 §3/§4/§11/§12; GATE5-RECONCILIATION_V1.
 **Constraint:** Parallel session may edit OCS_STATE_CANONICAL.md. **This doc does NOT edit the state file.** §C proposes edits only.
 
@@ -54,10 +54,44 @@ Verbatim: Claude #1–#6 in the Claude companion; GPT #11 (Financial Strategist)
 - **#11 Financial Advisor → Financial Strategist GPT** — holistic financial planning for entrepreneurs/RE investors; **OpenAI GPT** (Gate 4 #1), integrates with the rest of the (Claude) team across platforms.
 - **#7–#10, #12** — referenced by the team's collaboration sections; not yet pasted; platform per-member TBC.
 
-### A.3 Cross-reference — Claude Projects vs OpenAI GPTs (Gate 4)
-- **Gate 4's 6 GPTs:** Financial Strategist, Home Renovation Advisor, 4× Cold Case. **Financial Strategist instructions now captured** (GPT companion) — it is **#11 of the REI team** (cross-platform).
-- **F19 RESOLVED:** the team's "Financial Advisor" = Financial Strategist GPT. (Confirm no *separate* Claude "Financial Advisor" exists.)
-- **Internal RE-role distinctness:** #2 Commercial Broker vs #4 Technical Expert vs #6 Investment Advisor — three distinct RE roles; confirm no redundancy.
+### A.3 Cross-reference — Claude Projects vs OpenAI GPTs (COMPLETED 06-28)
+
+Scope of this pass: the **7 agents with captured instructions** (6 Claude Projects + Financial Strategist GPT), cross-read against the **Gate 4 GPT registry** (6 GPTs) and the team-collaboration sections embedded in the captured instructions. Uncaptured/referenced agents are carried as gaps, not analyzed for content.
+
+#### A.3.1 Inventory (platform × engine × function)
+| Agent | Platform | Engine | Function | Capture |
+|---|:--:|:--:|---|:--:|
+| Audit Trainer | Claude | 1 | Audit methodology/training (firm-internal) | ✅ instr |
+| NYC CRE Broker | Claude | 3 | Commercial / mixed-use **buy-side** brokerage | ✅ instr |
+| REI Technical Expert | Claude | 3 | Technical / environmental / construction DD — **team hub** | ✅ instr |
+| Transaction Advisory Accountant | Claude | 2/3 | Transaction accounting, tax, deal-structure (educational) | ✅ instr |
+| Real Estate Investment Advisor | Claude | 3 | **Residential ≤4-unit** investor advisory | ✅ instr |
+| Financial Aid Consultant | Claude | Family | FAFSA/SAI aid strategy | ✅ instr |
+| Financial Strategist | **OpenAI** | 5/adv | Holistic financial planning — REI team's **"Financial Advisor"** node | ✅ instr |
+| Home Renovation Advisor | OpenAI | 3? | Renovation advisory (standalone) | ⏳ desc |
+| 4× Cold Case | OpenAI | Family | Personal / non-business | ⏳ |
+| Broker Director · Real Estate Counsel · Business Broker Assistant · Research Analyst · Industry Expert | TBC | 2/3 | REI team members (referenced in collaboration sections) | ⏳ |
+
+#### A.3.2 Overlaps — cross-platform team is BY DESIGN (not duplication)
+The headline: **Financial Strategist GPT (OpenAI) is the "Financial Advisor" node wired into every captured Claude team member's collaboration section** — REI Technical Expert ("Financial Advisor Collaboration"), Transaction Advisory Accountant ("Financial Advisor Coordination"), and the Strategist's own "Collaborative Workflow Integration" reciprocally names the Brokers, Counsel, Investment Advisor, Technical Experts, Research/Industry Experts. This is **integration across platforms, not redundant copies.** → No consolidation forced; this *is* the cross-platform team finding (F17/A-4).
+
+#### A.3.3 Functional adjacencies — distinct lanes, watch for drift
+- **RE "money" triangle:** Real Estate Investment Advisor (Claude — residential ≤4-unit *strategy*) vs Financial Strategist (OpenAI — *holistic* wealth/portfolio/estate) vs Transaction Advisory Accountant (Claude — *accounting/tax/deal-structure*). Three adjacent lanes all touching RE-investment dollars; instructions confirm distinct scopes. Boundary documented here so they don't converge in practice.
+- **RE "property" triangle:** NYC CRE Broker (commercial/mixed-use, buy-side) vs REI Technical Expert (physical/technical DD) vs Real Estate Investment Advisor (residential advisory). Separated by **property class + function**. → A.3's prior "confirm no redundancy" is **RESOLVED: no redundancy.**
+
+#### A.3.4 Gaps
+- **G-a (strategic):** **Engine 2 — the money engine — has NO dedicated agent.** Migration Sprint is delivered via templates/workpapers, not a configured agent. Likely deliberate; flag in case a client-facing "AI Risk Advisor" agent is ever wanted. → **F21.**
+- **G-b:** REI team's **5 referenced members** (Broker Director, Real Estate Counsel, Business Broker Assistant, Research Analyst, Industry Expert) are **uncaptured AND platform-unknown AND build-status-unknown** — the collaboration design assumes they exist; some may be aspirational (named in instructions, never created). Capture-or-retire decision. → **F22.**
+- **G-c:** **Home Renovation Advisor** (OpenAI) is standalone — not in the REI collaboration graph, no Claude counterpart. Classify engine (3 reno/DIY vs personal) and decide whether it joins the REI team (Royal's hands-on reno capability is a *documented structural advantage* in NYC CRE Broker §6).
+- **G-d:** Audit Trainer (Engine 1) has no OpenAI counterpart — appropriate (firm-internal, single-platform). No action.
+
+#### A.3.5 Consolidation candidates
+- **C-1 (confirm-then-close):** Is there a *separate* Claude "Financial Advisor" Project distinct from the Financial Strategist GPT? F19 resolved the team's financial role = the GPT. If a Claude duplicate exists → true redundancy → pick one platform. **Needs Royal confirm.**
+- **C-2 (group/deprioritize, not merge):** **Personal/Family cluster** = Financial Aid Consultant (Claude) + 4× Cold Case (OpenAI) [+ possibly Home Renovation]. Per Royal 06-28, Personal/Family is **NOT an Engine.** Recommend: tag "Personal/Family — out of governance scope," keep documented, drop from the active agent-governance surface (Agent Registry already left these Engine-unset). Distinct functions → not a merge; a scope decision.
+- **C-3 (platform-coherence lever):** The REI team is split Claude/OpenAI seemingly by *where each was first built*, not by design. Custom GPTs are **NOT** on the Assistants-API/Agent-Builder deprecation path, so Financial Strategist faces **no forced migration**. But single-platform coherence (whole REI team on Claude Projects) would simplify governance + cross-platform collaboration-section upkeep. **Open strategic question, not a directive.**
+
+#### A.3.6 Deprecation-footprint note (Engine 2 positioning)
+The captured/known GPTs (Financial Strategist, Home Reno, Cold Case) are **Custom GPTs (gizmo objects)** — NOT Assistants-API or Agent-Builder objects. They do **not** undermine the Gate 4 "ZERO deprecated objects" positioning advantage. Re-confirm on the connector side in §B, but on the GPT side the deprecation exposure remains **ZERO** (Aug-26 / Nov-30 waves do not touch Custom GPTs).
 
 ### A.5 — REI ADVISORY AGENT-TEAM (CROSS-PLATFORM)
 A coordinated multi-agent team (hub #4 REI Technical Expert) whose members integrate with one another **across Claude and ChatGPT**. Captured: #4, #5, #6 (Claude) + #11 Financial Strategist (ChatGPT). Referenced/uncaptured: #7 Broker Director, #8 Real Estate Counsel, #9 Business Broker Assistant, #10 Research Analyst, #12 Industry Expert (+ confirm each one's platform). **This team is materially larger and more cross-platform than the 2 RE entries (#13/#14) in the 24-initiative reconciliation → F17.**
@@ -95,10 +129,25 @@ Per project: paste exact **name**, **custom instructions**, **knowledge** (filen
 
 ---
 
+## §D — GPT CAPABILITY TOGGLES (F4) — recommendation (Royal executes in the GPT editor)
+
+I cannot reach the GPT-builder UI, so this is a **recommendation to apply + confirm**, not an action taken. Capability toggles live per-GPT under **Configure → Capabilities** (Web Search · Canvas · DALL·E image · Code Interpreter & Data Analysis). Recommend by function:
+
+| GPT | Web Search | Code Interpreter / Data Analysis | Canvas | DALL·E (image) | Rationale |
+|---|:--:|:--:|:--:|:--:|---|
+| **Financial Strategist** | ✅ ON | ✅ ON | optional | ❌ OFF | Instructions lean on current rates/market context (Web) + financial modeling/scenarios (Code Interp — the instructions literally describe calculation workflows). No image need. |
+| Home Renovation Advisor | ✅ ON | optional | optional | ✅ ON | Reno = product/material lookups (Web) + visual mockups (DALL·E) are on-point. |
+| 4× Cold Case | per use | per use | — | — | Personal/Family — out of governance scope (C-2); set to Royal's preference, not a governance requirement. |
+
+**Privacy caveat (rule `pii-sanitize`):** enabling **Web Search** means prompts may be sent to a search provider — keep client-identifying detail out of these GPTs (consistent with each GPT's "no confidential information" constraint). Code Interpreter runs sandboxed (no extra exposure).
+**After applying:** paste back which toggles are now ON per GPT → I'll record the final state and close F4. *(Note: Claude Projects do not expose the same capability-toggle surface; F4 is GPT-side only.)*
+
+---
+
 ## §C — PROPOSED STATE UPDATES (do NOT apply — Royal merges)
 
-**§3 — Gate 5 status line (proposed):**
-> `| 5 | Claude Projects audit + ChatGPT audit | OPEN — 6 Claude Project + 1 GPT instruction sets captured; REI team confirmed CROSS-PLATFORM; team members #7-#10/#12 + all knowledge lists + ChatGPT audit pending |`
+**§3 — Gate 5 status line (proposed, updated 06-28):**
+> `| 5 | Claude Projects audit + ChatGPT audit | OPEN — 6 Claude Project + 1 GPT instruction sets captured; cross-reference DONE (no RE redundancy; cross-platform team confirmed); team members #7-#10/#12 + knowledge lists + ChatGPT audit (§B) + GPT toggles (§D/F4) pending |`
 
 **§4 — Gate 4 GPTs:** Financial Strategist GPT instructions now captured (GPT companion) → merge into GPT-GIZMO-REGISTRY_V3. (Count stays 6; this is capture, not a new GPT.)
 
@@ -111,6 +160,9 @@ Per project: paste exact **name**, **custom instructions**, **knowledge** (filen
 - **F17 (updated 06-22)** — reconciliation undercounts the REI agent-team AND mis-frames it as single-platform; it's a **cross-platform team**. Update the true count + platform split.
 - **F18 (resolved 06-21)** — Audit Trainer / Financial Aid = Claude.
 - **F19 (resolved 06-22)** — team "Financial Advisor" = Financial Strategist GPT (ChatGPT).
+- **F20 (NEW 06-28, corrected)** — **Stale-status defect (Verify-Before-Status):** NYC CRE Broker full instructions were captured 06-22 (companion §2), but the instructions-file header, canonical §12, and the working brief still read "description only." Corrected this session in the companion header/footer; canonical §12 patched. *Lesson: when a capture lands mid-pass, sweep all status mirrors same session.*
+- **F21 (NEW 06-28)** — **Engine 2 has no dedicated agent** (gap G-a). Decision: deliberate (template-delivered) vs build a client-facing "AI Risk Advisor" agent.
+- **F22 (NEW 06-28)** — REI team's **5 referenced members are uncaptured + platform-unknown + build-status-unknown** (gap G-b); may be aspirational. Capture-or-retire decision.
 
 ---
 

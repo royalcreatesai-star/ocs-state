@@ -2,11 +2,11 @@
 *(Formerly OAIS_STATE.md — renamed 2026-06-19. The "OAIS / O'Connor AI System" acronym is retired in favor of OCS. Distinct from the separately-retired OCS_Program_State lineage — see GATE5-RECONCILIATION D1.)*
 
 **Program:** O'Connor Configured System (OCS) | 60-Day Initiative
-**Version:** V7.2 — Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed)**
+**Version:** V7.3 — Gate 4 CLOSED / Gate 5 OPEN (cross-reference DONE) / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed)**
 **Last Updated:** 2026-06-28
-**Updated By:** Royal O'Connor + Claude (Opus 4.8, Claude Code) — 2026-06-28 Command Center Phase 2 session (prior: 2026-06-18 build session)
+**Updated By:** Royal O'Connor + Claude (Opus 4.8, Claude Code) — 2026-06-28 Command Center Phase 2 session + **2026-06-28 Gate 5 substantive pass** (prior: 2026-06-18 build session)
 **Route:** /ROC-OS/00_Registry/
-**Supersedes & reconciles:** the TWO divergent V6 files — the 06-15 "foundation" branch (git repo, 15 locked decisions, harness registry, Gate 4 detail) AND the 06-17 "Migration Sprint" branch (W7 decisions). The 06-17 branch had dropped foundation content; V7 re-merged everything and added the 2026-06-18 decisions. **V7.1 = V7 imported into the git repo (which had been stale at V6) + the 2026-06-18 build-session outputs (Migration Sprint Components 1–3 built, Workstream A Phases 0–1 drafted). Repo is canonical again and now ahead of the Drive mirror until re-mirrored.** **V7.2 adds the 2026-06-28 Command Center Phase 2 Session 1 outputs: the Notion Agent Registry (G3) and the Notion role audit (G8) — see new §5c.**
+**Supersedes & reconciles:** the TWO divergent V6 files — the 06-15 "foundation" branch (git repo, 15 locked decisions, harness registry, Gate 4 detail) AND the 06-17 "Migration Sprint" branch (W7 decisions). The 06-17 branch had dropped foundation content; V7 re-merged everything and added the 2026-06-18 decisions. **V7.1 = V7 imported into the git repo (which had been stale at V6) + the 2026-06-18 build-session outputs (Migration Sprint Components 1–3 built, Workstream A Phases 0–1 drafted). Repo is canonical again and now ahead of the Drive mirror until re-mirrored.** **V7.2 adds the 2026-06-28 Command Center Phase 2 Session 1 outputs: the Notion Agent Registry (G3) and the Notion role audit (G8) — see new §5c.** **V7.3 records the 2026-06-28 Gate 5 substantive pass: the Claude-Projects↔OpenAI-GPTs cross-reference is COMPLETE (GATE5-AUDIT §A.3 — no RE-role redundancy; REI team confirmed cross-platform by design; gaps F21/F22 + findings F20 logged), and the NYC CRE Broker stale-status defect (F20) is corrected. ChatGPT memory/connector audit (§B) and GPT toggle execution (§D/F4) remain open pending Royal's pastes.**
 **Canonical:** git repo `~/Documents/ME/Ai/ocs-state` → github.com/royalcreatesai-star/ocs-state. This Drive copy is the MIRROR. ⚠ Edit `.md` as TEXT only — opening in Google Docs spawns duplicate files.
 **Cross-platform bridge:** Load in any Claude or ChatGPT session before work. Read in full. Check §12 for active tasks.
 
@@ -39,7 +39,7 @@
 | 2 | State standardization | CLOSED ~06-12 |
 | 3 | Skills / Commands / Refinery | CLOSED ~06-13 |
 | 4 | OpenAI export audit + GPT configs | ✅ CLOSED 06-14 |
-| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | OPEN |
+| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | OPEN — 7 instruction sets captured + cross-reference DONE 06-28; ChatGPT audit + GPT toggles pending |
 | 6 | n8n workflow export + docs | PENDING |
 | 7 | Binder V1 | PENDING |
 | 8 | Demo engineering + Migration Rescue | PENDING |
@@ -104,10 +104,10 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 
 ## 12. OPEN ACTIONS
 **Gate 5 (Claude Projects audit):**
-- [ ] Map Claude Projects (Audit Trainer, NYC CRE Broker, Financial Aid Consultant, Technical Expert) — name, instructions, files, knowledge, purpose
-- [ ] Cross-reference Claude Projects vs OpenAI GPTs — overlaps, gaps, consolidation
-- [ ] **ChatGPT memory + connector audit (NEW 06-18):** check ChatGPT Memory + "Reference chat history"; ChatGPT connectors; Google Account → third-party apps (myaccount.google.com/connections) for OpenAI↔Drive scope. Document as a governance/credibility artifact. (Likely "O'Connor Advisory" surfaced via state-file paste or ChatGPT memory, NOT a Drive connection.)
-- [ ] Enable GPT capability toggles (F4)
+- [~] Map Claude Projects — **instructions captured for 6 of 6 known Projects** (Audit Trainer, NYC CRE Broker [full 06-22], Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + Financial Strategist GPT. **Residual:** knowledge-file lists for all; instructions+platform for 5 referenced REI team members (Broker Director, Real Estate Counsel, Business Broker Assistant, Research Analyst, Industry Expert — F22).
+- [x] **Cross-reference Claude Projects vs OpenAI GPTs — DONE 06-28** (GATE5-AUDIT §A.3): no RE-role redundancy; REI team cross-platform *by design*; gaps logged (G-a Engine-2 has no agent → F21; G-b 5 uncaptured team members → F22); consolidation candidates C-1 (confirm no separate Claude "Financial Advisor") / C-2 (Personal-Family cluster out of scope) / C-3 (platform-coherence lever). GPT deprecation footprint = ZERO (Custom GPTs ≠ Assistants/Agent-Builder objects).
+- [ ] **ChatGPT memory + connector audit (NEW 06-18):** check ChatGPT Memory + "Reference chat history"; ChatGPT connectors; Google Account → third-party apps (myaccount.google.com/connections) for OpenAI↔Drive scope. Document as a governance/credibility artifact. (Likely "O'Connor Advisory" surfaced via state-file paste or ChatGPT memory, NOT a Drive connection.) — **awaiting Royal's paste (GATE5-AUDIT §B.5).**
+- [ ] Enable GPT capability toggles (F4) — **recommendation drafted (GATE5-AUDIT §D): Financial Strategist Web+Code ON; Home Reno Web+DALL·E ON. Royal executes in GPT editor + confirms.**
 
 **Migration Sprint V2 (parallel — not gated):**
 - [x] **Component 1 — Risk Assessment workpaper BUILT 06-18** (Asset Register + S2–5 + Carve-Outs + CUEC + Continuity Confirmation + WP numbering) — .xlsx in /05_Projects/
@@ -145,4 +145,4 @@ OCS / ROC-OS · The Binder (8-ch client Playbook) · The Blueprint (5-engine str
 1. Read in full. 2. Check §12 (open actions). 3. Check §8 (findings). 4. Check §3 (gates). 5. Confirm orientation. 6. Close: /wrap (Chat) or /update (Code) → update state, mirror to Drive, commit to repo.
 
 ---
-*OCS_STATE_CANONICAL.md | OCS | V7.2 | Gate 4 CLOSED / Gate 5 OPEN / Migration Sprint V2 ACTIVE / Command Center Phase 2 Session 1 built (Agent Registry G3 live, G8 audited) | 2026-06-28 | /ROC-OS/00_Registry/*
+*OCS_STATE_CANONICAL.md | OCS | V7.3 | Gate 4 CLOSED / Gate 5 OPEN (cross-reference DONE 06-28) / Migration Sprint V2 ACTIVE / Command Center Phase 2 Session 1 built (Agent Registry G3 live, G8 audited) | 2026-06-28 | /ROC-OS/00_Registry/*
