@@ -8,7 +8,7 @@
 - Claude Projects → `DOC_2026-06-21_AI_PROJECTS_CLAUDE-PROJECT-INSTRUCTIONS_V1.md`
 - OpenAI GPTs → `DOC_2026-06-22_AI_INTELLIGENCE_GPT-INSTRUCTIONS_V1.md`
 **This doc is the map** (register, statuses, reconciliation); companions hold the raw instruction text.
-**Status:** 🔄 V1 — **PARTIAL CAPTURE + CROSS-REFERENCE COMPLETE (06-28).** Instructions captured for **6 Claude Projects** (Audit Trainer, NYC CRE Broker, Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + **1 OpenAI GPT** (Financial Strategist). **Cross-reference (§A.3) DONE 06-28** — overlaps/gaps/consolidation analyzed across the captured set. **Key finding: the REI advisory agent-team is CROSS-PLATFORM** (Claude Projects + ≥1 ChatGPT GPT) by design, not redundancy. Remaining ⏳: 5 referenced REI team members (capture + platform), all knowledge-file lists, ChatGPT memory/connector audit (§B), GPT toggle execution (§D / F4).
+**Status:** 🔄 V1 — **PARTIAL CAPTURE + CROSS-REFERENCE COMPLETE (06-28).** Instructions captured for **6 Claude Projects** (Audit Trainer, NYC CRE Broker, Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + **1 OpenAI GPT** (Financial Strategist). **Cross-reference (§A.3) DONE 06-28** + **ChatGPT memory/connector audit (§B) COMPLETE 06-28 — clean bill of health** + **GPT toggles (§D/F4) DONE.** **Key finding: the REI advisory agent-team is CROSS-PLATFORM** (Claude Projects + ≥1 ChatGPT GPT) by design, not redundancy. **Only remaining ⏳ (deferred-capture backlog, non-blocking):** knowledge-file lists for #1–#6/#11, and instructions+platform+build-status for the 5 referenced REI members (F22).
 **Source-of-truth inputs:** OCS_STATE_CANONICAL.md V7.1 §3/§4/§11/§12; GATE5-RECONCILIATION_V1.
 **Constraint:** Parallel session may edit OCS_STATE_CANONICAL.md. **This doc does NOT edit the state file.** §C proposes edits only.
 
@@ -100,7 +100,7 @@ A coordinated multi-agent team (hub #4 REI Technical Expert) whose members integ
 
 ---
 
-## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18) — 🔄 PARTIAL 06-28 (B.1 memory ✅ · B.3 data-controls ✅ partial · B.2 connectors + B.2b Google ⏳ · training-toggle re-confirm ⏳)
+## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18) — ✅ **COMPLETE 06-28** (B.1 memory · B.2 connectors=none · B.2b Google=SSO-only · B.3 data-controls incl. training=OFF · B.4 flags resolved — **clean bill of health, F23**)
 
 Account in scope: **royaloconnor@gmail.com**. Purpose: a **governance/credibility artifact** — prove the AI-governance advisor runs a clean, documented AI footprint (Engine 2) + surface privacy/deprecation exposure. Four parts:
 
@@ -146,16 +146,30 @@ You generally prefer concise, professional responses that get to the point witho
 ```
 </details>
 
-### B.2 Connectors / connected apps — ⏳ AWAITING PASTE (how-to below)
+### B.2 Connectors / connected apps — ✅ COMPLETE 06-28 — **NO CONNECTORS**
+**Result (Royal 06-28): zero connectors.** No Drive, Gmail, GitHub, or any other connected app. → no connector-side data exposure exists to flag.
+
+<details><summary>how-to (for future refresh)</summary>
+
 Each connector + on/off + scope; flag Drive/Gmail **write** scope.
 
 **Where to look + what to report:**
 - **ChatGPT → Settings → Connectors** (some accounts: "Connected apps" / "Data controls → Connected apps"). List **every** connector shown, each one's **ON/OFF**, and its **scope** (read vs write; which service — Google Drive, Gmail, GitHub, SharePoint, etc.).
 - **What I'm hunting:** any connector with **Google Drive or Gmail write scope** (highest-sensitivity — could modify your files/mail), and specifically **any OpenAI↔Drive connection** (the §12 question). If the Connectors panel is empty/"none," that itself is the finding (clean) — say so.
 - Paste format: `Name | ON/OFF | scope` per line.
+</details>
 
-### B.2b Google third-party connections — ⏳ AWAITING PASTE (how-to below)
-The **Google-side** check (independent of ChatGPT's own panel — this is what *Google* thinks has access to your account).
+### B.2b Google third-party connections — ✅ COMPLETE 06-28
+The **Google-side** check (what *Google* says has access). **Result (Royal 06-28):**
+
+| Google account | OpenAI entry? | Scope granted | Read |
+|---|---|---|---|
+| **royaloconnor@gmail.com** | Yes — **"Sign in with Google"** (since 2025-08-14) | **Authentication only** — name, email, profile picture. Granted to `openai.com` for SSO. | ⚠ Google labels this "OpenAI has some access to your Google Account," but the access is the **standard SSO basic-profile** — **NOT Drive, NOT Gmail, NOT files.** Benign. |
+| **royalcreates.ai@gmail.com** | **None** | — | ✅ **CLEAN** — the business/Drive account (Drive mirror + NotebookLM MCP live here) has **zero** OpenAI link. |
+
+**Definitive answer to the §12 question:** OpenAI has **NO access to Royal's Google Drive or Gmail** on either account. The only OpenAI↔Google link is read-only SSO sign-in (name/email/picture) on the *personal* account; the *business* account is entirely clean. → "advisory awareness" was **never** a Drive connection — it is chat-history reference (F23), now confirmed from both ends (memory + access).
+
+<details><summary>how-to (for future refresh)</summary>
 
 **Where to look + what to report:**
 - Go to **myaccount.google.com/connections** (signed in as the Google account ChatGPT might touch — check **both** royaloconnor@gmail.com *and* royalcreates.ai@gmail.com if ChatGPT could reach either).
@@ -163,16 +177,18 @@ The **Google-side** check (independent of ChatGPT's own panel — this is what *
 - For each match, report the **access granted** (the bullet list Google shows — e.g. "See, edit, create, delete all your Google Drive files" vs just "name/email").
 - **What I'm hunting:** any **OpenAI↔Drive grant**. If there is **no** OpenAI/ChatGPT entry, that is the clean finding — say "none."
 - *Why this matters for Engine 2:* it's the hard proof for the "I run a clean, documented AI footprint" credibility claim — Google's own ledger, not ChatGPT's self-report.
+</details>
 
-### B.3 Data-control settings — ✅ PARTIAL 06-28
-Royal (06-28): the personalization toggles now present as **"Memory" (Reference saved memories) = ON** and **"Reference chat history" = ON**.
+### B.3 Data-control settings — ✅ COMPLETE 06-28
+Royal (06-28): the personalization toggles present as **"Memory" (Reference saved memories) = ON** and **"Reference chat history" = ON**.
 - ✅ **Reference saved memories: ON**
 - ✅ **Reference chat history: ON** — *this is the mechanism behind the cross-session advisory awareness (B.1 / F23). Broader context bleed is a deliberate convenience trade; flag, not a defect. Privacy note: business + personal chats cross-pollinate — keep client-identifying detail out of ChatGPT (rule `pii-sanitize`).*
-- ⏳ **`training_allowed` / "Improve the model for everyone"** (Data Controls — was **false** at Gate 4): **NOT re-confirmed this paste.** One-line check needed → if still OFF, the Gate-4 privacy posture holds. **Residual.**
+- ✅ **`training_allowed` / "Improve the model for everyone": OFF — confirmed (Royal: "always been").** Gate-4 privacy posture holds; your data is not training the model. Residual cleared.
 
-### B.4 Flags
-- **Deprecation:** Gate 4 = ZERO Assistants API / Agent Builder objects (positioning advantage). Re-confirm none appeared (Assistants API 2026-08-26; Agent Builder 2026-11-30).
-- **Privacy:** any write-scope connector or PII-bearing memory → flag (rule `pii-sanitize`).
+### B.4 Flags — ✅ RESOLVED 06-28
+- **Deprecation:** GPT side = Custom GPTs only (NOT Assistants-API / Agent-Builder objects); connectors = none. **ZERO deprecated-object exposure holds** (Aug-26 / Nov-30 waves don't touch this footprint). Positioning advantage intact.
+- **Privacy:** **no write-scope connector** (none exist), **no PII-bearing memory** (B.1 scan clean), **no Drive/Gmail access** (B.2/B.2b). Only residual privacy item = the *deliberate* "Reference chat history" cross-pollination (B.3) — managed by keeping client detail out of prompts.
+- **Net:** the ChatGPT footprint audit is a **clean bill of health** — the credibility artifact §B set out to produce (F23).
 
 ### B.5 ⬇ COPY-PASTE GUIDE (ChatGPT settings — I cannot reach it)
 1. Settings → Personalization → Memory → Manage memories → copy list → `### B.1 PASTE`.
@@ -201,7 +217,7 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 **Privacy caveat (rule `pii-sanitize`):** enabling **Web Search** means prompts may be sent to a search provider — keep client-identifying detail out of these GPTs (consistent with each GPT's "no confidential information" constraint). Code Interpreter runs sandboxed (no extra exposure).
 **After applying:** paste back which toggles are now ON per GPT → I'll record the final state and close F4. *(Note: Claude Projects do not expose the same capability-toggle surface; F4 is GPT-side only.)*
 
-> ✅ **EXECUTED 06-28 (Royal):** **ALL** capabilities toggled **ON** — Web Search · Canvas · Image Generation · Code Interpreter & Data Analysis. **F4 = enabled/closed.** Minor notes, no action required: (1) Image Generation on a finance GPT is unused-but-harmless; (2) Web Search ON re-confirms the `pii-sanitize` caveat — keep client-identifying detail out of prompts. **One confirm pending:** does "all ON" apply to **Financial Strategist only**, or to **all GPTs**? (1 word — I'll annotate the registry accordingly.)
+> ✅ **EXECUTED 06-28 (Royal): ALL GPTs, ALL capabilities ON** — Web Search · Canvas · Image Generation · Code Interpreter & Data Analysis. **F4 = closed.** Minor notes, no action required: (1) Image Generation on the finance/advisory GPTs is unused-but-harmless; (2) Web Search ON across all GPTs makes the `pii-sanitize` caveat blanket — keep client-identifying detail out of every GPT's prompts. Scope confirmed = **all GPTs** (not just Financial Strategist).
 
 ---
 
@@ -225,7 +241,7 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 - **F21 (NEW 06-28)** — **Engine 2 has no dedicated agent** (gap G-a). Decision: deliberate (template-delivered) vs build a client-facing "AI Risk Advisor" agent.
 - **F22 (NEW 06-28)** — REI team's **5 referenced members are uncaptured + platform-unknown + build-status-unknown** (gap G-b); may be aspirational. Capture-or-retire decision.
 - **F19 (CLOSED 06-28)** — Royal confirmed **no separate Claude "Financial Advisor"** exists distinct from the Financial Strategist GPT. Consolidation candidate C-1 = resolved (no duplicate).
-- **F23 (NEW 06-28, governance-positive)** — ChatGPT footprint is **clean/professional** (B.1 PII scan clean). Advisory-brand awareness source identified = **"Reference chat history" ON** (not saved memory, not a Drive connector) → §12 hypothesis resolved. *Residual: re-confirm `training_allowed` still OFF (B.3).*
+- **F23 (NEW 06-28, governance-positive — CONFIRMED both ends)** — ChatGPT footprint is a **clean bill of health**: **no connectors**, **no Drive/Gmail access** (Google ledger shows only read-only SSO sign-in on the personal account; business account royalcreates.ai entirely clean), **PII-clean memory**, **training OFF**. Advisory-brand awareness source = **"Reference chat history" ON** (not memory, not a connection) → §12 hypothesis fully resolved. This is the Engine-2 credibility artifact §B set out to produce.
 - **F20 (residual RESOLVED 06-28)** — NYC CRE Broker canonical framing = **investor buy-side specialist** (Royal 06-28). The "occupier/tenant-rep" *description* is inaccurate → correct the description to match the buy-side instructions; both are NOT in-scope (buy-side wins).
 - **F16 (CLOSED 06-28)** — Financial Aid PROJ code = **`PROJ_FAM_FINAID`** (Royal: family-wide, two kids both benefit; broader than the SHSAT exam project, so NOT folded into PROJ_EDU_SHSAT).
 
@@ -241,7 +257,7 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 **OpenAI GPTs:**
 4. Knowledge files + Gizmo ID for **Financial Strategist** (to complete the GPT-registry merge). *(still open)*
 
-**ChatGPT account (royaloconnor@gmail.com)** — §B.5: 5. ✅ memory (06-28) · 6. ⏳ connectors (B.2 how-to) · 7. ✅ data controls (06-28; training-toggle re-confirm pending) · 8. ⏳ Google connections (B.2b how-to).
+**ChatGPT account (royaloconnor@gmail.com)** — §B: 5. ✅ memory · 6. ✅ connectors (NONE) · 7. ✅ data controls (training OFF) · 8. ✅ Google connections (SSO-only; business acct clean). **§B COMPLETE 06-28.**
 
 **Decisions:**
 9. ✅ **RESOLVED 06-28** — Financial Aid = `PROJ_FAM_FINAID` (family-wide; not folded into SHSAT). F16 closed.

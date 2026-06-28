@@ -39,7 +39,7 @@
 | 2 | State standardization | CLOSED ~06-12 |
 | 3 | Skills / Commands / Refinery | CLOSED ~06-13 |
 | 4 | OpenAI export audit + GPT configs | ✅ CLOSED 06-14 |
-| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | OPEN — 7 instruction sets captured + cross-reference DONE 06-28; ChatGPT audit + GPT toggles pending |
+| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | OPEN (governance work DONE 06-28) — captures + cross-reference + ChatGPT audit (CLEAN) + toggles complete; only deferred-capture backlog (knowledge lists + 5 REI members F22) remains; **close decision = Royal's** |
 | 6 | n8n workflow export + docs | PENDING |
 | 7 | Binder V1 | PENDING |
 | 8 | Demo engineering + Migration Rescue | PENDING |
@@ -106,8 +106,9 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 **Gate 5 (Claude Projects audit):**
 - [~] Map Claude Projects — **instructions captured for 6 of 6 known Projects** (Audit Trainer, NYC CRE Broker [full 06-22], Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + Financial Strategist GPT. **Residual:** knowledge-file lists for all; instructions+platform for 5 referenced REI team members (Broker Director, Real Estate Counsel, Business Broker Assistant, Research Analyst, Industry Expert — F22).
 - [x] **Cross-reference Claude Projects vs OpenAI GPTs — DONE 06-28** (GATE5-AUDIT §A.3): no RE-role redundancy; REI team cross-platform *by design*; gaps logged (G-a Engine-2 has no agent → F21; G-b 5 uncaptured team members → F22); consolidation candidates C-1 (confirm no separate Claude "Financial Advisor") / C-2 (Personal-Family cluster out of scope) / C-3 (platform-coherence lever). GPT deprecation footprint = ZERO (Custom GPTs ≠ Assistants/Agent-Builder objects).
-- [~] **ChatGPT memory + connector audit (NEW 06-18) — PARTIAL 06-28:** ✅ **B.1 memory captured** (6 blocks; PII-clean; footprint professional → F23 governance-positive) + ✅ **B.3 data-controls** (Memory ON + "Reference chat history" ON — the latter is the advisory-awareness source, NOT a Drive connection → §12 hypothesis resolved). **Residual:** B.2 connectors + B.2b Google third-party connections (how-to in audit doc; awaiting paste) + re-confirm `training_allowed` still OFF.
-- [x] **Enable GPT capability toggles (F4) — DONE 06-28:** Royal toggled **ALL** capabilities ON (Web Search · Canvas · Image Generation · Code Interpreter). One confirm pending: Financial Strategist-only vs all GPTs.
+- [x] **ChatGPT memory + connector audit (NEW 06-18) — COMPLETE 06-28 — CLEAN BILL OF HEALTH (F23):** memory PII-clean + **no connectors** + **no Drive/Gmail access** (Google ledger = read-only SSO sign-in on personal acct only; business acct royalcreates.ai entirely clean) + **training OFF** confirmed. Advisory-brand awareness = "Reference chat history" ON, **not** a Drive connection → §12 hypothesis fully resolved. Deprecation exposure = ZERO (Custom GPTs only). Detail: GATE5-AUDIT §B.
+- [x] **Enable GPT capability toggles (F4) — DONE 06-28:** Royal toggled **ALL capabilities ON across ALL GPTs** (Web Search · Canvas · Image Generation · Code Interpreter). Closed.
+- **Gate 5 governance work = DONE** (captures + cross-reference + footprint audit + toggles). **Only deferred-capture backlog remains** (knowledge-file lists; 5 referenced REI members F22). **Gate-close decision = Royal's** (close now with backlog tracked separately, or hold open until captures land).
 - **Decisions locked 06-28:** **F19 CLOSED** (no separate Claude "Financial Advisor" — Financial Strategist GPT is the team's only financial role) · **F16 CLOSED** (Financial Aid → `PROJ_FAM_FINAID`, family-wide) · **F20 residual RESOLVED** (NYC CRE Broker = investor **buy-side** specialist; occupier-rep description is inaccurate → rewrite). New Gate-5 findings **F21** (Engine 2 has no agent) / **F22** (5 uncaptured REI members) / **F23** (clean footprint) staged in GATE5-AUDIT §C.
 
 **Migration Sprint V2 (parallel — not gated):**
