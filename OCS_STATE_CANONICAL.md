@@ -2,7 +2,7 @@
 *(Formerly OAIS_STATE.md — renamed 2026-06-19. The "OAIS / O'Connor AI System" acronym is retired in favor of OCS. Distinct from the separately-retired OCS_Program_State lineage — see GATE5-RECONCILIATION D1.)*
 
 **Program:** O'Connor Configured System (OCS) | 60-Day Initiative
-**Version:** V7.3 — Gate 4 CLOSED / Gate 5 OPEN (cross-reference DONE) / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed)**
+**Version:** V7.3 — Gate 4 CLOSED / **Gate 5 ✅ CLOSED 06-28** / Gate 6 NEXT / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed)**
 **Last Updated:** 2026-06-28
 **Updated By:** Royal O'Connor + Claude (Opus 4.8, Claude Code) — 2026-06-28 Command Center Phase 2 session + **2026-06-28 Gate 5 substantive pass** (prior: 2026-06-18 build session)
 **Route:** /ROC-OS/00_Registry/
@@ -39,7 +39,7 @@
 | 2 | State standardization | CLOSED ~06-12 |
 | 3 | Skills / Commands / Refinery | CLOSED ~06-13 |
 | 4 | OpenAI export audit + GPT configs | ✅ CLOSED 06-14 |
-| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | OPEN (governance work DONE 06-28) — captures + cross-reference + ChatGPT audit (CLEAN) + toggles complete; only deferred-capture backlog (knowledge lists + 5 REI members F22) remains; **close decision = Royal's** |
+| 5 | Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)** | ✅ **CLOSED 06-28** — captures + cross-reference + ChatGPT footprint audit (CLEAN bill of health) + toggles complete; deferred-capture backlog (knowledge lists + 5 REI members F22) tracked in §7 registry, non-blocking |
 | 6 | n8n workflow export + docs | PENDING |
 | 7 | Binder V1 | PENDING |
 | 8 | Demo engineering + Migration Rescue | PENDING |
@@ -86,7 +86,8 @@ Full plan: **DOC_2026-06-18_AI_ADVISORY_MIGRATION-SPRINT-PLAN_V2.md** (/ROC-OS/0
 - **Intake channels LIVE (06-18):** Drive connector reads /ROC-OS/00_Inbox; Gmail connector wired, "ROC-OS Intake" label = Label_448698645156134993 (0 threads tagged yet).
 
 ## 7. PROJECT REGISTRY
-PROJ_AI_OCS (Gate 5 next) · PROJ_AI_WALLYB (nodes 8/8a/12 passing) · PROJ_AI_MOVIEWATCH (Phase 1) · PROJ_AI_FAMILYSPORTS · PROJ_AI_AUTOTRADING (hold) · PROJ_AI_CDT · PROJ_AI_BOOTCAMP · PROJ_AI_COLDCASE · PROJ_AI_DIGITALLITERACY · PROJ_RE_PROPDATA · PROJ_EDU_SHSAT · PROJ_AI_FOOTBALL · **PROJ_AI_MIGRATION (Engine 2 — ACTIVE SPRINT; Workstream B delivery product BUILT 06-18; Workstream A outreach next)**.
+PROJ_AI_OCS (**Gate 6 next** — n8n workflow export) · PROJ_AI_WALLYB (nodes 8/8a/12 passing) · PROJ_AI_MOVIEWATCH (Phase 1) · PROJ_AI_FAMILYSPORTS · PROJ_AI_AUTOTRADING (hold) · PROJ_AI_CDT · PROJ_AI_BOOTCAMP · PROJ_AI_COLDCASE · PROJ_AI_DIGITALLITERACY · PROJ_RE_PROPDATA · PROJ_EDU_SHSAT · **PROJ_FAM_FINAID (NEW 06-28 — Financial Aid Consultant; Family, both kids; out of governance Engine scope)** · PROJ_AI_FOOTBALL · **PROJ_AI_MIGRATION (Engine 2 — ACTIVE SPRINT; Workstream B delivery product BUILT 06-18; Workstream A outreach next)**.
+**Gate-5 capture backlog (F22, non-blocking, post-close):** knowledge-file lists for the 6 captured Claude Projects + Financial Strategist GPT; instructions/platform/**build-status** for 5 referenced REI members (Broker Director, Real Estate Counsel, Business Broker Assistant, Research Analyst, Industry Expert) — confirm built vs aspirational, capture-or-retire. Also pending: NYC CRE Broker description rewrite to buy-side (F20 action); Financial Strategist Gizmo ID + knowledge files for GPT-registry merge.
 Full universe: 24 unique initiatives across 6 sources — DOC_2026-06-14_AI_PROJECTS_GATE5-RECONCILIATION_V1.md.
 
 ## 8. OPEN FINDINGS
@@ -103,7 +104,7 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 **06-18:** repo path whitelisted in `~/.claude/hooks/bash-path-guard.py` so Claude Code (this harness) can `git add/commit/push` the repo directly without the /ME/Ai path-guard blocking it.
 
 ## 12. OPEN ACTIONS
-**Gate 5 (Claude Projects audit):**
+**Gate 5 (Claude Projects + ChatGPT audit) — ✅ CLOSED 06-28** *(Royal's call; governance work complete, capture-backlog F22 moved to §7 registry as non-blocking):*
 - [~] Map Claude Projects — **instructions captured for 6 of 6 known Projects** (Audit Trainer, NYC CRE Broker [full 06-22], Financial Aid, REI Technical Expert, Transaction Advisory Accountant, Real Estate Investment Advisor) + Financial Strategist GPT. **Residual:** knowledge-file lists for all; instructions+platform for 5 referenced REI team members (Broker Director, Real Estate Counsel, Business Broker Assistant, Research Analyst, Industry Expert — F22).
 - [x] **Cross-reference Claude Projects vs OpenAI GPTs — DONE 06-28** (GATE5-AUDIT §A.3): no RE-role redundancy; REI team cross-platform *by design*; gaps logged (G-a Engine-2 has no agent → F21; G-b 5 uncaptured team members → F22); consolidation candidates C-1 (confirm no separate Claude "Financial Advisor") / C-2 (Personal-Family cluster out of scope) / C-3 (platform-coherence lever). GPT deprecation footprint = ZERO (Custom GPTs ≠ Assistants/Agent-Builder objects).
 - [x] **ChatGPT memory + connector audit (NEW 06-18) — COMPLETE 06-28 — CLEAN BILL OF HEALTH (F23):** memory PII-clean + **no connectors** + **no Drive/Gmail access** (Google ledger = read-only SSO sign-in on personal acct only; business acct royalcreates.ai entirely clean) + **training OFF** confirmed. Advisory-brand awareness = "Reference chat history" ON, **not** a Drive connection → §12 hypothesis fully resolved. Deprecation exposure = ZERO (Custom GPTs only). Detail: GATE5-AUDIT §B.
@@ -147,4 +148,4 @@ OCS / ROC-OS · The Binder (8-ch client Playbook) · The Blueprint (5-engine str
 1. Read in full. 2. Check §12 (open actions). 3. Check §8 (findings). 4. Check §3 (gates). 5. Confirm orientation. 6. Close: /wrap (Chat) or /update (Code) → update state, mirror to Drive, commit to repo.
 
 ---
-*OCS_STATE_CANONICAL.md | OCS | V7.3 | Gate 4 CLOSED / Gate 5 OPEN (cross-reference DONE 06-28) / Migration Sprint V2 ACTIVE / Command Center Phase 2 Session 1 built (Agent Registry G3 live, G8 audited) | 2026-06-28 | /ROC-OS/00_Registry/*
+*OCS_STATE_CANONICAL.md | OCS | V7.3 | Gate 4 CLOSED / Gate 5 CLOSED 06-28 / Gate 6 NEXT / Migration Sprint V2 ACTIVE / Command Center Phase 2 Session 1 built (Agent Registry G3 live, G8 audited) | 2026-06-28 | /ROC-OS/00_Registry/*

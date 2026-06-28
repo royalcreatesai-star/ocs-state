@@ -1,6 +1,6 @@
 # DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md — Gate 5 Audit (MAP)
 
-**Gate:** 5 (OPEN) — Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)**
+**Gate:** 5 (✅ **CLOSED 06-28**, Royal's call) — Claude Projects audit **+ ChatGPT memory/connector audit (added 06-18)**. Governance work complete; capture-backlog (F22 + knowledge lists + GPT-registry merge) tracked non-blocking in canonical §7.
 **Program:** O'Connor Configured System (OCS) | Engine 4 (program) / governance artifact
 **Route (logical):** /ROC-OS/05_Projects/ — physically in git repo SoT `~/Documents/ME/Ai/ocs-state` (flat layout). **Mirror to Drive pending.**
 **Created:** 2026-06-21 · **Updated:** 2026-06-22 (platform re-confirmation pass) · **2026-06-28 (substantive pass — cross-reference §A.3 completed; NYC CRE stale-status corrected; toggle rec §D drafted)** by Royal O'Connor + Claude (Opus 4.8, Claude Code).
