@@ -132,7 +132,7 @@ Change management in audit functions
 **Description (verbatim, Royal 06-21):**
 > "To act as a strategic advisor, helping businesses find, negotiate, and secure the ideal space (lease or buy) by leveraging deep market knowledge, extensive networks, and negotiation skills to achieve the best financial and operational outcomes, saving clients time, money, and risk in the complex city market. They focus on long-term client success, not just quick deals, by aligning property solutions with business growth, zoning needs, and future goals."
 
-> ⚠ **Reconcile note (06-22):** the short description above frames an *occupier/tenant-rep* broker ("helping businesses find space"), while the full instructions below configure an *investor buy-side* broker (Royal's own Bay Street acquisition). Same project, two emphases — confirm the intended framing, or note both are in-scope.
+> ⚠ **Reconcile note (06-22) — RESOLVED 06-28 (Royal):** the short description above frames an *occupier/tenant-rep* broker ("helping businesses find space"), while the full instructions below configure an *investor buy-side* broker (Royal's own Bay Street acquisition). **Resolution: this is an investor BUY-SIDE specialist.** The occupier-rep description is inaccurate/stale and should be rewritten to match the buy-side instructions — NOT both-in-scope. (Audit F20.)
 
 ### Custom instructions (verbatim, captured 06-22)
 ```

@@ -30,8 +30,8 @@ Royal is running a **per-project platform re-confirmation pass** (Claude vs Chat
 | # | Project | Platform | Engine | Instructions | Knowledge | Notes |
 |---|---------|:--:|:--:|:--:|:--:|-------|
 | 1 | **Audit Trainer** (Expert Audit Knowledge Advisor) | Claude | 1 | ✅ | ⏳ | Internal/firm-eval; ≠ The Binder |
-| 2 | **NYC CRE Broker** (Commercial Broker · SI/Bay St) | Claude | 3 | ✅ | ⏳ | **Full instructions captured 06-22** (was desc-only) |
-| 3 | **Financial Aid Consultant** | Claude | Family | ✅ | ⏳ | New to registry (A-1); ETA→EOP note |
+| 2 | **NYC CRE Broker** (Commercial Broker · SI/Bay St) | Claude | 3 | ✅ | ⏳ | Full instr 06-22. **Framing RESOLVED 06-28: investor buy-side specialist** (occupier-rep description is inaccurate → fix) — F20 |
+| 3 | **Financial Aid Consultant** | Claude | Family | ✅ | ⏳ | **PROJ_FAM_FINAID (06-28)**; ETA→EOP note — F16 closed |
 | 4 | **REI Technical Expert** | Claude | 3 | ✅ | ⏳ | Agent-team **hub**; re-confirmed Claude 06-22 |
 | 5 | **Transaction Advisory Accountant** | Claude | 2/3 | ✅ | ⏳ | Agent-team |
 | 6 | **Real Estate Investment Advisor** | Claude | 3 | ✅ | ⏳ | Agent-team; residential ≤4-unit |
@@ -39,7 +39,7 @@ Royal is running a **per-project platform re-confirmation pass** (Claude vs Chat
 | 8 | **Real Estate Counsel** | ⏳ | 3 | ⏳ | ⏳ | Referenced; cf "Expert Real Estate Counsel" |
 | 9 | **Business Broker Assistant** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
 | 10 | **Research Analyst** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
-| 11 | **Financial Advisor** = **Financial Strategist GPT** | **ChatGPT** | 5 | ✅ | ⏳ | **F19 RESOLVED 06-22** — the team's financial role is the Gate 4 GPT (cross-platform); confirm there's no separate Claude "Financial Advisor" |
+| 11 | **Financial Advisor** = **Financial Strategist GPT** | **ChatGPT** | 5 | ✅ | ⏳ | **F19 CLOSED 06-28** — team's financial role is the Gate 4 GPT (cross-platform); Royal confirmed **no separate Claude "Financial Advisor"** |
 | 12 | **Industry Expert** | ⏳ | 2/3 | ⏳ | ⏳ | Referenced — capture + confirm platform |
 
 Verbatim: Claude #1–#6 in the Claude companion; GPT #11 (Financial Strategist) in the GPT companion.
@@ -73,7 +73,9 @@ Scope of this pass: the **7 agents with captured instructions** (6 Claude Projec
 | Broker Director · Real Estate Counsel · Business Broker Assistant · Research Analyst · Industry Expert | TBC | 2/3 | REI team members (referenced in collaboration sections) | ⏳ |
 
 #### A.3.2 Overlaps — cross-platform team is BY DESIGN (not duplication)
-The headline: **Financial Strategist GPT (OpenAI) is the "Financial Advisor" node wired into every captured Claude team member's collaboration section** — REI Technical Expert ("Financial Advisor Collaboration"), Transaction Advisory Accountant ("Financial Advisor Coordination"), and the Strategist's own "Collaborative Workflow Integration" reciprocally names the Brokers, Counsel, Investment Advisor, Technical Experts, Research/Industry Experts. This is **integration across platforms, not redundant copies.** → No consolidation forced; this *is* the cross-platform team finding (F17/A-4).
+The headline: **Financial Strategist GPT (OpenAI) is the "Financial Advisor" role NAMED in every captured Claude team member's collaboration section** — REI Technical Expert ("Financial Advisor Collaboration"), Transaction Advisory Accountant ("Financial Advisor Coordination"), and the Strategist's own "Collaborative Workflow Integration" reciprocally names the Brokers, Counsel, Investment Advisor, Technical Experts, Research/Industry Experts.
+
+⚠ **"Named," not "wired" (clarified 06-28, Royal Q):** the linkage is **purely textual/documentary** — the agents do NOT call each other, share data, or integrate technically. No ChatGPT↔Claude pipe exists. **Royal is the integration layer** (manual context relay between agents). Governance consequences: (1) *strengthens the clean-footprint story* — there are no cross-platform data pipes to audit; (2) *the team is only as real as the human relay* — the prose asserts a ~12-agent team but the built reality may be ~7 → this is the operational stakes behind **F22** (named-but-possibly-unbuilt members). → No consolidation forced; this *is* the cross-platform team finding (F17/A-4), but it is a **design convention, not a system.**
 
 #### A.3.3 Functional adjacencies — distinct lanes, watch for drift
 - **RE "money" triangle:** Real Estate Investment Advisor (Claude — residential ≤4-unit *strategy*) vs Financial Strategist (OpenAI — *holistic* wealth/portfolio/estate) vs Transaction Advisory Accountant (Claude — *accounting/tax/deal-structure*). Three adjacent lanes all touching RE-investment dollars; instructions confirm distinct scopes. Boundary documented here so they don't converge in practice.
@@ -98,18 +100,75 @@ A coordinated multi-agent team (hub #4 REI Technical Expert) whose members integ
 
 ---
 
-## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18) — ALL ⏳ AWAITING PASTE
+## §B — CHATGPT MEMORY / CONNECTOR AUDIT (added 06-18) — 🔄 PARTIAL 06-28 (B.1 memory ✅ · B.3 data-controls ✅ partial · B.2 connectors + B.2b Google ⏳ · training-toggle re-confirm ⏳)
 
 Account in scope: **royaloconnor@gmail.com**. Purpose: a **governance/credibility artifact** — prove the AI-governance advisor runs a clean, documented AI footprint (Engine 2) + surface privacy/deprecation exposure. Four parts:
 
-### B.1 Saved memory entries — ⏳
-ChatGPT's persistent Memory ("Manage memories"): triage each as business/personal/stale, flag PII, decide keep/edit/delete. Tests the §12 hypothesis that "O'Connor Advisory" awareness came from memory/state-paste, not a Drive connection.
+### B.1 Saved memory entries — ✅ CAPTURED 06-28
 
-### B.2 Connectors / connected apps — ⏳
-Each connector + on/off + scope; flag Drive/Gmail **write** scope. Also Google layer: myaccount.google.com/connections → any OpenAI↔Drive grant.
+ChatGPT presented memory as a synthesized profile in **6 blocks** (verbatim captured below in repo; summarized here). Triage + PII flag:
 
-### B.3 Data-control settings — re-verify Gate 4
-`training_allowed` ("Improve the model for everyone" — was **false**) · "Reference saved memories" · "Reference chat history".
+| Memory block | Class | PII / sensitivity | Disposition |
+|---|---|---|---|
+| **Overview** (research/planning partner; CRE, finance, AI, home/vehicle, project planning; prefers structured/actionable) | Business + working-style | None | **Keep** |
+| **Finance & Real Estate** (CPA background; CRE/accounting/investment; due diligence; tables/decision frameworks) | Business (E2/E3) | None — no client names, no figures | **Keep** — core, relevant |
+| **AI & Technology Projects** (custom GPTs, AI advisory, **PROJECT_STATE.md summaries shared across ChatGPT/Claude/CoWork**) | Business (E4) | None | **Keep** — note: the cross-platform state-bridge pattern is *visible in ChatGPT memory* |
+| **Mazda CX-90 PHEV** (2024 Premium Plus; L1 charging; keep-then-pass-to-family) | Personal | Personal asset detail, low | **Optional trim** — harmless; out of governance scope |
+| **Home Projects** (kitchen remodel; Cristallo/Bianco countertops; cost/storage) | Personal | Personal, low | **Optional trim** — harmless |
+| **Preferred Working Style** (concise/professional; sections/tables/step-by-step) | Working-style | None | **Keep** |
+
+**PII scan: CLEAN.** No account numbers, SSNs, client-confidential data, or financial figures. The two personal blocks (vehicle, home) are low-sensitivity lifestyle facts, not PII.
+
+**§12 hypothesis — RESOLVED:** No memory block hard-names **"O'Connor Advisory."** The "advisory awareness" Royal observed is **not** a stored memory entry and **not** evidence of a Drive connection. With **"Reference chat history" ON** (§B.3), ChatGPT surfaces the brand from *prior conversations*, not from saved memory or a connector. → advisory awareness source = **chat-history reference**, confirmed. → **F23.**
+
+**Governance/credibility read:** the footprint is **professional and clean** — business-oriented, no embarrassing or confidential content, consistent with each agent's "no confidential information" constraint. This *is* the positive governance artifact §B set out to produce: the AI-governance advisor demonstrably runs a disciplined AI footprint.
+
+<details><summary><strong>B.1 verbatim memory (captured 06-28)</strong></summary>
+
+```
+1. Overview
+You frequently use ChatGPT as a research, planning, and technical thinking partner. Your main long-term themes include commercial real estate investing and finance, AI and workflow design, home and vehicle ownership, and detailed project planning. You prefer practical, structured responses with concrete recommendations and actionable next steps.
+
+Finance and Real Estate
+You have a CPA background and regularly work on commercial real estate, accounting, and investment-related topics. You research property transactions, market trends, financial modeling, and due diligence, and you often ask for concise explanations that reduce jargon while preserving important technical details. You also explore long-term investing strategies and frequently request structured analyses, comparison tables, and decision frameworks.
+
+AI and Technology Projects
+You are actively exploring AI systems, custom GPTs, and practical workflows. You have been developing ideas around AI advisory work, creating specialized GPTs for technology discussions, and using structured project documentation that can be shared across tools such as ChatGPT, Claude, and CoWork. You commonly ask for PROJECT_STATE.md summaries to capture decisions, current status, next steps, and lessons learned so projects can continue seamlessly across platforms.
+
+Mazda CX-90 PHEV
+You purchased a 2024 Mazda CX-90 PHEV Premium Plus and plan to keep it for several years before potentially passing it to a family driver. You primarily use Level 1 charging and intend to charge overnight. Your driving is a mix of short local trips and longer highway travel, so you've been learning how to balance battery usage, charging habits, maintenance, and efficient operation. You also prefer practical ownership guidance over technical jargon.
+
+Home Projects
+You have an active home improvement project that includes kitchen remodeling and countertop selection. You have compared materials such as Cristallo and Bianco, explored different design scenarios, evaluated total project costs, and planned temporary storage options during construction. You also occasionally seek troubleshooting help for household equipment and appliances when problems arise.
+
+Preferred Working Style
+You generally prefer concise, professional responses that get to the point without unnecessary filler. For complex subjects, you like information organized into clear sections, tables, matrices, or step-by-step plans. When appropriate, you also appreciate simplified explanations that make technical topics easier to understand while still preserving key details.
+```
+</details>
+
+### B.2 Connectors / connected apps — ⏳ AWAITING PASTE (how-to below)
+Each connector + on/off + scope; flag Drive/Gmail **write** scope.
+
+**Where to look + what to report:**
+- **ChatGPT → Settings → Connectors** (some accounts: "Connected apps" / "Data controls → Connected apps"). List **every** connector shown, each one's **ON/OFF**, and its **scope** (read vs write; which service — Google Drive, Gmail, GitHub, SharePoint, etc.).
+- **What I'm hunting:** any connector with **Google Drive or Gmail write scope** (highest-sensitivity — could modify your files/mail), and specifically **any OpenAI↔Drive connection** (the §12 question). If the Connectors panel is empty/"none," that itself is the finding (clean) — say so.
+- Paste format: `Name | ON/OFF | scope` per line.
+
+### B.2b Google third-party connections — ⏳ AWAITING PASTE (how-to below)
+The **Google-side** check (independent of ChatGPT's own panel — this is what *Google* thinks has access to your account).
+
+**Where to look + what to report:**
+- Go to **myaccount.google.com/connections** (signed in as the Google account ChatGPT might touch — check **both** royaloconnor@gmail.com *and* royalcreates.ai@gmail.com if ChatGPT could reach either).
+- Scan the list for any entry named **ChatGPT, OpenAI, or "OpenAI, L.L.C."**
+- For each match, report the **access granted** (the bullet list Google shows — e.g. "See, edit, create, delete all your Google Drive files" vs just "name/email").
+- **What I'm hunting:** any **OpenAI↔Drive grant**. If there is **no** OpenAI/ChatGPT entry, that is the clean finding — say "none."
+- *Why this matters for Engine 2:* it's the hard proof for the "I run a clean, documented AI footprint" credibility claim — Google's own ledger, not ChatGPT's self-report.
+
+### B.3 Data-control settings — ✅ PARTIAL 06-28
+Royal (06-28): the personalization toggles now present as **"Memory" (Reference saved memories) = ON** and **"Reference chat history" = ON**.
+- ✅ **Reference saved memories: ON**
+- ✅ **Reference chat history: ON** — *this is the mechanism behind the cross-session advisory awareness (B.1 / F23). Broader context bleed is a deliberate convenience trade; flag, not a defect. Privacy note: business + personal chats cross-pollinate — keep client-identifying detail out of ChatGPT (rule `pii-sanitize`).*
+- ⏳ **`training_allowed` / "Improve the model for everyone"** (Data Controls — was **false** at Gate 4): **NOT re-confirmed this paste.** One-line check needed → if still OFF, the Gate-4 privacy posture holds. **Residual.**
 
 ### B.4 Flags
 - **Deprecation:** Gate 4 = ZERO Assistants API / Agent Builder objects (positioning advantage). Re-confirm none appeared (Assistants API 2026-08-26; Agent Builder 2026-11-30).
@@ -142,6 +201,8 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 **Privacy caveat (rule `pii-sanitize`):** enabling **Web Search** means prompts may be sent to a search provider — keep client-identifying detail out of these GPTs (consistent with each GPT's "no confidential information" constraint). Code Interpreter runs sandboxed (no extra exposure).
 **After applying:** paste back which toggles are now ON per GPT → I'll record the final state and close F4. *(Note: Claude Projects do not expose the same capability-toggle surface; F4 is GPT-side only.)*
 
+> ✅ **EXECUTED 06-28 (Royal):** **ALL** capabilities toggled **ON** — Web Search · Canvas · Image Generation · Code Interpreter & Data Analysis. **F4 = enabled/closed.** Minor notes, no action required: (1) Image Generation on a finance GPT is unused-but-harmless; (2) Web Search ON re-confirms the `pii-sanitize` caveat — keep client-identifying detail out of prompts. **One confirm pending:** does "all ON" apply to **Financial Strategist only**, or to **all GPTs**? (1 word — I'll annotate the registry accordingly.)
+
 ---
 
 ## §C — PROPOSED STATE UPDATES (do NOT apply — Royal merges)
@@ -152,7 +213,7 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 **§4 — Gate 4 GPTs:** Financial Strategist GPT instructions now captured (GPT companion) → merge into GPT-GIZMO-REGISTRY_V3. (Count stays 6; this is capture, not a new GPT.)
 
 **§7 — Project registry:**
-- **Financial Aid** → Family/Personal; PROJ_FAM_FINAID or fold into PROJ_EDU_SHSAT.
+- **Financial Aid** → Family/Personal; **`PROJ_FAM_FINAID` (CONFIRMED 06-28)** — family-wide (two kids), broader than the SHSAT exam project, so NOT folded into PROJ_EDU_SHSAT.
 - **REI advisory agent-team** → register explicitly as a **cross-platform multi-agent system** (hub REI Technical Expert; Claude members #2,#4,#5,#6 + ChatGPT Financial Strategist + TBC #7–#10,#12) under Engine 3. Resolves reconciliation undercount.
 
 **§8 — Findings:**
@@ -163,6 +224,10 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 - **F20 (NEW 06-28, corrected)** — **Stale-status defect (Verify-Before-Status):** NYC CRE Broker full instructions were captured 06-22 (companion §2), but the instructions-file header, canonical §12, and the working brief still read "description only." Corrected this session in the companion header/footer; canonical §12 patched. *Lesson: when a capture lands mid-pass, sweep all status mirrors same session.*
 - **F21 (NEW 06-28)** — **Engine 2 has no dedicated agent** (gap G-a). Decision: deliberate (template-delivered) vs build a client-facing "AI Risk Advisor" agent.
 - **F22 (NEW 06-28)** — REI team's **5 referenced members are uncaptured + platform-unknown + build-status-unknown** (gap G-b); may be aspirational. Capture-or-retire decision.
+- **F19 (CLOSED 06-28)** — Royal confirmed **no separate Claude "Financial Advisor"** exists distinct from the Financial Strategist GPT. Consolidation candidate C-1 = resolved (no duplicate).
+- **F23 (NEW 06-28, governance-positive)** — ChatGPT footprint is **clean/professional** (B.1 PII scan clean). Advisory-brand awareness source identified = **"Reference chat history" ON** (not saved memory, not a Drive connector) → §12 hypothesis resolved. *Residual: re-confirm `training_allowed` still OFF (B.3).*
+- **F20 (residual RESOLVED 06-28)** — NYC CRE Broker canonical framing = **investor buy-side specialist** (Royal 06-28). The "occupier/tenant-rep" *description* is inaccurate → correct the description to match the buy-side instructions; both are NOT in-scope (buy-side wins).
+- **F16 (CLOSED 06-28)** — Financial Aid PROJ code = **`PROJ_FAM_FINAID`** (Royal: family-wide, two kids both benefit; broader than the SHSAT exam project, so NOT folded into PROJ_EDU_SHSAT).
 
 ---
 
@@ -171,16 +236,16 @@ I cannot reach the GPT-builder UI, so this is a **recommendation to apply + conf
 **Claude Projects:**
 1. **Knowledge-file lists** for #1 Audit Trainer, #2 NYC CRE Broker, #3 Financial Aid, #4 REI Technical Expert, #5 Transaction Advisory, #6 Real Estate Investment Advisor.
 2. **Instructions + knowledge + platform** for #7 Broker Director, #8 Real Estate Counsel, #9 Business Broker Assistant, #10 Research Analyst, #12 Industry Expert.
-3. Confirm there's **no separate Claude "Financial Advisor"** distinct from the Financial Strategist GPT.
+3. ✅ **RESOLVED 06-28** — no separate Claude "Financial Advisor"; F19 closed.
 
 **OpenAI GPTs:**
-4. Knowledge files + Gizmo ID for **Financial Strategist** (to complete the GPT-registry merge).
+4. Knowledge files + Gizmo ID for **Financial Strategist** (to complete the GPT-registry merge). *(still open)*
 
-**ChatGPT account (royaloconnor@gmail.com)** — §B.5: 5. memory · 6. connectors · 7. data controls · 8. Google connections.
+**ChatGPT account (royaloconnor@gmail.com)** — §B.5: 5. ✅ memory (06-28) · 6. ⏳ connectors (B.2 how-to) · 7. ✅ data controls (06-28; training-toggle re-confirm pending) · 8. ⏳ Google connections (B.2b how-to).
 
 **Decisions:**
-9. **PROJ code** for Financial Aid — `PROJ_FAM_FINAID` or fold into `PROJ_EDU_SHSAT`?
-10. NYC CRE Broker: reconcile the **occupier-rep description vs investor-buy-side instructions** (same project, two framings?).
+9. ✅ **RESOLVED 06-28** — Financial Aid = `PROJ_FAM_FINAID` (family-wide; not folded into SHSAT). F16 closed.
+10. ✅ **RESOLVED 06-28** — NYC CRE Broker = investor **buy-side** specialist; occupier-rep description is inaccurate → rewrite. F20 residual closed.
 
 ---
 *DOC_2026-06-21_AI_PROJECTS_GATE5-AUDIT_V1.md | OCS Gate 5 | V1 map (06-22) | companions: CLAUDE-PROJECT-INSTRUCTIONS_V1 + GPT-INSTRUCTIONS_V1 | does not edit canonical state | 2026-06-22*
