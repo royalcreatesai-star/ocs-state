@@ -126,6 +126,7 @@ Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Rem
 - [ ] **Replicate this work into the OpenAI environment where appropriate** (cross-platform parity)
 - [ ] Engineer readiness gate (Responses API/Agents SDK familiarity) (F10 partner)
 - [ ] Confirm E&O coverage (F11)
+- [ ] **Harness security gate (pre-client-data) — F11 partner:** before the first engagement that routes *client* data through the Claude Code harness, stand up a real OS boundary (sandbox-exec profile or container with explicit mounts). The path-guard is a **tripwire, not a sandbox** — string-matching can't close dynamic/relative/interpreter Bash classes. Ref: `…/ME/Ai/wallyb/SECURITY-POSTURE-MEMO_2026-06-28_path-guard.md`; §11 (06-28 security pass).
 - [ ] Test run on Royal's own (CLEAN) account — sample deliverable, validate ≤2-hr target
 
 **Command Center Phase 2 (NEW 06-28):**
