@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+"""
+PreToolUse hook — restricts Bash access to /ME/Ai and system paths.
+Blocks any command that references a /Users/iglobalian/ path outside the
+allowed directories.
+
+Tilde (~/) and $HOME/${HOME} paths are normalized to the literal home dir
+before checking, so they can no longer slip past the literal-path matcher.
+
+KNOWN LIMITATION (documented, not airtight): a path built through shell-
+variable indirection (e.g. `D=~/x; cp "$D"`) cannot be resolved statically
+and is NOT caught. This hook is a guardrail against accidental / literal
+out-of-scope access, not a sandbox; sensitive operations still rely on the
+allowlist + human review.
+"""
+import sys
+import json
+import re
+
+HOME = "/Users/iglobalian"
+
+ALLOWED_USER_PATHS = [
+    "/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai",
+    "/Users/iglobalian/.claude",
+    "/Users/iglobalian/Library/Application Support/Claude",
+    "/Users/iglobalian/Library/Application Support/claude",
+    "/Users/iglobalian/Documents/ME/Ai/ocs-state",  # OCS state repo (git; iCloud blocks .git)
+    "/Users/iglobalian/Library/CloudStorage/GoogleDrive-royalcreates.ai@gmail.com",  # Google Drive mirror mount — direct repo->Drive sync (enabled 2026-06-28)
+]
+
+def _normalize(p: str) -> str:
+    # Collapse ~ and $HOME/${HOME} prefixes to the literal home dir.
+    if p.startswith("~/"):
+        return HOME + p[1:]
+    if p.startswith("${HOME}"):
+        return HOME + p[len("${HOME}"):]
+    if p.startswith("$HOME"):
+        return HOME + p[len("$HOME"):]
+    return p
+
+def extract_paths(cmd: str):
+    paths = []
+    # Literal /Users/iglobalian paths (quoted handles spaces like "Mobile Documents")
+    paths += re.findall(r'"(/Users/iglobalian/[^"]+)"', cmd)
+    paths += re.findall(r"'(/Users/iglobalian/[^']+)'", cmd)
+    paths += re.findall(r'(?<!["\'])(/Users/iglobalian/[^\s\'";&|>)\\]+)', cmd)
+    # Unquoted ~/ paths (quoted tilde does NOT expand in bash, so we skip those)
+    paths += re.findall(r'(?<!["\'])(~/[^\s\'";&|>)\\]+)', cmd)
+    # $HOME / ${HOME} paths — both unquoted and double-quoted expand in bash
+    paths += re.findall(r'"((?:\$HOME|\$\{HOME\})/[^"]+)"', cmd)
+    paths += re.findall(r'(?<!["\'])((?:\$HOME|\$\{HOME\})/[^\s\'";&|>)\\]+)', cmd)
+    return [_normalize(p) for p in paths]
+
+def main():
+    try:
+        data = json.load(sys.stdin)
+    except Exception:
+        sys.exit(0)
+
+    cmd = data.get("tool_input", {}).get("command", "")
+    blocked = []
+    for path in extract_paths(cmd):
+        path = path.rstrip(")'\"\\ ")
+        if not any(path.startswith(a) for a in ALLOWED_USER_PATHS):
+            blocked.append(path)
+
+    if blocked:
+        out = {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": (
+                    f"Blocked: path outside /ME/Ai — {', '.join(blocked[:3])}"
+                ),
+            }
+        }
+        print(json.dumps(out))
+
+if __name__ == "__main__":
+    main()
