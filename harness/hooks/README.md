@@ -6,7 +6,7 @@
 
 A PreToolUse hook that denies Bash commands referencing a *literal* `/Users/iglobalian/` path outside an allowlist (the /ME/Ai iCloud tree, `~/.claude`, the Claude app-support dirs, this `ocs-state` repo, and the Google Drive mirror mount).
 
-**It is a tripwire, not a security boundary.** It matches the command *string*, so it cannot see paths built dynamically, relative paths after `cd`, symlinks reached via a relative path, command-substitution/base64, paths inside a script file, or interpreter invocations (`python3 -c`). For a real boundary, sandbox the process (sandbox-exec profile / container with explicit mounts). Full analysis: `…/ME/Ai/wallyb/SECURITY-POSTURE-MEMO_2026-06-28_path-guard.md`.
+**It is a tripwire, not a security boundary.** It matches the command *string*, so it cannot see paths built dynamically, relative paths after `cd`, symlinks reached via a relative path, command-substitution/base64, paths inside a script file, or interpreter invocations (`python3 -c`). For a real boundary, sandbox the process (sandbox-exec profile / container with explicit mounts). Full analysis: `./SECURITY-POSTURE-MEMO_2026-06-28_path-guard.md` (archived alongside this README; working copy also in `…/ME/Ai/wallyb/`).
 
 ## Lineage
 
