@@ -15,7 +15,10 @@
 7. **SOC `.docx` native formats preserved (07-06, Royal-approved):** `SOC 1 Memo.docx` + `SubService Organization Memo.docx` copied to `/04_Domain/` beside their Google-Doc versions — verified byte-identical.
 8. **`_LEGACY_ARCHIVE_2026-07-06/` DELETED (07-06, Royal-approved):** all 192 contents were byte-identical to Drive canonical (verified before the prune), so nothing unique was lost — the pruned content lives on in Drive. Prune is now permanent; recovery, if ever needed, is from Drive canonical.
 
-Remaining (Royal's call): `Ai Implementation.m4a` — **HELD, not deleted** (Royal will copy it to Google Drive himself; a mounted-Drive search 07-06 did not find it, so the iCloud copy is kept until its backup is confirmed); overwrite the stale iCloud WORKPAPER from Drive (Drive copy authoritative — 56 KB/14:11 vs iCloud 24 KB/13:31); triage the other loose files (`IMG_8182.jpeg`, `text.txt`, `unknown.png`).
+9. **WORKPAPER overwritten (07-06, Royal-approved):** the authoritative Drive build (56 KB) copied over the stale iCloud copy (24 KB) — iCloud now byte-identical to the verified 9-tab build.
+10. **`Ai Implementation.m4a` backed up + iCloud copy deleted (07-06, Royal-approved):** copied to Drive `/03_Data/Ai Implementation.m4a` (verified byte-identical, 3.5 MB) FIRST, then the iCloud copy removed. Kept for transcription.
+
+Remaining (Royal's call, minor): triage 3 loose iCloud files with no clear identity — `IMG_8182.jpeg`, `text.txt`, `unknown.png`. Everything else in the dual-location cleanup is resolved.
 **Method:** Read-only cross-reference of the legacy iCloud tree against the canonical Drive tree, by filename + byte-size. Scan script: `scratchpad/thread5_scan.py` (this session).
 
 - **Legacy tree:** `/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai/`
