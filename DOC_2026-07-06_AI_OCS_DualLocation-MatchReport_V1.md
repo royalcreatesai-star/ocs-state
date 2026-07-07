@@ -12,7 +12,10 @@
 5. **3 OCS artifacts backed up (07-06):** `CoworkStarterPrompt_V1.md` → `/04_Domain/DOC_AI_PROTOCOLS/`; `InitiativeMap_V1.html` + `DailyDigest V1.tsx` → `/05_Projects/blueprint/` — all verified byte-identical; iCloud originals untouched.
 6. **`.DS_Store` shells cleared (07-06):** 4 nested empty dirs under `DOC_AI_SUPERPOWERS_SOURCE/` removed; `AGENTS.md` preserved (content backed up in Drive as the identical `superpowers/CLAUDE.md`).
 
-Remaining (report-only, Royal's call): preserve SOC `.docx` + `OConnorServiceMenu.html` native formats (content already in Drive as Google Docs); triage the loose iCloud-only files (`Ai Implementation.m4a`, `IMG_8182.jpeg`, `text.txt`, `unknown.png`); overwrite the stale iCloud WORKPAPER from Drive; delete `_LEGACY_ARCHIVE_2026-07-06/` once satisfied (final hard-delete = Royal's call). **Recovery: to undo any prune, move files back from `_LEGACY_ARCHIVE_2026-07-06/`.**
+7. **SOC `.docx` native formats preserved (07-06, Royal-approved):** `SOC 1 Memo.docx` + `SubService Organization Memo.docx` copied to `/04_Domain/` beside their Google-Doc versions — verified byte-identical.
+8. **`_LEGACY_ARCHIVE_2026-07-06/` DELETED (07-06, Royal-approved):** all 192 contents were byte-identical to Drive canonical (verified before the prune), so nothing unique was lost — the pruned content lives on in Drive. Prune is now permanent; recovery, if ever needed, is from Drive canonical.
+
+Remaining (Royal's call): `Ai Implementation.m4a` — **HELD, not deleted** (Royal will copy it to Google Drive himself; a mounted-Drive search 07-06 did not find it, so the iCloud copy is kept until its backup is confirmed); overwrite the stale iCloud WORKPAPER from Drive (Drive copy authoritative — 56 KB/14:11 vs iCloud 24 KB/13:31); triage the other loose files (`IMG_8182.jpeg`, `text.txt`, `unknown.png`).
 **Method:** Read-only cross-reference of the legacy iCloud tree against the canonical Drive tree, by filename + byte-size. Scan script: `scratchpad/thread5_scan.py` (this session).
 
 - **Legacy tree:** `/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai/`
