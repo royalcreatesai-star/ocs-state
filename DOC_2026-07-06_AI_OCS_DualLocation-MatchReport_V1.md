@@ -83,7 +83,17 @@ So the 226 exact-duplicates split into two dispositions (§3.A).
 | `unknown.png` (23401b) | Unidentified image — peek before deleting. |
 | `Ai Implementation.m4a` (3.5 MB) | Audio recording — **NOT auto-junk**; confirm it's not a voice note worth keeping/migrating. |
 
-### D. iCloud-only — no Drive match (35) — MIGRATE, don't delete
+### D. iCloud-only — CORRECTED 2026-07-06 by content-hash re-check
+
+> ⚠️ **CORRECTION.** The original Category D below was matched by exact filename only, which **over-counted the gap** — it missed files renamed on upload and Office→Google-Doc conversions. A content-hash + basename re-check (`scratchpad/thread5_hashcheck.py`) resolves the 35+ name-misses to:
+> - **7 already in Drive, identical content under a different name** — incl. the **Steuben `.numbers`** (byte-identical to `/03_Data/TAX FILES/.../DOC_2026-06-14_PROJECTS_Steuben_2025_FINAL.numbers`) and the whole `DOC_AI_NAMING_BUNDLE/` (renamed to the `DOC_2026-06-14_*` convention in `/04_Domain/DOC_AI_SYSTEM_Tools/`). **No gap — no action.**
+> - **3 present in Drive as Google Docs** (basename match): `SOC 1 Memo.docx`, `SubService Organization Memo.docx`, `OConnorServiceMenu_V1.html`. Content backed up; only the **native `.docx`/`.html` format** is iCloud-only (preserve only if the Word/HTML format itself matters).
+> - **29 TRUE backup gap** — genuinely absent from Drive:
+>   - **SUBSTANTIVE:** the **20 Schwab investing-theme PDFs** (`PROJ_AI_AUTOTRADING/`, Engine 5, ~9 MB) + 3 OCS artifacts (`DailyDigest.tsx`, `CoworkStarterPrompt_V1.md`, `InitiativeMap_V1.html`).
+>   - **LOW/JUNK:** `Steuben_2025_Final.xlsx` (regenerable export of the backed-up `.numbers`), `Ai Implementation.m4a`, `IMG_8182.jpeg`, `text.txt`, `unknown.png`, `lu41p4cs0.tmp`, `.~lock.Steuben...#`.
+> **Net: the only substantive backup gap is the 20 Schwab PDFs + 3 OCS artifacts.** Steuben and the SOC memos are already backed up. This same content-hash caveat also applies to Category A — filename+size match is strong but a `shasum` pass is the definitive check.
+
+_Original (filename-only) Category D, retained for trail:_
 
 These exist ONLY in iCloud (backup gap). Grouped:
 
