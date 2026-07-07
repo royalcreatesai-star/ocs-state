@@ -9,7 +9,10 @@
 3. **Reference/source dupes pruned:** the **190** non-`PROJ_*` exact-duplicates — **each content-hash verified byte-identical to a Drive twin (0 surprises)** — **moved** to `/ME/Ai/_LEGACY_ARCHIVE_2026-07-06/` (preserving structure) + 55 emptied dirs removed. Reversible: nothing deleted; the content also lives in Drive canonical. The 54 `PROJ_*` duplicates were KEPT (iCloud is their canonical home).
 4. **WORKPAPER.xlsx reconciled:** both 9-sheet; Drive copy (56 KB, saved 14:11) is newer + fuller than iCloud (24 KB, 13:31) → **Drive is authoritative**; the iCloud copy is a stale earlier save (a `PROJ_*` deliverable — left for Royal to overwrite-from-Drive or prune).
 
-Remaining (report-only, Royal's call): preserve SOC `.docx` + `OConnorServiceMenu.html` native formats; back up 3 OCS artifacts (`DailyDigest.tsx`, `CoworkStarterPrompt`, `InitiativeMap`); triage the loose iCloud-only files (`Ai Implementation.m4a`, `IMG_8182.jpeg`, `text.txt`, `unknown.png`); empty the `.DS_Store`-only folders left after the prune. **Recovery: to undo any prune, move files back from `_LEGACY_ARCHIVE_2026-07-06/`.**
+5. **3 OCS artifacts backed up (07-06):** `CoworkStarterPrompt_V1.md` → `/04_Domain/DOC_AI_PROTOCOLS/`; `InitiativeMap_V1.html` + `DailyDigest V1.tsx` → `/05_Projects/blueprint/` — all verified byte-identical; iCloud originals untouched.
+6. **`.DS_Store` shells cleared (07-06):** 4 nested empty dirs under `DOC_AI_SUPERPOWERS_SOURCE/` removed; `AGENTS.md` preserved (content backed up in Drive as the identical `superpowers/CLAUDE.md`).
+
+Remaining (report-only, Royal's call): preserve SOC `.docx` + `OConnorServiceMenu.html` native formats (content already in Drive as Google Docs); triage the loose iCloud-only files (`Ai Implementation.m4a`, `IMG_8182.jpeg`, `text.txt`, `unknown.png`); overwrite the stale iCloud WORKPAPER from Drive; delete `_LEGACY_ARCHIVE_2026-07-06/` once satisfied (final hard-delete = Royal's call). **Recovery: to undo any prune, move files back from `_LEGACY_ARCHIVE_2026-07-06/`.**
 **Method:** Read-only cross-reference of the legacy iCloud tree against the canonical Drive tree, by filename + byte-size. Scan script: `scratchpad/thread5_scan.py` (this session).
 
 - **Legacy tree:** `/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai/`
