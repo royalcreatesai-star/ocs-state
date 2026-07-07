@@ -1,2 +1,8 @@
 .DS_Store
 **/.DS_Store
+
+# Thread 3 — Drive OAuth secrets (never commit)
+credentials.json
+token.json
+**/credentials.json
+**/token.json
