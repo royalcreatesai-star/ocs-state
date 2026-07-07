@@ -1,7 +1,7 @@
 # DOC_2026-07-06_AI_OCS — Dual-Location Match Report (Thread 5)
 
 **Filed:** 2026-07-06 | **Session:** Thread 5 — Dual-Location Cleanup (Code harness) | **Route:** /ROC-OS/00_Registry/
-**Deliverable for:** PQ-003 (legacy `/ME/Ai/` tree scan). **Status: REPORT ONLY — no files moved, deleted, or trashed.** Per PQ-003: "return match report. No action until review."
+**Deliverable for:** PQ-003 (legacy `/ME/Ai/` tree scan). **Status: report + one approved backup action.** The scan/cross-reference was report-only per PQ-003. **ACTION TAKEN 2026-07-06 (Royal-approved):** the 19 Schwab investing-theme files (the one substantive backup gap, see §D correction) were **copied** from iCloud `PROJ_AI_AUTOTRADING/` to Drive `/05_Projects/PROJ_AI_AUTOTRADING/` — all 19 verified byte-identical (`cmp`); iCloud originals untouched; nothing deleted/trashed. All other categories remain report-only pending Royal's dispositions.
 **Method:** Read-only cross-reference of the legacy iCloud tree against the canonical Drive tree, by filename + byte-size. Scan script: `scratchpad/thread5_scan.py` (this session).
 
 - **Legacy tree:** `/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai/`
