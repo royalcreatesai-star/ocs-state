@@ -1,7 +1,15 @@
 # DOC_2026-07-06_AI_OCS — Dual-Location Match Report (Thread 5)
 
 **Filed:** 2026-07-06 | **Session:** Thread 5 — Dual-Location Cleanup (Code harness) | **Route:** /ROC-OS/00_Registry/
-**Deliverable for:** PQ-003 (legacy `/ME/Ai/` tree scan). **Status: report + one approved backup action.** The scan/cross-reference was report-only per PQ-003. **ACTION TAKEN 2026-07-06 (Royal-approved):** the 19 Schwab investing-theme files (the one substantive backup gap, see §D correction) were **copied** from iCloud `PROJ_AI_AUTOTRADING/` to Drive `/05_Projects/PROJ_AI_AUTOTRADING/` — all 19 verified byte-identical (`cmp`); iCloud originals untouched; nothing deleted/trashed. All other categories remain report-only pending Royal's dispositions.
+**Deliverable for:** PQ-003 (legacy `/ME/Ai/` tree scan). **Status: report + Royal-approved cleanup executed 2026-07-06.**
+
+**ACTIONS TAKEN 2026-07-06 (all Royal-approved; fully reversible / non-destructive):**
+1. **Backup:** the 19 Schwab investing-theme files (§D substantive gap) **copied** to Drive `/05_Projects/PROJ_AI_AUTOTRADING/` — all verified byte-identical; iCloud originals untouched.
+2. **Junk quarantined:** stale `lu41p4cs0.tmp` + `.~lock.Steuben...#` **moved** to `/ME/Ai/_LEGACY_ARCHIVE_2026-07-06/` (LibreOffice confirmed not running). Not hard-deleted.
+3. **Reference/source dupes pruned:** the **190** non-`PROJ_*` exact-duplicates — **each content-hash verified byte-identical to a Drive twin (0 surprises)** — **moved** to `/ME/Ai/_LEGACY_ARCHIVE_2026-07-06/` (preserving structure) + 55 emptied dirs removed. Reversible: nothing deleted; the content also lives in Drive canonical. The 54 `PROJ_*` duplicates were KEPT (iCloud is their canonical home).
+4. **WORKPAPER.xlsx reconciled:** both 9-sheet; Drive copy (56 KB, saved 14:11) is newer + fuller than iCloud (24 KB, 13:31) → **Drive is authoritative**; the iCloud copy is a stale earlier save (a `PROJ_*` deliverable — left for Royal to overwrite-from-Drive or prune).
+
+Remaining (report-only, Royal's call): preserve SOC `.docx` + `OConnorServiceMenu.html` native formats; back up 3 OCS artifacts (`DailyDigest.tsx`, `CoworkStarterPrompt`, `InitiativeMap`); triage the loose iCloud-only files (`Ai Implementation.m4a`, `IMG_8182.jpeg`, `text.txt`, `unknown.png`); empty the `.DS_Store`-only folders left after the prune. **Recovery: to undo any prune, move files back from `_LEGACY_ARCHIVE_2026-07-06/`.**
 **Method:** Read-only cross-reference of the legacy iCloud tree against the canonical Drive tree, by filename + byte-size. Scan script: `scratchpad/thread5_scan.py` (this session).
 
 - **Legacy tree:** `/Users/iglobalian/Library/Mobile Documents/com~apple~CloudDocs/ME/Ai/`
