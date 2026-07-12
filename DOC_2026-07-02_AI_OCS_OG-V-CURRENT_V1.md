@@ -1,9 +1,9 @@
 # The Royal O'Connor Operating System — V-Current (Canonical)
 
-**Status:** OG **V1.1** (published 2026-07-03) | Base: OG V1.0, frozen 2026-05-31 (see `DOC_2026-07-02_AI_OCS_OG-V1.0-FREEZE-RECORD_V1.md`)
-**Location:** /ROC-OS/00_Registry/ — this is the canonical, editable OG going forward
-**Change control:** Amendments only via the SPEC_DELTA protocol at `/wrap` — `[SD-NNN] description | disposition (ratify/revert/review) | session`. Ratified deltas batch at gate closures or quarterly review, never per-session (SD-018).
-**Next publish target:** OG V1.2, at the next gate closure or quarterly review.
+**Status:** OG **V1.2** (published 2026-07-11) | Base: OG V1.1 (2026-07-03) → V1.0, frozen 2026-05-31 (see `DOC_2026-07-02_AI_OCS_OG-V1.0-FREEZE-RECORD_V1.md`)
+**Location:** git repo `ocs-state` — **source of truth (SD-039)**; Drive `/ROC-OS/00_Registry/` is the mirror. Git history is the OG's version lineage (V1.1 → V1.2 → …).
+**Change control:** Amendments only via the SPEC_DELTA protocol at `/wrap` — `[SD-NNN] description | disposition (ratify/revert/review) | session`. Ratified deltas batch at gate closures or quarterly review, never per-session (SD-018). Disposition is two-state (SD-038): *proposed-at-capture* (author's intent when logged) vs *current-batch-disposition* (authoritative, assigned at the batch).
+**Next publish target:** OG V1.3, at the next gate closure or quarterly review.
 
 ---
 
@@ -36,7 +36,7 @@ Two views, both canonical. V1.0's Four Layers describe **where things live**; th
 
 **Layer 2 — Identity + Principles (`~/.claude/CLAUDE.md`).** Who you are, how you work, filters — loaded into every Claude Code session. Global scope. Subject to the 600-token authoring constraint (SD-014).
 
-**Layer 3 — Execution System (`~/blueprint/` living files).** Where ideas land, get triaged, decided, tracked. Files: `ideas.md`, `decisions.md`, `processes.md`, `projects.md`, `northstar.md`.
+**Layer 3 — Execution System (`~/blueprint/` living files).** Files: `ideas.md`, `decisions.md`, `processes.md`, `projects.md`, `northstar.md`. *Retained-but-demoted (SD-036): `ideas.md` / `projects.md` are Code-surface working context loaded per session, NOT canonical destinations — canonical capture = Gmail `ROC-OS Intake` label (SD-025), canonical build state = Notion Initiative Registry (SD-026). `northstar.md` + `decisions.md` remain canonical.*
 
 **Layer 4 — Operational Layer (Notion).** Where humans read and act. Notion Command Center + Session Log + project pages. Not client-facing.
 
@@ -59,6 +59,7 @@ Canonical Drive taxonomy, mirrored in the git state repo:
 
 ```
 /ROC-OS/
+  00_Inbox/          — intake staging (Drive-side; parallel to the ROC-OS Intake Gmail label per SD-025) — SD-037
   00_Registry/       — canonical state, OG, PRUNE_QUEUE, freeze records
   01_Intelligence/   — GPT docs, intelligence assets
   02_Automation/     — n8n workflow exports
@@ -86,38 +87,27 @@ Canonical Drive taxonomy, mirrored in the git state repo:
 
 ---
 
-## The Idea Flow
+## The Idea Flow *(V3 — rewritten per SD-025–029; replaces the V1.1 flow and PROCESS: Idea Triage)*
 
-Every idea — regardless of source — moves through the same sequence:
+Every item — regardless of source — moves through the same seven-step sequence:
 
 ```
-CAPTURE
- Source: voice note / written / chat / old laptop / random thought
- Action: Land in ideas.md with date and source tag
- ↓
-TRIAGE (Northstar Lens — 3 questions)
- 1. Which engine does this serve? (1–5, or none)
- 2. What's the unlock? (revenue / friction removed / capability built)
- 3. Flush or build?
- ↓
- ├── FLUSH   → noted, archived, done — no further energy
- ├── ITERATE → explore before deciding — no build commitment yet
- └── BUILD   → moves to projects.md
-                  ↓
-              SCOPE GATE
-              "Does this need to be a product?"
-              "To what degree?"
-                  ↓
-        ┌─────────────────────────┐
-        │ Full product            │
-        │ Lightweight tool        │
-        │ Internal process        │
-        │ One-time task           │
-        └─────────────────────────┘
+CAPTURE SWEEP  → read Gmail "ROC-OS Intake" AND NOT "ROC-OS Intake/Processed"; inventory only
+RESOLVE        → get each item to discussable text (fetch / transcribe-flag / paste-flag)
+CLASSIFY       → TYPE (Reference→bucket+score, bypasses Flush/Iterate/Build | Idea→Northstar Lens)
+                 BUCKET (topic, not engine) · RELEVANCE (anchor = 6 active initiatives)
+TRIAGE         → Northstar Lens (engine? / unlock? / Flush-Iterate-Build?) — idea-candidates only
+ROUTE          → FLUSH (log, done) | ITERATE (hold, note the one open question) | BUILD (→ Scope Gate)
+SCOPE GATE     → Full product / Lightweight tool / Internal process / One-time task
+LAND           → BUILD→Notion Initiative Registry · REFERENCE→Notion Reference Library DB
+                 (authoritative→NotebookLM) · ALL→add "ROC-OS Intake/Processed" (keep Intake for provenance)
 ```
 
-**Key principle:** Nothing moves to BUILD without passing through ITERATE first.
-Flushing is not failure — it is discipline.
+**Key principle:** Nothing reaches BUILD without passing ITERATE first. Flushing is discipline, not failure.
+**Guardrail:** LAND is the flow's only side-effect gate — nothing writes before it; NotebookLM adds are a manual human-curation gate (no consumer API).
+**Flow-step tagging (SD-029):** each step carries `[provenance · action-class]`; the action-class pre-marks automation gates before any trigger is wired.
+
+**Surfaces (target-state where noted):** CAPTURE = Gmail `ROC-OS Intake` label; mark-done = `ROC-OS Intake/Processed` (`Label_4981583307976649244`), Intake = `Label_448698645156134993` (SD-025). BUILD → Notion Initiative Registry (SD-026). REFERENCE → Notion Reference Library DB — *target-state, not yet built* (SD-027). Authoritative sources → NotebookLM — *target-state* (SD-028). Ingestion rule (SD-023): third-party/marketing content is parsed for substance, hype discarded; video requires a local file for `transcribe.sh`.
 
 ---
 
@@ -143,16 +133,14 @@ New processes get added as discovered. The library compounds over time.
 - `/wrap close` — terminal exit; finalizes row; writes Next Starter to Drive `/04_Domain/{project}/PROMPTS.md`
 **Steps:**
 1. Log any decisions made → `decisions.md`
-2. Capture any new ideas → `ideas.md`
-3. Update project status → `projects.md`
+2. Capture any new ideas → `ideas.md` *(working-context write; canonical capture = Gmail `ROC-OS Intake` label per SD-025)*
+3. Update project status → `projects.md` *(working-context write; canonical build state = Notion Initiative Registry per SD-026)*
 4. Log any SPEC_DELTAs into Amendment Log candidate list (batching per SD-018)
 5. Log any PRUNE_QUEUE entries (see PRUNE_QUEUE process)
 6. Answer the closing question: *"What do I know now that I didn't before — and how does it change what I build next?"*
 
-### PROCESS: Idea Triage
-**When:** Any new idea surfaces — structured or unstructured
-**Trigger:** `ideas.md` has uncategorized entries
-**Output:** Each idea marked: FLUSH / ITERATE / BUILD + engine tag
+### PROCESS: Idea Triage *(folded into The Idea Flow V3, per SD-025–029)*
+**Superseded:** the standalone triage step is now the CLASSIFY → TRIAGE → ROUTE stages of the Idea Flow V3 (see above). Retained as a named pointer; no separate procedure.
 
 ### PROCESS: Northstar Check
 **When:** Any time a decision feels hard or priorities conflict
@@ -213,15 +201,20 @@ New processes get added as discovered. The library compounds over time.
 **Default rule:** When in doubt, start in Claude Code.
 Ideas are not scarce. Execution context is.
 
-### Three Surfaces *(additive per SD-019 — operational reality on top of V1.0)*
+### Four-Lane AI Segregation of Duties *(SD-033 — amends SD-019; three surfaces → four lanes, write-authority made explicit)*
 
-| Surface | Role |
-|---|---|
-| **Chat** (Claude.ai) | Digest cockpit — session open, quick reasoning, /wrap authoring, conversational triage |
-| **Cowork** | Multi-step build surface — file work, artifact creation, connector-heavy sessions |
-| **Code** (Claude Code) | Execution — direct file writes to the repo, harness runs, commit-level work |
+The operating reality is a **four-lane authority model** — the **ChatGPT Checker** lane exists in operation but appeared nowhere in V1.1 canon. Write-authority is now explicit per lane.
 
-The three-surface view names how work actually flows today; the V1.0 routing above remains the routing table of record.
+| Lane | Surface / model | Role | In-place Drive master edit | Repo commit | New-file create/copy | External-system writes |
+|---|---|---|---|---|---|---|
+| **Maker** | Claude **Code** | Sole writer; harness runs, execution | ✅ yes (sole) | ✅ yes (sole) | ✅ | scoped, path-guarded |
+| **Orchestrator** | Claude **Chat** | Session open, reasoning, /wrap authoring, drafts, digests | ❌ read-only | ❌ | ❌ (drafts to outputs, routes to Code) | Notion Session Log writes only (SD-012) |
+| **Checker** | **ChatGPT** | Specialist / second-opinion review | ❌ read-only | ❌ | ❌ | none (no write path) |
+| **Background** | **CoWork** | Multi-step background tasks; mirror fallback | ❌ no in-place master edits | ❌ | ✅ create/copy only | fallback Drive mirror when mount unavailable |
+
+**Cross-cites:** **SD-019** (superseded-and-extended — three surfaces → four lanes, ChatGPT named; V1.0 Session Routing remains the routing table of record) · **Decision #8 / State §5b** (the *human* SoD — Royal owns Domain + controls, engineer owns Automation + Data — a distinct axis; the two segregation models cross-reference, they do not collapse) · **SD-030** (the Notion-lane visibility-only discipline is a corollary of this model).
+
+**`[PENDING Fable 5 Approach 2 — seed committed; do NOT fabricate]`** the full §F positive/negative rights-matrix reconciliation, the **five failure modes + escalation paths**, and the SD-019 amendment mechanics are the Approach-2 deliverable and fold in as a follow-up (stays within V1.2). This SD-033 (the four lanes + cross-cites above) is the ratification-candidate seed and ratifies the already-operating model.
 
 ---
 
@@ -229,15 +222,15 @@ The three-surface view names how work actually flows today; the V1.0 routing abo
 
 **Character axis (Constitutional, from V1.0):** Active / Passive / Scalable / Capital Growth — intrinsic to the engine, does not change.
 
-**Status axis (Living, operational):** Not Started / In-Progress / Active / Closed — reflects operational state; maintained in State V7.5 and updated as engines transition.
+**Status axis (Living, operational):** Not Started / In-Progress / Active / Closed — reflects operational state; synced to State V7.8 (2026-07-06) and updated as engines transition (SD-035).
 
-| Engine | Character | Status *(proposed 2026-07-03; Royal to confirm/adjust in State V7.5)* | Role in decisions |
+| Engine | Character | Status *(synced to State V7.8, 2026-07-11 per SD-035)* | Role in decisions |
 |---|---|---|---|
 | 1 — W2 Income | Active | Active | Funds everything. Protect the runway. |
-| 2 — O'Connor Advisory | Active | In-Progress | First priority for new work and tools; transitions to Active on first paid engagement |
+| 2 — O'Connor Advisory | Active | Active | First priority for new work and tools. *Status = Active = operationally delivering-capable; a separate first-revenue-closed milestone flag (still open, gated on F11 E&O) tracks the revenue event.* |
 | 3 — Real Estate | Passive | Active | Data-driven decisions only. Run numbers first. |
-| 4 — AI-Native Product | Scalable | In-Progress | Only after consulting proves itself |
-| 5 — Trading & Investing | Capital Growth | In-Progress | Capital from Engines 2+3 only |
+| 4 — AI-Native Product | Scalable | Active | Only after consulting proves itself |
+| 5 — Trading & Investing | Capital Growth | Active | Capital from Engines 2+3 only |
 
 **Architecture rules (non-negotiable, Constitutional):**
 - Consulting proves itself before product gets priority
@@ -271,7 +264,7 @@ Universal governance scorecard for OCS growth. Levels A–E:
 
 **Living record.** The Model carries a Growth Ledger — dated advances that materially advanced OCS maturity. Update the Ledger every meaningful session that adds governance, foundation, or agentic capability. This is the honest counter-signal to the "mirage of stagnation" that governance work can create.
 
-Canonical location: Audit Group Framework build (June 24 HTML deliverable). Applies universally (audit group, OCS/personal, firm-scale).
+Canonical location: OCS-local Maturity Model artifact in `/ROC-OS/00_Registry/` (SD-015′). The Audit Group Framework HTML (June 24 deliverable) is a *derived instance*, not canon — this removes OCS governance canon from an employer-adjacent artifact. Scoring uses a single A–E scale with a stated **A–E ↔ numeric** mapping (resolves the "2.5 of 4" vs "3.2/5" vs A–E fragmentation); State §1 is fixed in the same V7.9 pass. Applies universally (audit group, OCS/personal, firm-scale).
 
 ---
 
@@ -290,7 +283,7 @@ The OG has two tiers with different bars for change:
 - Filing root taxonomy
 - Naming conventions (file + session)
 - Process Library
-- Session Routing (V1.0 table + three-surface addition)
+- Session Routing (V1.0 table + four-lane AI SoD, SD-033)
 - Five Engines — Status axis
 - Edge Discipline mechanics
 - Authoring constraints (600-token rule)
@@ -306,6 +299,8 @@ Ratified deltas batch at **gate closures or quarterly review**, never per-sessio
 ## Authoring Constraints
 
 **600-token rule (SD-014):** `CLAUDE.md` and skill files stay under 600 tokens each. Applies at Layer 2. Rationale: quadratic token tax on context load; loose files silently degrade every session.
+
+**OCS vocabulary reference-tags (SD-031):** §-references, gate IDs, and PQ IDs carry their canonical reference tag so opaque references stay legible across surfaces. Companion to SD-014.
 
 ---
 
@@ -362,5 +357,24 @@ Ratified deltas batch at **gate closures or quarterly review**, never per-sessio
 | SD-020 | 2026-07-03 | Process Library method renamed: Explore → Plan → Approve → Code → Commit (5 phases). "Approve" = decision-commit (V1.0's plan-approval gate); "Commit" = git commit. | Resolves terminology overload in V1.0 phrasing without changing intent | 2026-07-03 Cowork |
 | SD-021 | 2026-07-03 | Clarifying note: OG V1.0 Northstar Filter phrasing remains canonical. Downstream paraphrases are working-memory shorthand, not redefinitions. | Prevents paraphrase-drift on Constitutional core without substantively amending it | 2026-07-03 Cowork |
 | SD-022 | 2026-07-03 | Five Engines table split into two axes. Character (intrinsic; Constitutional): Active / Passive / Scalable / Capital Growth. Status (operational; Living): Not Started / In-Progress / Active / Closed. | Restores V1.0's phasing signal that had been flattened, without editing the Constitutional Five Engines | 2026-07-03 Cowork |
+| SD-023 | 2026-07-11 (batch) | Ingestion standing rule: parse third-party content for substance; video → local file for `transcribe.sh` | Fold running-system intake rule into canon | V1.2 batch |
+| SD-024 | 2026-07-11 (batch) | Automation-cost principle (scheduling for unattended jobs only) ratified | Cost discipline on automation; cadence on-demand until volume warrants | V1.2 batch |
+| SD-025 | 2026-07-11 (batch) | Idea Flow CAPTURE surface = Gmail label `ROC-OS Intake`; mark-done `ROC-OS Intake/Processed` (`Label_4981583307976649244`) | Replaces `ideas.md` capture with the live Gmail intake | V1.2 batch |
+| SD-026 | 2026-07-11 (batch) | Idea Flow BUILD routes to Notion Initiative Registry (not `projects.md`) | Registry is the live build destination; Layer-3 demoted (SD-036) | V1.2 batch |
+| SD-027 | 2026-07-11 (batch) | CLASSIFY layer; reference bypasses Flush/Iterate/Build → Reference Library DB (target-state) | Reference assets need a destination distinct from builds | V1.2 batch |
+| SD-028 | 2026-07-11 (batch) | NotebookLM authoritative-source tier; three-tier destination model (target-state) | Grounded per-initiative corpus for authoritative sources | V1.2 batch |
+| SD-029 | 2026-07-11 (batch) | Flow-step tagging `[provenance · action-class]` | Pre-marks automation gates before triggers are wired | V1.2 batch |
+| SD-030 | 2026-07-11 (batch) | Notion Plus posture: Drive-first / Notion-eyeball; no query-tool reach | Notion is visibility-only; Business-plan upgrade declined | V1.2 batch |
+| SD-031 | 2026-07-11 (batch) | OCS vocabulary reference-tag convention (§/gates/PQ IDs) → Authoring Constraints | Companion to SD-014; keeps opaque refs legible | V1.2 batch |
+| SD-032 | — | **REDIRECTED to State** (Thread 5 cleanup status — not an OG amendment) | Project-status records live in State §5d, not the OG | V1.2 batch (redirect logged) |
+| SD-033 | 2026-07-11 (batch) | Four-lane AI SoD (Maker/Orchestrator/Checker/Background); amends SD-019; cross-cites Decision #8 | Load-bearing write-authority model was operating without canon; ChatGPT lane absent from SD-019 | V1.2 batch |
+| SD-034 | 2026-07-11 (batch) | Agentic sequencing constraint: no G-gap hard-gated on Gate 7; G7 Aug-26-anchored via Migration Sprint | Constraint contradicted by executed G3/G8 | V1.2 batch |
+| SD-035 | 2026-07-11 (batch) | Five Engines Status axis synced to State V7.8 (E2/E4/E5 → Active); E2 two-axis note + first-revenue milestone flag | OG body table stale vs confirmed Status | V1.2 batch |
+| SD-036 | 2026-07-11 (batch) | Layer 3 retained-but-demoted (Code-surface context, not canonical); /wrap steps 1–3 updated | Consequence of SD-025/026 rerouting | V1.2 batch |
+| SD-037 | 2026-07-11 (batch) | Filing root adds `00_Inbox` (Drive-side intake, parallel to Gmail label) | Live folder was absent from SD-007 taxonomy | V1.2 batch |
+| SD-038 | 2026-07-11 (batch) | SPEC_DELTA disposition semantics: proposed-at-capture vs current-batch-disposition | Resolves Session-Log/pending-table disposition mismatch | V1.2 batch |
+| SD-015′ | 2026-07-11 (batch) | Maturity Model canonical location → `/00_Registry` (OCS-local); Audit HTML becomes derived | Removes OCS canon from employer-adjacent artifact | V1.2 batch |
+| SD-039 | 2026-07-11 (batch) | OG governance doc enters `ocs-state` git repo as SoT; Drive mount = mirror | Closes F15 cross-runtime boundary; "git = SoT" now holds for governance, not just State | V1.2 batch |
 
-*OG V1.0 → V1.1 published 2026-07-03 via Thread 0 Phase 4 (Reconcile) closure. Next amendment batch targets OG V1.2 at the next gate closure or quarterly review (per SD-018).*
+*OG V1.1 → V1.2 published 2026-07-11 (SD-018 quarterly-review batch, Q3; session `CLOSE_2026-07-11_AI_PROJECTS_OCS_CoherenceReview-Adjudication`). Applied to the git repo by the Maker (Code) lane per SD-039. Next amendment batch targets OG V1.3 at the next gate closure or quarterly review (per SD-018).*
+*Note (SD-033): the four-lane SoD is committed as the ratification-candidate seed; the full positive/negative rights matrix + five failure-mode escalation paths are `[PENDING Fable 5 Approach 2]` and fold in as a follow-up within V1.2.*
