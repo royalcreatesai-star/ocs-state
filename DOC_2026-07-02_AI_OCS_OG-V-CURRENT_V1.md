@@ -130,7 +130,7 @@ New processes get added as discovered. The library compounds over time.
 **When:** End of any meaningful work session
 **Variants:**
 - `/wrap checkpoint` — mid-session pause; appends timestamped entry to Notion ROC Session Log; keeps Status Open
-- `/wrap close` — terminal exit; finalizes row; writes Next Starter to Drive `/04_Domain/{project}/PROMPTS.md`
+- `/wrap close` — terminal exit; finalizes the Session Log row; **authors** the Next Starter prompt, which the **Maker (Code) lane lands** to Drive `/04_Domain/{project}/PROMPTS.md` *(Orchestrator holds no Drive-text write — SD-033 carve-out (b))*
 **Steps:**
 1. Log any decisions made → `decisions.md`
 2. Capture any new ideas → `ideas.md` *(working-context write; canonical capture = Gmail `ROC-OS Intake` label per SD-025)*
@@ -208,13 +208,20 @@ The operating reality is a **four-lane authority model** — the **ChatGPT Check
 | Lane | Surface / model | Role | In-place Drive master edit | Repo commit | New-file create/copy | External-system writes |
 |---|---|---|---|---|---|---|
 | **Maker** | Claude **Code** | Sole writer; harness runs, execution | ✅ yes (sole) | ✅ yes (sole) | ✅ | scoped, path-guarded |
-| **Orchestrator** | Claude **Chat** | Session open, reasoning, /wrap authoring, drafts, digests | ❌ read-only | ❌ | ❌ (drafts to outputs, routes to Code) | Notion Session Log writes only (SD-012) |
+| **Orchestrator** | Claude **Chat** | Session open, reasoning, /wrap authoring, drafts, digests | ❌ read-only | ❌ | ❌ (drafts to outputs, routes to Code) | Notion ops-visibility writes + own Session Log row (SD-030) |
 | **Checker** | **ChatGPT** | Specialist / second-opinion review | ❌ read-only | ❌ | ❌ | none (no write path) |
 | **Background** | **CoWork** | Multi-step background tasks; mirror fallback | ❌ no in-place master edits | ❌ | ✅ create/copy only | fallback Drive mirror when mount unavailable |
 
 **Cross-cites:** **SD-019** (superseded-and-extended — three surfaces → four lanes, ChatGPT named; V1.0 Session Routing remains the routing table of record) · **Decision #8 / State §5b** (the *human* SoD — Royal owns Domain + controls, engineer owns Automation + Data — a distinct axis; the two segregation models cross-reference, they do not collapse) · **SD-030** (the Notion-lane visibility-only discipline is a corollary of this model).
 
-**`[PENDING Fable 5 Approach 2 — seed committed; do NOT fabricate]`** the full §F positive/negative rights-matrix reconciliation, the **five failure modes + escalation paths**, and the SD-019 amendment mechanics are the Approach-2 deliverable and fold in as a follow-up (stays within V1.2). This SD-033 (the four lanes + cross-cites above) is the ratification-candidate seed and ratifies the already-operating model.
+**Detail completed (adjudicated 2026-07-12; carries in the V1.3 batch):** the Approach-2 deliverable is ratified and carried in the standalone SD-033 artifact at `/00_Registry/DOC_2026-07-13_AI_OCS_SD033-FourLane-SoD_V1.md` — full §B positive/negative rights matrix, §C FM-1…FM-5 escalation paths, §D audit-trail requirements, SD-019 amendment mechanics. **Governing principle:** *technical capability and granted right have come apart — the rights matrix records rights, not capabilities; a "(cap. withheld)" cell means the lane's connector can perform the write and the SoD forbids it.*
+
+**Resolved cells (adjudicated 2026-07-12):**
+- **Handoff carve-out → (b) reroute.** Orchestrator holds no Drive-text write, unconditionally. Chat authors the Next Starter; the Maker lands it to `/04_Domain/{project}/PROMPTS.md` (see the corrected `/wrap close` process text).
+- **Session Log append.** Every lane except Checker may append its *own* row (never edit others'); Checker sessions are logged by the commissioning Orchestrator.
+- **External-system writes: default-deny** for all lanes; any future grant is a per-system, per-lane SD amendment — never an inferred extension.
+
+**Failure modes (capped at five; quarterly review 2026-10-12):** FM-1 Phantom close (ground SD-011/VBS · closes HG-1 handoff verification hook) · FM-2 Mirror fork (git HEAD wins · closes HG-4 single-writer lock) · FM-3 Checker drift (F23 · closes HG-2 as-of stamping) · FM-4 Ungoverned capability grant (ground State §11; enforcement follow-on parked to 2026-10-12 · closes HG-5 config-vs-SD sweep) · FM-5 Background overreach (F15 · closes HG-3 CoWork completion rows). **Escalation invariant:** every path terminates in a Maker-verified state, a Session Log incident row, and — where a right or scope was at issue — a Controls-axis decision by Royal. No path resolves inside the lane that failed.
 
 ---
 
@@ -378,3 +385,11 @@ Ratified deltas batch at **gate closures or quarterly review**, never per-sessio
 
 *OG V1.1 → V1.2 published 2026-07-11 (SD-018 quarterly-review batch, Q3; session `CLOSE_2026-07-11_AI_PROJECTS_OCS_CoherenceReview-Adjudication`). Applied to the git repo by the Maker (Code) lane per SD-039. Next amendment batch targets OG V1.3 at the next gate closure or quarterly review (per SD-018).*
 *Note (SD-033): the four-lane SoD is committed as the ratification-candidate seed; the full positive/negative rights matrix + five failure-mode escalation paths are `[PENDING Fable 5 Approach 2]` and fold in as a follow-up within V1.2.*
+
+### Pending V1.3 batch
+
+| SD | Date | Change | Why | Batch |
+|---|---|---|---|---|
+| SD-033 (detail completed) | 2026-07-12 (adjudicated) | Completes the `[PENDING Fable 5 Approach 2]` detail on the SD-033 seed published in V1.2: four-lane authority model, §B positive/negative rights matrix, FM-1…FM-5 escalation paths (capped at five; quarterly review 2026-10-12), SD-019 amendment mechanics. Rulings folded in: handoff carve-out **(b)** — Chat drafts, Code lands (includes the `/wrap close` process-text correction); Session Log append for all lanes except Checker; FM-1 reground on SD-011/VBS; FM-4 reground on State §11 (SD-039 mis-cite removed — SD-039 denotes git repo = SoT / closes F15); FM-4 enforcement follow-on parked to 2026-10-12 (cross-linked §12 Harness Security Gate + R2, no duplicate charter); B.3 mirror-fallback and C.1 role-holder assumptions confirmed canonical. Full text: `/00_Registry/DOC_2026-07-13_AI_OCS_SD033-FourLane-SoD_V1.md`. | Seed operated without its rights matrix + escalation paths; carve-out (b) removed the last live contradiction between process text and the authority table | V1.3 batch |
+
+*Note: the V1.2 publish note above expected the SD-033 detail to fold in "within V1.2"; adjudication 2026-07-12 reframed the completed delta to carry into the OG V1.3 batch per SD-018. The published V1.2 record is unchanged.*
