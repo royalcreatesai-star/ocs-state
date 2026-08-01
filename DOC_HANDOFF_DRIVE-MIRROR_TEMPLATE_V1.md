@@ -37,6 +37,9 @@ Use when the Drive mount is unavailable (e.g. Drive-for-Desktop not running) or 
 | Date | Repo HEAD | Version | Files mirrored | Method | Verified |
 |---|---|---|---|---|---|
 | 2026-06-28 | (this commit) | V7.4 | OCS_STATE_CANONICAL + 3 Gate 5 docs + GATE5-CLOSE-SESSION + this template | A (direct) | ✅ diff byte-identical |
+| 2026-08-01 | 63fe482 | V7.8 | OCS_STATE_CANONICAL (§8 F24 registered — OAuth refresh guard) | A (direct) | ✅ diff byte-identical, sha256 `1f5858eb…73c41` |
+
+*Note on the 08-01 row: the commit also changed `harness/scripts/drive_audit.py` + `test_drive_audit.py`. Those are **not mirrored** — the destination map above covers governance `.md` only, and `harness/` has never had a Drive counterpart. Repo is the sole home for harness code; that is current intended behavior, not a missed mirror.*
 
 ---
 
