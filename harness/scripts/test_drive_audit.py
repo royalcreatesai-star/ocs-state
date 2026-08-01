@@ -10,10 +10,17 @@ plus a structural check that the Drive-only scope patch stayed applied
 route_entries() only touches the `service` argument when execute=True and
 the disposition is archive/trash, so a dry-run (execute=False) can pass
 service=None without mocking the Google API.
+
+Auth coverage (added 2026-07-28) exercises load_credentials() with the
+Google objects mocked out — no network, no browser, no real token.json.
 """
 
 import pathlib
+import tempfile
 import unittest
+from unittest import mock
+
+from google.auth.exceptions import RefreshError, TransportError
 
 import drive_audit
 
@@ -91,6 +98,99 @@ class RouteEntriesDryRunTests(unittest.TestCase):
         )
 
 
+class CredentialRefreshTests(unittest.TestCase):
+    """Regression cover for the 2026-07-28 incident.
+
+    The OAuth consent screen is in "Testing" publishing status, whose refresh
+    tokens die after 7 days. The token minted 2026-07-06 was already revoked,
+    so creds.refresh() raised RefreshError(invalid_grant) and the script died
+    with an unhandled traceback instead of re-authenticating. A failed refresh
+    must fall through to the InstalledAppFlow browser path.
+    """
+
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.token_path = pathlib.Path(tmp.name) / "token.json"
+        patcher = mock.patch.object(drive_audit, "TOKEN_FILE", str(self.token_path))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    @staticmethod
+    def _stub_creds(*, valid, expired=False, refresh_token=None, refresh_raises=None):
+        creds = mock.Mock()
+        creds.valid = valid
+        creds.expired = expired
+        creds.refresh_token = refresh_token
+        creds.to_json.return_value = '{"stub": "written"}'
+        if refresh_raises is not None:
+            creds.refresh.side_effect = refresh_raises
+        return creds
+
+    def _run(self, stored, *, fresh=None):
+        """Call load_credentials() with Credentials/Request/InstalledAppFlow mocked.
+
+        `stored` is what token.json deserializes to (or an exception to raise);
+        `fresh` is what the browser flow hands back. Returns (creds, flow_cls).
+        """
+        fresh = fresh or self._stub_creds(valid=True)
+        loader = mock.patch.object(
+            drive_audit.Credentials, "from_authorized_user_file",
+            side_effect=stored if isinstance(stored, Exception) else None,
+            return_value=None if isinstance(stored, Exception) else stored,
+        )
+        with loader, \
+                mock.patch.object(drive_audit, "InstalledAppFlow") as flow_cls, \
+                mock.patch.object(drive_audit, "Request"):
+            flow_cls.from_client_secrets_file.return_value.run_local_server.return_value = fresh
+            creds = drive_audit.load_credentials()
+        return creds, flow_cls
+
+    def test_revoked_refresh_token_falls_back_to_browser_flow(self):
+        stale = self._stub_creds(valid=False, expired=True, refresh_token="revoked",
+                                 refresh_raises=RefreshError("invalid_grant"))
+        fresh = self._stub_creds(valid=True)
+        creds, flow_cls = self._run(stale, fresh=fresh)
+
+        stale.refresh.assert_called_once()          # it did try the cheap path first
+        self.assertIs(creds, fresh)                 # ...then re-authed instead of raising
+        flow_cls.from_client_secrets_file.assert_called_once_with(
+            drive_audit.CREDENTIALS_FILE, drive_audit.SCOPES
+        )
+        self.assertEqual(self.token_path.read_text(), '{"stub": "written"}')
+
+    def test_transport_error_on_refresh_also_falls_back(self):
+        stale = self._stub_creds(valid=False, expired=True, refresh_token="whatever",
+                                 refresh_raises=TransportError("connection reset"))
+        creds, flow_cls = self._run(stale)
+        self.assertIsNot(creds, stale)
+        flow_cls.from_client_secrets_file.assert_called_once()
+
+    def test_successful_refresh_skips_browser_flow(self):
+        stale = self._stub_creds(valid=False, expired=True, refresh_token="still-good")
+        creds, flow_cls = self._run(stale)
+
+        stale.refresh.assert_called_once()
+        flow_cls.from_client_secrets_file.assert_not_called()
+        self.assertIs(creds, stale)
+        self.assertEqual(self.token_path.read_text(), '{"stub": "written"}')
+
+    def test_missing_token_file_runs_browser_flow(self):
+        fresh = self._stub_creds(valid=True)
+        creds, flow_cls = self._run(FileNotFoundError(drive_audit.TOKEN_FILE), fresh=fresh)
+        self.assertIs(creds, fresh)
+        flow_cls.from_client_secrets_file.assert_called_once()
+
+    def test_valid_token_touches_neither_refresh_nor_flow(self):
+        good = self._stub_creds(valid=True)
+        creds, flow_cls = self._run(good)
+
+        good.refresh.assert_not_called()
+        flow_cls.from_client_secrets_file.assert_not_called()
+        self.assertIs(creds, good)
+        self.assertFalse(self.token_path.exists())  # nothing changed → nothing rewritten
+
+
 class DriveOnlyScopeStructuralTests(unittest.TestCase):
     """Confirms the Resolution C patch (Drive-only scope) is actually in the file on disk."""
 
@@ -115,6 +215,12 @@ class DriveOnlyScopeStructuralTests(unittest.TestCase):
     def test_no_scan_queue_in_route_entries(self):
         self.assertNotIn('queues["scan"]', self.src)
         self.assertNotIn("execute_scan", self.src)
+
+    def test_refresh_call_is_exception_guarded(self):
+        # The 2026-07-28 crash was a bare creds.refresh(Request()). Keep it wrapped.
+        block = self.src.split("def load_credentials")[1].split("\ndef ")[0]
+        self.assertIn("creds.refresh(", block)
+        self.assertIn("except", block)
 
     def test_dry_run_is_default(self):
         # --execute must be an opt-in store_true flag, not default-on.

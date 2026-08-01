@@ -40,6 +40,7 @@ import sys
 from datetime import date, datetime
 
 try:
+    from google.auth.exceptions import GoogleAuthError
     from google.auth.transport.requests import Request
     from google.oauth2.credentials import Credentials
     from google_auth_oauthlib.flow import InstalledAppFlow
@@ -60,21 +61,40 @@ FIELD_RE = re.compile(r"^([a-z_]+):\s*(.*)$")
 
 
 # ── Auth ─────────────────────────────────────────────────────────────────────
-def get_service():
+def load_credentials():
+    """Return usable Drive credentials, re-authenticating in a browser if needed.
+
+    A stored refresh_token is not a guarantee. While the OAuth consent screen sits
+    in "Testing" publishing status Google expires refresh tokens after 7 days, and
+    a revoked/expired one makes creds.refresh() raise RefreshError(invalid_grant).
+    That killed the 2026-07-28 run with a raw traceback. Any refresh failure now
+    falls through to the same InstalledAppFlow path a missing token.json takes.
+    """
     creds = None
     try:
         creds = Credentials.from_authorized_user_file(TOKEN_FILE, SCOPES)
     except FileNotFoundError:
         pass
     if not creds or not creds.valid:
+        refreshed = False
         if creds and creds.expired and creds.refresh_token:
-            creds.refresh(Request())
-        else:
+            try:
+                creds.refresh(Request())
+                refreshed = True
+            except GoogleAuthError as exc:
+                # RefreshError (invalid_grant) is the common case; TransportError
+                # and friends land here too. Either way: re-authorize, don't die.
+                print(f"Stored token could not be refreshed ({exc}) — re-authorizing in browser.")
+        if not refreshed:
             flow = InstalledAppFlow.from_client_secrets_file(CREDENTIALS_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
         with open(TOKEN_FILE, "w") as f:
             f.write(creds.to_json())
-    return build("drive", "v3", credentials=creds)
+    return creds
+
+
+def get_service():
+    return build("drive", "v3", credentials=load_credentials())
 
 
 # ── Queue parse / serialize ──────────────────────────────────────────────────
