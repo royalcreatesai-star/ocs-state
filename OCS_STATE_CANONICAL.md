@@ -1,7 +1,7 @@
 # OCS_STATE_CANONICAL.md — O'Connor Configured System (OCS) State
 *(Formerly OAIS_STATE.md — renamed 2026-06-19. The "OAIS / O'Connor AI System" acronym is retired in favor of OCS. Distinct from the separately-retired OCS_Program_State lineage — see GATE5-RECONCILIATION D1.)*
 
-**Program:** O'Connor Configured System (OCS) | 60-Day Initiative
+**Program:** O'Connor Configured System (OCS) | 89-Day Initiative (amended 2026-08-11; originally 60-day)
 **Version:** V7.9 — Gate 4 CLOSED / **Gate 5 ✅ CLOSED 06-28** / **Gate 6 RE-CHARTERED as a BUILD gate (Risk Scan intake = centerpiece), due Aug 22** / **Program window AMENDED to 2026-09-12 (89 days)** / **Drive direct-mirror ENABLED 06-28 (F15 update)** / Migration Sprint V2 ACTIVE / **Command Center Phase 2 — Session 1 BUILT (Agent Registry live, G3 closed) + G8 remediation EXECUTED 06-28 (all 4)** / **Drive Audit Harness — Threads 2+3+4 CLOSED + Thread 5 scan done (report filed, awaiting disposition review) 07-06** / **V7.6 fork reconciled (07-03 two-axis Five Engines merged into repo lineage) 07-06**
 **Last Updated:** 2026-08-11
 **Updated By:** Royal O'Connor + Claude (Opus 5, Claude Code) — 2026-08-11 Batch ①②③ Code-lane pass: program-window amendment, Gate 6 re-charter + gate-spine re-dating, F25/F26 registered, F15 scope clarified, PAT expiry logged (prior: 2026-07-06 Drive Audit Harness session [Threads 2+3+4] + V7.6-fork reconciliation; 2026-07-03 Thread 0 Phase 4 Chat wrap [V7.6 two-axis, Drive-only]; 2026-06-28 Command Center Phase 2 session + Gate 5 substantive pass)
@@ -20,7 +20,7 @@
 | Window | **2026-06-15 → 2026-09-12 (89 days, 9 gates)** — AMENDED 2026-08-11 (was 06-15 → 08-14 / 60 days). Gate count unchanged; the extension re-dates the Gate 6–9 spine in §3 and absorbs the Gate 6 re-charter from an export task to a BUILD gate. |
 | Mission | Consolidate all AI assets into a single documented, sellable system |
 | Canonical Home | git repo (SoT) + Google Drive mirror — royalcreates.ai@gmail.com |
-| Filing Root | /ROC-OS/{00_Registry, 01_Intelligence, 02_Automation, 03_Data, 04_Domain, 05_Projects} |
+| Filing Root | /ROC-OS/{00_Registry, 01_Intelligence, 02_Automation, 03_Data, 04_Domain, 05_Projects, 99_Archive} — **99_Archive documented 08-11; archive-destination policy UNRESOLVED — two live archive locations exist** (existence recorded here only; no canonical archive destination is designated — see F27) |
 | Maturity | 2.5 of 4 (Level 3 target by close) |
 
 ## 2. FIVE ENGINES
@@ -117,11 +117,15 @@ F1 Oxford rent discrepancy ($50,700 vs $45,000) · F2 Bay Street file anomaly ·
 
 **F26 (NEW 08-11): Portfolio Calendar non-reconciliation.** Registered by title per the 08-11 batch. ⚠ **Detail not yet documented — this entry is a placeholder holding the finding number, not a description of the defect.** A search of the git repo and the full `/ROC-OS/` Drive tree this session returned **zero** references to a "Portfolio Calendar" artifact, so there is no existing source to reconstruct the finding from. **What is needed to make F26 actionable:** (i) which artifact the Portfolio Calendar *is* and where it lives; (ii) which Engine owns it (the name suggests Engine 3 real-estate or Engine 5 investing, but that is inference, not record); (iii) what it fails to reconcile *against* — a second calendar, the property workbook, projects.md, or an external source; (iv) the impact and whether anything downstream depends on the reconciliation. Until (i)–(iv) land, F26 is **OPEN and undescribed** — do not treat its presence in this section as evidence the finding has been analyzed.
 
+**F27 (NEW 08-11): ARCHIVE FRAGMENTATION.** Two live archive locations exist and are mutually unaware. **(a) `/ROC-OS/99_Archive/`** — created 2026-06-19, 2 files, manual, NOT queue-routed, no audit trail; one of its two files is a `(1)` stray duplicate of a live `/05_Projects/` asset. **(b) `/ROC-OS/00_Registry/archive/`** — `drive_audit.py`'s hardcoded destination, 9 files from the 07-06 `--execute` run, queue-routed and logged. **Root cause:** 99_Archive predates both PRUNE_QUEUE.md (06-30) and the Thread 2 destination choice (07-03), so the script was pointed elsewhere while it already existed. Version files are accumulating across the tree (Royal, 08-11). **OPEN:** consolidation target, script repoint + 17/17 re-run, disposition of the existing 9, queue-routed vs bulk. **Status OPEN, undescribed at scale — scan required before any move.**
+
+**F28 (NEW 08-11): Notion SQL recency defect.** Registered by title to hold the finding number, carried over from the 2026-08-11 **Chat**-lane session where it was identified but never written to canonical. ⚠ **Detail not yet documented — this entry is a placeholder, not a description of the defect.** No description of it exists anywhere in this file or the repo as of this commit, so there is no source to reconstruct it from on the Code lane. **What is needed to make F28 actionable:** (i) which Notion database/view/query the defect is in; (ii) what "recency" is being computed wrong — sort order, a last-edited/created property, a rollup, or a filter window; (iii) what surfaces the wrong result downstream (Command Center, Agent Registry §5c, Session Log); (iv) whether it predates or postdates the 06-28 G8 remediation. Until (i)–(iv) land, F28 is **OPEN and undescribed** — its presence here is number reservation only. Source detail sits in the 08-11 Chat session and must be transferred by Royal (per F15, Chat cannot write the repo).
+
 ## 9. DEPRECATION TIMELINE
-Assistants API 2026-08-26 (~10wk) · Agent Builder 2026-11-30 (~24wk) · OCS Gate 9 2026-08-14. Royal's account exposure: ZERO (the positioning advantage).
+Assistants API 2026-08-26 (~2wk as of 2026-08-11) · Agent Builder 2026-11-30 (~16wk as of 2026-08-11) · OCS Gate 9 2026-09-12 (amended 08-11). Royal's account exposure: ZERO (the positioning advantage).
 
 ## 10. ARCHITECTURE / STACK
-Claude (Sonnet 4.6) orchestration · OpenAI (GPT-5-5-thinking) specialist advisory (6 GPTs + 2 Projects, ===SECTION=== format) · n8n 2.0 (Docker, M4, LOCAL only) · Google Drive mirror. Naming: {TYPE}_{DATE}_{DOMAIN}_{CATEGORY}_{DESCRIPTION}_{VERSION}.
+Claude (Opus 5, as of 2026-08-11) orchestration · OpenAI (GPT-5-5-thinking) specialist advisory (6 GPTs + 2 Projects, ===SECTION=== format) · n8n 2.0 (Docker, M4, LOCAL only) · Google Drive mirror. Naming: {TYPE}_{DATE}_{DOMAIN}_{CATEGORY}_{DESCRIPTION}_{VERSION}.
 
 ## 11. GIT REPO (✅ LIVE)
 Local `~/Documents/ME/Ai/ocs-state` (outside iCloud — iCloud blocks .git). Remote github.com/royalcreatesai-star/ocs-state (main). Canonical file OCS_STATE_CANONICAL.md (formerly OAIS_STATE.md); Drive 00_Registry = mirror. Fine-grained PAT (Contents r/w). Push: `cd ~/Documents/ME/Ai/ocs-state && git push -u origin main`.
